@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: node:22-alpine
+    working_dir: /app
+    ports:
+      - "5173:5173"
+    volumes:
+      # Mount the frontend directory to /app
+      - ./frontend:/app
+      - /app/node_modules
+      # Mount public data so it's accessible
+      - ./public/data:/app/public/data
+    command: sh -c "npm install && npm run dev -- --host"
