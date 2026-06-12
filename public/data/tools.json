@@ -5,7 +5,7 @@
     "description": "Define and run multi-container applications with Docker.",
     "category": "docker",
     "subcategory": "Official Projects",
-    "stars": 37511,
+    "stars": 37513,
     "language": "Go",
     "topics": [
       "docker",
@@ -14,7 +14,7 @@
       "golang",
       "orchestration"
     ],
-    "last_updated": "2026-06-10T07:36:32Z",
+    "last_updated": "2026-06-11T09:03:06Z",
     "license": "Apache License 2.0",
     "github_description": "Define and run multi-container applications with Docker",
     "install_cmd": "go get github.com/docker/compose"
@@ -25,7 +25,7 @@
     "description": "Container runtimes on macOS (and Linux) with minimal setup.",
     "category": "docker",
     "subcategory": "Engine & Runtime",
-    "stars": 29230,
+    "stars": 29247,
     "language": "Go",
     "topics": [
       "containerd",
@@ -52,7 +52,7 @@
     "description": "An open and reliable container runtime.",
     "category": "docker",
     "subcategory": "Engine & Runtime",
-    "stars": 20814,
+    "stars": 20823,
     "language": "Go",
     "topics": [
       "cncf",
@@ -64,7 +64,7 @@
       "kubernetes",
       "oci"
     ],
-    "last_updated": "2026-06-10T17:12:58Z",
+    "last_updated": "2026-06-11T17:40:35Z",
     "license": "Apache License 2.0",
     "github_description": "An open and reliable container runtime",
     "install_cmd": "go get github.com/containerd/containerd"
@@ -88,7 +88,7 @@
       "oci-runtime",
       "runc"
     ],
-    "last_updated": "2026-06-11T00:41:43Z",
+    "last_updated": "2026-06-12T00:42:44Z",
     "license": "Apache License 2.0",
     "github_description": "Open Container Initiative-based implementation of Kubernetes Container Runtime Interface",
     "install_cmd": "go get github.com/cri-o/cri-o"
@@ -99,7 +99,7 @@
     "description": "Application Kernel for Containers.",
     "category": "docker",
     "subcategory": "Engine & Runtime",
-    "stars": 18504,
+    "stars": 18512,
     "language": "Go",
     "topics": [
       "containers",
@@ -110,7 +110,7 @@
       "oci",
       "sandbox"
     ],
-    "last_updated": "2026-06-11T00:14:35Z",
+    "last_updated": "2026-06-12T02:59:30Z",
     "license": "Apache License 2.0",
     "github_description": "Application Kernel for Containers",
     "install_cmd": "go get github.com/google/gvisor"
@@ -121,7 +121,7 @@
     "description": "LXC - Linux Containers.",
     "category": "docker",
     "subcategory": "Engine & Runtime",
-    "stars": 5199,
+    "stars": 5200,
     "language": "C",
     "topics": [
       "c",
@@ -140,7 +140,7 @@
     "description": "Docker-compatible container CLI for macOS, built on Apple's Containerization framework.",
     "category": "docker",
     "subcategory": "Engine & Runtime",
-    "stars": 215,
+    "stars": 221,
     "language": "Swift",
     "topics": [
       "apple-containerization",
@@ -154,7 +154,7 @@
       "swift",
       "swift-package-manager"
     ],
-    "last_updated": "2026-05-06T00:07:20Z",
+    "last_updated": "2026-06-11T12:04:43Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Docker-compatible container CLI built on Apple's Containerization framework. Same commands, same flags \u2014 mocker run, ps, stop, build, compose, stats \u2014 all working on macOS 26.",
     "install_cmd": null
@@ -165,7 +165,7 @@
     "description": "Libpod is a library used to create container pods. Home of Podman.",
     "category": "docker",
     "subcategory": "Engine & Runtime",
-    "stars": 32002,
+    "stars": 32003,
     "language": "Go",
     "topics": [
       "containers",
@@ -174,7 +174,7 @@
       "linux",
       "oci"
     ],
-    "last_updated": "2026-06-10T19:51:12Z",
+    "last_updated": "2026-06-12T00:15:44Z",
     "license": "Apache License 2.0",
     "github_description": "Podman: A tool for managing OCI containers and pods.",
     "install_cmd": "go get github.com/containers/libpod"
@@ -185,14 +185,14 @@
     "description": "CLI tool for spawning and running containers according to the OCI specification.",
     "category": "docker",
     "subcategory": "Engine & Runtime",
-    "stars": 13269,
+    "stars": 13272,
     "language": "Go",
     "topics": [
       "containers",
       "docker",
       "oci"
     ],
-    "last_updated": "2026-06-09T18:02:16Z",
+    "last_updated": "2026-06-11T10:28:47Z",
     "license": "Apache License 2.0",
     "github_description": "CLI tool for spawning and running containers according to the OCI specification",
     "install_cmd": "go get github.com/opencontainers/runc"
@@ -222,7 +222,7 @@
     "description": "Container runtime written in Rust, implementing the OCI runtime specification.",
     "category": "docker",
     "subcategory": "Engine & Runtime",
-    "stars": 7442,
+    "stars": 7443,
     "language": "Rust",
     "topics": [
       "containers",
@@ -231,7 +231,7 @@
       "oci",
       "rust"
     ],
-    "last_updated": "2026-06-10T12:22:17Z",
+    "last_updated": "2026-06-11T12:17:17Z",
     "license": "Apache License 2.0",
     "github_description": "A container runtime written in Rust",
     "install_cmd": null
@@ -242,7 +242,7 @@
     "description": "A tool utilising `ansible` and `buildah`.",
     "category": "docker",
     "subcategory": "Builder",
-    "stars": 694,
+    "stars": 693,
     "language": "Python",
     "topics": [
       "ansible",
@@ -259,14 +259,14 @@
     "description": "Declarative OCI image builder from apk packages; reproducible by design.",
     "category": "docker",
     "subcategory": "Builder",
-    "stars": 1633,
+    "stars": 1634,
     "language": "Go",
     "topics": [
       "containers",
       "docker",
       "oci"
     ],
-    "last_updated": "2026-06-10T21:04:56Z",
+    "last_updated": "2026-06-11T14:03:37Z",
     "license": "Apache License 2.0",
     "github_description": "Build OCI images from APK packages directly without Dockerfile",
     "install_cmd": "go get github.com/chainguard-dev/apko"
@@ -277,7 +277,7 @@
     "description": "A tool that facilitates building OCI images.",
     "category": "docker",
     "subcategory": "Builder",
-    "stars": 8869,
+    "stars": 8875,
     "language": "Go",
     "topics": [
       "container",
@@ -288,7 +288,7 @@
       "oci-image",
       "podman"
     ],
-    "last_updated": "2026-06-09T17:48:22Z",
+    "last_updated": "2026-06-11T07:00:07Z",
     "license": "Apache License 2.0",
     "github_description": "A tool that facilitates building OCI images.",
     "install_cmd": "go get github.com/containers/buildah"
@@ -299,7 +299,7 @@
     "description": "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit.",
     "category": "docker",
     "subcategory": "Builder",
-    "stars": 10037,
+    "stars": 10039,
     "language": "Go",
     "topics": [
       "builder",
@@ -313,7 +313,7 @@
       "oci",
       "oci-image"
     ],
-    "last_updated": "2026-06-10T23:40:15Z",
+    "last_updated": "2026-06-11T22:23:48Z",
     "license": "Apache License 2.0",
     "github_description": "concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit",
     "install_cmd": "go get github.com/moby/buildkit"
@@ -324,10 +324,10 @@
     "description": "Official Docker CLI plugin for multi-platform builds backed by BuildKit.",
     "category": "docker",
     "subcategory": "Builder",
-    "stars": 4404,
+    "stars": 4406,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-10T23:39:06Z",
+    "last_updated": "2026-06-11T16:27:32Z",
     "license": "Apache License 2.0",
     "github_description": "Docker CLI plugin for extended build capabilities with BuildKit",
     "install_cmd": "go get github.com/docker/buildx"
@@ -403,7 +403,7 @@
     "description": "Containerized build automation with Dockerfile-meets-Makefile syntax.",
     "category": "docker",
     "subcategory": "Builder",
-    "stars": 12038,
+    "stars": 12037,
     "language": "Go",
     "topics": [
       "build",
@@ -508,7 +508,7 @@
     "description": "Build and deploy Go applications as container images without a Dockerfile.",
     "category": "docker",
     "subcategory": "Builder",
-    "stars": 8446,
+    "stars": 8448,
     "language": "Go",
     "topics": [
       "container",
@@ -519,7 +519,7 @@
       "golang",
       "kubernetes"
     ],
-    "last_updated": "2026-06-10T01:03:35Z",
+    "last_updated": "2026-06-12T01:03:51Z",
     "license": "Apache License 2.0",
     "github_description": "Build and deploy Go applications",
     "install_cmd": "go get github.com/ko-build/ko"
@@ -629,7 +629,7 @@
       "oci-image",
       "wolfi"
     ],
-    "last_updated": "2026-06-11T00:38:36Z",
+    "last_updated": "2026-06-12T03:46:24Z",
     "license": "Apache License 2.0",
     "github_description": "Public Chainguard Images",
     "install_cmd": null
@@ -640,7 +640,7 @@
     "description": "Language focused docker images, minus the operating system.",
     "category": "docker",
     "subcategory": "Base Images",
-    "stars": 22727,
+    "stars": 22737,
     "language": "Starlark",
     "topics": [
       "bazel",
@@ -657,10 +657,10 @@
     "description": "Build apk packages from declarative YAML for use with apko.",
     "category": "docker",
     "subcategory": "Base Images",
-    "stars": 602,
+    "stars": 603,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-10T15:24:00Z",
+    "last_updated": "2026-06-11T21:27:39Z",
     "license": "Apache License 2.0",
     "github_description": "build APKs from source code",
     "install_cmd": "go get github.com/chainguard-dev/melange"
@@ -676,7 +676,7 @@
     "topics": [
       "wolfi"
     ],
-    "last_updated": "2026-06-10T15:11:24Z",
+    "last_updated": "2026-06-11T15:16:22Z",
     "license": "Other",
     "github_description": "Main package repository for production Wolfi images",
     "install_cmd": null
@@ -686,22 +686,7 @@
     "url": "https://github.com/Dockershelf/dockershelf",
     "description": "A repository that serves as a collector for docker recipes that are universal, efficient and slim. Images are updated, tested and published daily via a Travis cron job.",
     "category": "docker",
-    "subcategory": "Dockerfile",
-    "stars": 96,
-    "language": "Shell",
-    "topics": [
-      "ci-cd",
-      "docker",
-      "docker-image",
-      "dockerfile",
-      "latex",
-      "node",
-      "python"
-    ],
-    "last_updated": "2026-06-11T02:40:44Z",
-    "license": "GNU General Public License v3.0",
-    "github_description": "A repository containing useful, lightweight and reliable dockerfiles.",
-    "install_cmd": null
+    "subcategory": "Dockerfile"
   },
   {
     "name": "Dockadvisor",
@@ -709,7 +694,7 @@
     "description": "Lightweight Dockerfile linter with 60+ rules, quality scoring, and security checks.",
     "category": "docker",
     "subcategory": "Linter",
-    "stars": 204,
+    "stars": 206,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-01-12T09:26:02Z",
@@ -735,7 +720,7 @@
       "python",
       "python3"
     ],
-    "last_updated": "2026-06-08T07:27:31Z",
+    "last_updated": "2026-06-12T02:03:21Z",
     "license": "MIT License",
     "github_description": ":whale: Keep an eye on your docker image size and prevent it from growing too big",
     "install_cmd": "pip install docker-image-size-limit"
@@ -746,7 +731,7 @@
     "description": "A Dockerfile linter that checks for best practices, common mistakes, and is also able to lint any bash written in `RUN` instructions;.",
     "category": "docker",
     "subcategory": "Linter",
-    "stars": 12207,
+    "stars": 12209,
     "language": "Haskell",
     "topics": [
       "docker",
@@ -757,7 +742,7 @@
       "shellcheck",
       "static-analysis"
     ],
-    "last_updated": "2026-06-01T09:57:49Z",
+    "last_updated": "2026-06-11T07:29:04Z",
     "license": "GNU General Public License v3.0",
     "github_description": "Dockerfile linter, validate inline bash, written in Haskell",
     "install_cmd": null
@@ -779,7 +764,7 @@
       "p2p",
       "registry"
     ],
-    "last_updated": "2026-06-11T03:39:57Z",
+    "last_updated": "2026-06-11T04:26:49Z",
     "license": "Apache License 2.0",
     "github_description": "Delivers efficient, stable, and secure data distribution and acceleration powered by P2P technology, with an optional content\u2011addressable filesystem that accelerates OCI container launch.",
     "install_cmd": "go get github.com/dragonflyoss/Dragonfly2"
@@ -833,7 +818,7 @@
       "docker-registry",
       "p2p"
     ],
-    "last_updated": "2026-06-10T15:49:23Z",
+    "last_updated": "2026-06-11T20:21:36Z",
     "license": "Apache License 2.0",
     "github_description": "P2P Docker registry capable of distributing TBs of data in seconds",
     "install_cmd": "go get github.com/uber/kraken"
@@ -844,7 +829,7 @@
     "description": "Lightweight multi-protocol artifact registry supporting Docker, Maven, npm, Cargo and PyPI in a single 32MB binary. Pull-through cache, Web UI, Prometheus metrics, RBAC auth.",
     "category": "docker",
     "subcategory": "Registry",
-    "stars": 191,
+    "stars": 192,
     "language": "Rust",
     "topics": [
       "air-gapped",
@@ -868,7 +853,7 @@
       "supply-chain-security",
       "terraform-registry"
     ],
-    "last_updated": "2026-06-10T23:00:36Z",
+    "last_updated": "2026-06-11T23:48:02Z",
     "license": "MIT License",
     "github_description": "Lightweight multi-format artifact registry. 13 formats: Docker, Maven, npm, PyPI, Cargo, Go, NuGet, RubyGems, Terraform, Conan, Ansible Galaxy, Dart Pub, and Raw. Single binary, zero dependencies, <100MB RAM.",
     "install_cmd": null
@@ -914,7 +899,7 @@
     "description": "Go library and CLI tools (`crane`, `gcrane`, `registry`) for working with container registries.",
     "category": "docker",
     "subcategory": "Registry CLI",
-    "stars": 3910,
+    "stars": 3912,
     "language": "Go",
     "topics": [
       "container",
@@ -922,7 +907,7 @@
       "docker",
       "registry"
     ],
-    "last_updated": "2026-06-10T02:33:41Z",
+    "last_updated": "2026-06-11T22:24:48Z",
     "license": "Apache License 2.0",
     "github_description": "Go library and CLIs for working with container registries",
     "install_cmd": "go get github.com/google/go-containerregistry"
@@ -933,7 +918,7 @@
     "description": "Push and pull arbitrary OCI artifacts to and from any OCI registry.",
     "category": "docker",
     "subcategory": "Registry CLI",
-    "stars": 2302,
+    "stars": 2303,
     "language": "Go",
     "topics": [
       "docker",
@@ -942,7 +927,7 @@
       "registry",
       "storage"
     ],
-    "last_updated": "2026-06-10T14:14:29Z",
+    "last_updated": "2026-06-12T03:42:29Z",
     "license": "Apache License 2.0",
     "github_description": "OCI registry client - managing content like artifacts, images, packages",
     "install_cmd": "go get github.com/oras-project/oras"
@@ -953,7 +938,7 @@
     "description": "Daemonless registry client; copy, inspect, modify, and sign OCI images.",
     "category": "docker",
     "subcategory": "Registry CLI",
-    "stars": 1854,
+    "stars": 1855,
     "language": "Go",
     "topics": [
       "docker",
@@ -971,7 +956,7 @@
     "description": "Work with remote image registries: retrieve information, copy images, sign content.",
     "category": "docker",
     "subcategory": "Registry CLI",
-    "stars": 10965,
+    "stars": 10973,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-06-08T18:44:05Z",
@@ -1005,7 +990,7 @@
     "description": "Clair is an open source project for the static analysis of vulnerabilities in appc and docker containers.",
     "category": "docker",
     "subcategory": "Image Scanning & SBOM",
-    "stars": 11006,
+    "stars": 11009,
     "language": "Go",
     "topics": [
       "clair",
@@ -1047,7 +1032,7 @@
     "description": "A vulnerability scanner for container images, filesystems and SBOMs.",
     "category": "docker",
     "subcategory": "Image Scanning & SBOM",
-    "stars": 12375,
+    "stars": 12384,
     "language": "Go",
     "topics": [
       "container-image",
@@ -1077,7 +1062,7 @@
     "description": "OpenSCAP provides oscap-docker tool which is used to scan Docker containers and images.",
     "category": "docker",
     "subcategory": "Image Scanning & SBOM",
-    "stars": 1737,
+    "stars": 1738,
     "language": "XSLT",
     "topics": [
       "compliance",
@@ -1089,7 +1074,7 @@
       "scap",
       "xccdf"
     ],
-    "last_updated": "2026-06-02T22:41:11Z",
+    "last_updated": "2026-06-11T13:11:57Z",
     "license": "GNU Lesser General Public License v2.1",
     "github_description": "NIST Certified SCAP 1.2 toolkit",
     "install_cmd": null
@@ -1118,7 +1103,7 @@
     "description": "CLI tool and library for generating a Software Bill of Materials (SBOM) from container images and filesystems.",
     "category": "docker",
     "subcategory": "Image Scanning & SBOM",
-    "stars": 9091,
+    "stars": 9093,
     "language": "Go",
     "topics": [
       "containers",
@@ -1133,7 +1118,7 @@
       "static-analysis",
       "tool"
     ],
-    "last_updated": "2026-06-09T17:22:44Z",
+    "last_updated": "2026-06-11T13:40:42Z",
     "license": "Apache License 2.0",
     "github_description": "CLI tool and library for generating a Software Bill of Materials from container images and filesystems",
     "install_cmd": "go get github.com/anchore/syft"
@@ -1144,7 +1129,7 @@
     "description": "Aqua Security's open source simple and comprehensive vulnerability scanner for containers (suitable for CI).",
     "category": "docker",
     "subcategory": "Image Scanning & SBOM",
-    "stars": 36300,
+    "stars": 36347,
     "language": "Go",
     "topics": [
       "containers",
@@ -1163,7 +1148,7 @@
       "vulnerability-detection",
       "vulnerability-scanners"
     ],
-    "last_updated": "2026-06-10T11:45:18Z",
+    "last_updated": "2026-06-11T14:52:49Z",
     "license": "Apache License 2.0",
     "github_description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more",
     "install_cmd": "go get github.com/aquasecurity/trivy"
@@ -1174,10 +1159,10 @@
     "description": "Container signing, verification, and transparency log for OCI artifacts.",
     "category": "docker",
     "subcategory": "Supply Chain",
-    "stars": 6030,
+    "stars": 6032,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-09T23:34:33Z",
+    "last_updated": "2026-06-11T20:51:12Z",
     "license": "Apache License 2.0",
     "github_description": "Code signing and transparency for containers and binaries",
     "install_cmd": "go get github.com/sigstore/cosign"
@@ -1188,7 +1173,7 @@
     "description": "Framework for supply chain attestations; underpins SLSA and cosign provenance.",
     "category": "docker",
     "subcategory": "Supply Chain",
-    "stars": 1005,
+    "stars": 1007,
     "language": "Python",
     "topics": [
       "new-york-university",
@@ -1230,7 +1215,7 @@
       "supply-chain",
       "verification"
     ],
-    "last_updated": "2026-06-11T00:27:01Z",
+    "last_updated": "2026-06-11T17:53:38Z",
     "license": "Apache License 2.0",
     "github_description": "Witness is a pluggable framework for software supply chain risk management.  It automates, normalizes, and verifies software artifact provenance.",
     "install_cmd": "go get github.com/in-toto/witness"
@@ -1306,7 +1291,7 @@
     "description": "A container run and build engine - runs inside docker.",
     "category": "docker",
     "subcategory": "Composition",
-    "stars": 382,
+    "stars": 383,
     "language": "C",
     "topics": [],
     "last_updated": "2025-03-20T15:47:21Z",
@@ -1320,7 +1305,7 @@
     "description": "A script to run docker-compose.yml using podman.",
     "category": "docker",
     "subcategory": "Composition",
-    "stars": 6105,
+    "stars": 6107,
     "language": "Python",
     "topics": [
       "docker-compose",
@@ -1393,7 +1378,7 @@
     "description": "Open source orchestration system for Docker containers by Google.",
     "category": "docker",
     "subcategory": "Orchestration",
-    "stars": 122927,
+    "stars": 122935,
     "language": "Go",
     "topics": [
       "cncf",
@@ -1401,7 +1386,7 @@
       "go",
       "kubernetes"
     ],
-    "last_updated": "2026-06-11T03:25:52Z",
+    "last_updated": "2026-06-12T01:18:47Z",
     "license": "Apache License 2.0",
     "github_description": "Production-Grade Container Scheduling and Management",
     "install_cmd": "go get github.com/kubernetes/kubernetes"
@@ -1437,10 +1422,10 @@
     "description": "Easily deploy applications at any scale. A Distributed, Highly Available, Datacenter-Aware Scheduler.",
     "category": "docker",
     "subcategory": "Orchestration",
-    "stars": 16591,
+    "stars": 16595,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-11T01:12:19Z",
+    "last_updated": "2026-06-12T02:39:20Z",
     "license": "Other",
     "github_description": "Nomad is an easy-to-use, flexible, and performant workload orchestrator that can deploy a mix of microservice, batch, containerized, and non-containerized applications. Nomad is easy to operate and scale and has native Consul and Vault integrations.",
     "install_cmd": "go get github.com/hashicorp/nomad"
@@ -1451,7 +1436,7 @@
     "description": "An open source project that provides a complete platform for operating Docker in production.",
     "category": "docker",
     "subcategory": "Orchestration",
-    "stars": 25661,
+    "stars": 25667,
     "language": "Go",
     "topics": [
       "cattle",
@@ -1461,7 +1446,7 @@
       "orchestration",
       "rancher"
     ],
-    "last_updated": "2026-06-10T23:02:22Z",
+    "last_updated": "2026-06-11T22:00:31Z",
     "license": "Apache License 2.0",
     "github_description": "Complete container management platform",
     "install_cmd": "go get github.com/rancher/rancher"
@@ -1509,7 +1494,7 @@
     "description": "[Previously known as CaptainDuckDuck] Automated Scalable Webserver Package (automated Docker+nginx) - Heroku on Steroids.",
     "category": "docker",
     "subcategory": "Deployment & Platforms",
-    "stars": 15054,
+    "stars": 15056,
     "language": "TypeScript",
     "topics": [
       "aws",
@@ -1551,7 +1536,7 @@
       "ecs",
       "paas"
     ],
-    "last_updated": "2026-06-11T01:34:44Z",
+    "last_updated": "2026-06-11T05:13:13Z",
     "license": "Other",
     "github_description": "Private PaaS built on native AWS services for maximum privacy and minimum upkeep",
     "install_cmd": "go get github.com/convox/rack"
@@ -1602,7 +1587,7 @@
       "self-hosted",
       "selfhosted"
     ],
-    "last_updated": "2026-06-10T18:47:24Z",
+    "last_updated": "2026-06-12T02:38:47Z",
     "license": "MIT License",
     "github_description": "A docker-powered PaaS that helps you build and manage the lifecycle of applications",
     "install_cmd": null
@@ -1728,7 +1713,7 @@
       "kubernetes",
       "werf"
     ],
-    "last_updated": "2026-06-10T22:46:41Z",
+    "last_updated": "2026-06-11T21:18:12Z",
     "license": "Apache License 2.0",
     "github_description": "A solution for implementing efficient and consistent software delivery to Kubernetes facilitating best practices.",
     "install_cmd": "go get github.com/werf/werf"
@@ -1794,7 +1779,7 @@
     "description": "Flannel is a virtual network that gives a subnet to each host for use with container runtimes.",
     "category": "docker",
     "subcategory": "Networking",
-    "stars": 9474,
+    "stars": 9472,
     "language": "Go",
     "topics": [
       "docker",
@@ -1817,7 +1802,7 @@
     "description": "The netshoot container has a powerful set of networking tools to help troubleshoot Docker networking issues.",
     "category": "docker",
     "subcategory": "Networking",
-    "stars": 10765,
+    "stars": 10771,
     "language": "Shell",
     "topics": [
       "containers",
@@ -1870,7 +1855,7 @@
     "description": "Open-source and next-gen Web Application Firewall (WAF).",
     "category": "docker",
     "subcategory": "Reverse Proxy",
-    "stars": 10599,
+    "stars": 10609,
     "language": "Python",
     "topics": [
       "antibot",
@@ -1905,7 +1890,7 @@
     "description": "Caddy-based reverse proxy, configured with service or container labels.",
     "category": "docker",
     "subcategory": "Reverse Proxy",
-    "stars": 4523,
+    "stars": 4522,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-06-07T08:32:59Z",
@@ -1970,7 +1955,7 @@
     "description": "A lightweight companion container for the nginx-proxy. It allow the creation/renewal of Let's Encrypt certificates automatically.",
     "category": "docker",
     "subcategory": "Reverse Proxy",
-    "stars": 7713,
+    "stars": 7712,
     "language": "Shell",
     "topics": [
       "acme",
@@ -2012,7 +1997,7 @@
     "description": "A beautiful web interface for proxying web based services with SSL.",
     "category": "docker",
     "subcategory": "Reverse Proxy",
-    "stars": 33214,
+    "stars": 33230,
     "language": "TypeScript",
     "topics": [
       "nginx",
@@ -2029,7 +2014,7 @@
     "description": "The easiest using, powerful and beautiful OpenResty Manager(Nginx Enhanced Version), open source alternative to OpenResty Edge.",
     "category": "docker",
     "subcategory": "Reverse Proxy",
-    "stars": 1413,
+    "stars": 1412,
     "language": "Go",
     "topics": [
       "1panel",
@@ -2096,7 +2081,7 @@
     "description": "Automated reverse proxy and load-balancer for Docker, Mesos, Consul, Etcd.",
     "category": "docker",
     "subcategory": "Reverse Proxy",
-    "stars": 63616,
+    "stars": 63593,
     "language": "Go",
     "topics": [
       "consul",
@@ -2114,7 +2099,7 @@
       "traefik",
       "zookeeper"
     ],
-    "last_updated": "2026-06-10T14:46:46Z",
+    "last_updated": "2026-06-11T14:48:06Z",
     "license": "MIT License",
     "github_description": "The Cloud Native Application Proxy",
     "install_cmd": "go get github.com/containous/traefik"
@@ -2139,7 +2124,7 @@
     "description": "Dynamic Docker resource governor using cgroups v2 to manage system load.",
     "category": "docker",
     "subcategory": "Observability",
-    "stars": 9,
+    "stars": 10,
     "language": "Python",
     "topics": [
       "automation",
@@ -2196,7 +2181,7 @@
     "description": "Analyzes resource usage and performance characteristics of running containers.",
     "category": "devops",
     "subcategory": "Observability & Monitoring",
-    "stars": 19185,
+    "stars": 19193,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-06-02T10:10:24Z",
@@ -2315,7 +2300,7 @@
     "description": "Docker hosts and containers monitoring with Prometheus, Grafana, cAdvisor, NodeExporter and AlertManager.",
     "category": "docker",
     "subcategory": "Observability",
-    "stars": 6549,
+    "stars": 6553,
     "language": null,
     "topics": [
       "alertmanager",
@@ -2376,7 +2361,7 @@
       "vuejs",
       "watchtower-alternative"
     ],
-    "last_updated": "2026-06-11T02:36:53Z",
+    "last_updated": "2026-06-11T19:05:59Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Open source container update monitoring \u2014 23 registries, 20 notification triggers, audit log, OIDC auth, Prometheus metrics, and a modern dashboard.",
     "install_cmd": null
@@ -2411,7 +2396,7 @@
       "uptime-monitoring",
       "vue"
     ],
-    "last_updated": "2026-06-03T23:14:39Z",
+    "last_updated": "2026-06-11T22:51:01Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Drop a container. Your stack is monitored.",
     "install_cmd": "go get github.com/kolapsis/maintenant"
@@ -2439,7 +2424,7 @@
     "stars": 6,
     "language": "JavaScript",
     "topics": [],
-    "last_updated": "2026-06-09T22:54:46Z",
+    "last_updated": "2026-06-11T15:01:58Z",
     "license": "MIT License",
     "github_description": "Secure your Docker builds against supply chain attacks \u2014 restrict outbound network access to only the domains you allow",
     "install_cmd": null
@@ -2471,7 +2456,7 @@
     "description": "Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages.",
     "category": "devops",
     "subcategory": "Security",
-    "stars": 8781,
+    "stars": 8784,
     "language": "Python",
     "topics": [
       "aws",
@@ -2488,7 +2473,7 @@
       "static-analysis",
       "terraform"
     ],
-    "last_updated": "2026-06-10T23:29:26Z",
+    "last_updated": "2026-06-11T23:29:10Z",
     "license": "Apache License 2.0",
     "github_description": "Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages with Checkov by Bridgecrew.",
     "install_cmd": "pip install checkov"
@@ -2502,7 +2487,7 @@
     "stars": 97,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-09T03:59:44Z",
+    "last_updated": "2026-06-11T06:21:14Z",
     "license": "Apache License 2.0",
     "github_description": null,
     "install_cmd": "go get github.com/google/container-explorer"
@@ -2513,7 +2498,7 @@
     "description": "Powerful runtime vulnerability scanner for kubernetes, virtual machines and serverless.",
     "category": "cicd",
     "subcategory": "secure tools",
-    "stars": 5277,
+    "stars": 5278,
     "language": "TypeScript",
     "topics": [
       "cloud-native",
@@ -2574,7 +2559,7 @@
     "description": "Script that checks for dozens of common best-practices around deploying Docker containers in production.",
     "category": "docker",
     "subcategory": "Security",
-    "stars": 9652,
+    "stars": 9653,
     "language": "Shell",
     "topics": [],
     "last_updated": "2026-06-04T18:11:52Z",
@@ -2588,7 +2573,7 @@
     "description": "HAProxy-based fine-grained filter for the Docker API socket; widely used to expose a restricted socket to reverse proxies and homelab stacks.",
     "category": "docker",
     "subcategory": "Security",
-    "stars": 2558,
+    "stars": 2563,
     "language": "Python",
     "topics": [
       "docker",
@@ -2605,7 +2590,7 @@
     "description": "An infrastructure-as-code scanning tool, find security vulnerabilities, compliance issues, and infrastructure misconfigurations early in the development cycle. Can be extended for additional policies.",
     "category": "docker",
     "subcategory": "Security",
-    "stars": 2647,
+    "stars": 2648,
     "language": "Open Policy Agent",
     "topics": [
       "appsec",
@@ -2660,7 +2645,7 @@
     "description": "Sysdig Falco is an open source container security monitor. It can monitor application, container, host, and network activity and alert on unauthorized activity.",
     "category": "docker",
     "subcategory": "Security",
-    "stars": 9035,
+    "stars": 9036,
     "language": "C++",
     "topics": [
       "cloud-native",
@@ -2674,7 +2659,7 @@
       "runtime-security",
       "security"
     ],
-    "last_updated": "2026-06-10T13:36:50Z",
+    "last_updated": "2026-06-11T16:03:11Z",
     "license": "Apache License 2.0",
     "github_description": "Cloud Native Runtime Security",
     "install_cmd": null
@@ -2825,7 +2810,7 @@
     "description": "A tool for exploring each layer in a docker image.",
     "category": "docker",
     "subcategory": "Terminal",
-    "stars": 54247,
+    "stars": 54220,
     "language": "Go",
     "topics": [
       "cli",
@@ -2926,7 +2911,7 @@
     "description": "An interactive shell UI for managing Docker containers.",
     "category": "docker",
     "subcategory": "Terminal",
-    "stars": 4015,
+    "stars": 4016,
     "language": "JavaScript",
     "topics": [
       "cli",
@@ -2937,7 +2922,7 @@
       "hacktoberfest",
       "nodejs"
     ],
-    "last_updated": "2026-06-08T07:48:32Z",
+    "last_updated": "2026-06-11T08:17:42Z",
     "license": "MIT License",
     "github_description": "Immersive terminal interface for managing docker containers and services",
     "install_cmd": null
@@ -3020,7 +3005,7 @@
     "description": "An interactive CLI for Docker containers.",
     "category": "docker",
     "subcategory": "Terminal",
-    "stars": 3259,
+    "stars": 3261,
     "language": "Go",
     "topics": [
       "docker",
@@ -3049,7 +3034,7 @@
       "terminal-ui",
       "tui"
     ],
-    "last_updated": "2026-06-11T00:36:56Z",
+    "last_updated": "2026-06-12T01:05:03Z",
     "license": "MIT License",
     "github_description": "EasyDocker is a TUI focused on investigating and troubleshooting Docker resources. Highly inspired by lazydocker and k9s while leveraging beautiful graphics from BubbleTea",
     "install_cmd": "go get github.com/joao-zanutto/easydocker"
@@ -3086,7 +3071,7 @@
     "description": "The lazier way to manage everything docker. A simple terminal UI for both docker and docker-compose, written in Go with the gocui library.",
     "category": "docker",
     "subcategory": "Terminal",
-    "stars": 51310,
+    "stars": 51326,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-04-19T02:51:06Z",
@@ -3100,7 +3085,7 @@
     "description": "A interface for reading and filtering the logs output of Docker and Podman containers like [Dozzle](dozzle) but for the terminal with support for fuzzy find, regex and output coloring.",
     "category": "docker",
     "subcategory": "Terminal",
-    "stars": 1291,
+    "stars": 1292,
     "language": "Go",
     "topics": [
       "auditd",
@@ -3135,7 +3120,7 @@
     "description": "A simple tui to view & control docker containers.",
     "category": "docker",
     "subcategory": "Terminal",
-    "stars": 1715,
+    "stars": 1717,
     "language": "Rust",
     "topics": [
       "async",
@@ -3228,7 +3213,7 @@
       "golang",
       "tui"
     ],
-    "last_updated": "2026-06-10T21:34:12Z",
+    "last_updated": "2026-06-11T10:33:39Z",
     "license": "Apache License 2.0",
     "github_description": "A terminal UI for Docker Swarm that makes cluster state easier to see, understand, and reason about.",
     "install_cmd": "go get github.com/Eldara-Tech/swarmcli"
@@ -3280,7 +3265,7 @@
     "description": "An easy and modern Docker management platform, built with everybody in mind.",
     "category": "docker",
     "subcategory": "Web",
-    "stars": 5711,
+    "stars": 5717,
     "language": "Go",
     "topics": [
       "compose",
@@ -3295,7 +3280,7 @@
       "typescript",
       "web-ui"
     ],
-    "last_updated": "2026-06-11T03:12:04Z",
+    "last_updated": "2026-06-12T03:25:44Z",
     "license": "BSD 3-Clause \"New\" or \"Revised\" License",
     "github_description": "Modern Docker Management, Designed for Everyone",
     "install_cmd": "go get github.com/getarcaneapp/arcane"
@@ -3325,7 +3310,7 @@
       "websocket",
       "webui"
     ],
-    "last_updated": "2026-06-08T21:32:45Z",
+    "last_updated": "2026-06-11T07:34:16Z",
     "license": "MIT License",
     "github_description": "Container as a Service admin",
     "install_cmd": null
@@ -3357,7 +3342,7 @@
     "description": "Web Interface for the Docker Registry HTTP API v2.",
     "category": "docker",
     "subcategory": "Web",
-    "stars": 689,
+    "stars": 690,
     "language": "Ruby",
     "topics": [
       "docker",
@@ -3378,7 +3363,7 @@
     "description": "Visualizes Docker services on a Docker Swarm (for running demos).",
     "category": "docker",
     "subcategory": "Web",
-    "stars": 3343,
+    "stars": 3342,
     "language": "JavaScript",
     "topics": [],
     "last_updated": "2024-10-26T07:12:05Z",
@@ -3392,7 +3377,7 @@
     "description": "Easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.",
     "category": "docker",
     "subcategory": "Web",
-    "stars": 23462,
+    "stars": 23472,
     "language": "TypeScript",
     "topics": [
       "docker",
@@ -3420,7 +3405,7 @@
     "description": "A tool to build and deploy software on many servers.",
     "category": "docker",
     "subcategory": "Web",
-    "stars": 11357,
+    "stars": 11366,
     "language": "Rust",
     "topics": [],
     "last_updated": "2026-05-12T01:45:09Z",
@@ -3434,7 +3419,7 @@
     "description": "A lightweight management UI for managing your Docker hosts or Docker Swarm clusters.",
     "category": "docker",
     "subcategory": "Web",
-    "stars": 37692,
+    "stars": 37707,
     "language": "TypeScript",
     "topics": [
       "docker",
@@ -3451,7 +3436,7 @@
       "portainer",
       "ui"
     ],
-    "last_updated": "2026-06-10T14:04:28Z",
+    "last_updated": "2026-06-11T14:15:00Z",
     "license": "zlib License",
     "github_description": "Making Docker and Kubernetes management easy.",
     "install_cmd": null
@@ -3462,7 +3447,7 @@
     "description": "Swarmpit provides simple and easy to use interface for your Docker Swarm cluster. You can manage your stacks, services, secrets, volumes, networks etc.",
     "category": "docker",
     "subcategory": "Web",
-    "stars": 3448,
+    "stars": 3449,
     "language": "Clojure",
     "topics": [
       "ai",
@@ -3494,7 +3479,7 @@
     "description": "A complete and modern Docker management platform designed for sysadmin, devops with enterprise grade tools, cve scanner, ssh, rdp on web and much more.",
     "category": "docker",
     "subcategory": "Web",
-    "stars": 116,
+    "stars": 115,
     "language": "Go",
     "topics": [
       "agplv3",
@@ -3597,7 +3582,7 @@
     "description": "A Maven plugin for running and creating Docker images.",
     "category": "docker",
     "subcategory": "API Client",
-    "stars": 1930,
+    "stars": 1929,
     "language": "Java",
     "topics": [
       "docker",
@@ -3616,7 +3601,7 @@
     "description": "C#/.NET HTTP client for the Docker remote API.",
     "category": "docker",
     "subcategory": "API Client",
-    "stars": 2415,
+    "stars": 2414,
     "language": "C#",
     "topics": [],
     "last_updated": "2025-08-28T14:08:51Z",
@@ -3653,7 +3638,7 @@
       "node",
       "nodejs"
     ],
-    "last_updated": "2026-05-22T23:14:57Z",
+    "last_updated": "2026-06-11T13:33:02Z",
     "license": "Apache License 2.0",
     "github_description": "Docker + Node = Dockerode (Node.js module for Docker's Remote API)",
     "install_cmd": null
@@ -3785,7 +3770,7 @@
       "gcp",
       "infrastructure-as-code"
     ],
-    "last_updated": "2026-06-10T21:58:11Z",
+    "last_updated": "2026-06-11T16:37:02Z",
     "license": "MIT License",
     "github_description": "Defang CLI. Develop Once, Deploy Anywhere. Take your app from Docker Compose to a secure and scalable deployment on your favorite cloud in minutes.",
     "install_cmd": "go get github.com/DefangLabs/defang"
@@ -3796,7 +3781,7 @@
     "description": "Receive notifications when an image or repository is updated on a Docker registry.",
     "category": "docker",
     "subcategory": "CI/CD",
-    "stars": 4710,
+    "stars": 4712,
     "language": "Go",
     "topics": [
       "automation",
@@ -3818,7 +3803,7 @@
       "update-checker",
       "watch"
     ],
-    "last_updated": "2026-06-08T13:04:15Z",
+    "last_updated": "2026-06-11T13:02:54Z",
     "license": "MIT License",
     "github_description": "Receive notifications when an image is updated on a Docker registry",
     "install_cmd": "go get github.com/crazy-max/diun"
@@ -3829,7 +3814,7 @@
     "description": "A script checking updates for docker images without pulling then auto-update selected/all containers. With notifications, pruning and more.",
     "category": "docker",
     "subcategory": "CI/CD",
-    "stars": 2351,
+    "stars": 2352,
     "language": "Shell",
     "topics": [
       "bash",
@@ -3869,7 +3854,7 @@
     "description": "a Container-Native, Continuous Delivery Platform.",
     "category": "devops",
     "subcategory": "Continuous Integration & Delivery",
-    "stars": 36654,
+    "stars": 36689,
     "language": "Go",
     "topics": [
       "build-automation",
@@ -3885,7 +3870,7 @@
       "hacktoberfest",
       "scm"
     ],
-    "last_updated": "2026-06-09T17:36:56Z",
+    "last_updated": "2026-06-11T09:02:43Z",
     "license": "Apache License 2.0",
     "github_description": "Harness Open Source is an end-to-end developer platform with Source Control Management, CI/CD Pipelines, Hosted Developer Environments, and Artifact Registries.",
     "install_cmd": "go get github.com/drone/drone"
@@ -3983,7 +3968,7 @@
     "description": "Remote development machines powered by Terraform or Docker.",
     "category": "docker",
     "subcategory": "Development Environment",
-    "stars": 13416,
+    "stars": 13438,
     "language": "Go",
     "topics": [
       "agents",
@@ -3997,7 +3982,7 @@
       "terraform",
       "vscode"
     ],
-    "last_updated": "2026-06-11T03:36:24Z",
+    "last_updated": "2026-06-12T02:31:27Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Secure environments for developers and their agents",
     "install_cmd": "go get github.com/coder/coder"
@@ -4014,7 +3999,7 @@
       "docker",
       "hacktoberfest"
     ],
-    "last_updated": "2026-06-10T22:15:18Z",
+    "last_updated": "2026-06-11T12:00:08Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Local development environment toolset based on Docker",
     "install_cmd": null
@@ -4096,7 +4081,7 @@
       "rv1126",
       "toolchain"
     ],
-    "last_updated": "2026-05-18T01:14:58Z",
+    "last_updated": "2026-06-11T07:41:05Z",
     "license": "MIT License",
     "github_description": "This is a One-Click docker images and containers setup base which is doing via a lot of bash scripts. My primary target is embedded linux development and you can choose your target whatever you want. Have fun. Thank you for your starts.",
     "install_cmd": null
@@ -4246,7 +4231,7 @@
     "description": "A composable build system for multi-container test environments that provides developers with: a powerful Python-like SDK for environment configuration, a compile-time validator to verify environment behavior & setup, and a runtime for environment execution, monitoring, & debugging capabilities.",
     "category": "docker",
     "subcategory": "Testing",
-    "stars": 542,
+    "stars": 544,
     "language": "Go",
     "topics": [
       "backend",
@@ -4264,7 +4249,7 @@
       "networks",
       "prototyping"
     ],
-    "last_updated": "2026-06-10T20:39:50Z",
+    "last_updated": "2026-06-11T14:56:04Z",
     "license": "Apache License 2.0",
     "github_description": "A platform for packaging and launching blockchain infra. Think docker compose for blockchain",
     "install_cmd": "go get github.com/kurtosis-tech/kurtosis"
@@ -4275,7 +4260,7 @@
     "description": "Chaos testing, network emulation and stress testing tool for containers.",
     "category": "devops",
     "subcategory": "Chaos Engineering",
-    "stars": 3050,
+    "stars": 3051,
     "language": "Go",
     "topics": [
       "chaos",
@@ -4310,7 +4295,7 @@
     "stars": 97,
     "language": "Python",
     "topics": [],
-    "last_updated": "2026-05-27T14:21:40Z",
+    "last_updated": "2026-06-11T16:00:47Z",
     "license": "MIT License",
     "github_description": "Artsy's Docker / Kubernetes CLI and Workflow",
     "install_cmd": "pip install hokusai"
@@ -4366,7 +4351,7 @@
     "description": "A tool to execute simple docker containers in batch or interactive systems without root privileges.",
     "category": "docker",
     "subcategory": "Wrappers",
-    "stars": 1750,
+    "stars": 1752,
     "language": "Python",
     "topics": [
       "batch",
@@ -4440,7 +4425,7 @@
     "description": "Generate files from docker container meta-data.",
     "category": "docker",
     "subcategory": "In-Container Tooling",
-    "stars": 4629,
+    "stars": 4628,
     "language": "Go",
     "topics": [
       "docker",
@@ -4479,7 +4464,7 @@
     "description": "Run this specific application as this specific user and get out of the pipeline (entrypoint script tool).",
     "category": "docker",
     "subcategory": "In-Container Tooling",
-    "stars": 4977,
+    "stars": 4976,
     "language": "Shell",
     "topics": [],
     "last_updated": "2026-06-06T05:15:55Z",
@@ -4535,7 +4520,7 @@
     "stars": 3888,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-09T20:55:09Z",
+    "last_updated": "2026-06-11T13:42:03Z",
     "license": "MIT License",
     "github_description": "A docker job scheduler (aka. crontab for docker)",
     "install_cmd": "go get github.com/mcuadros/ofelia"
@@ -4546,7 +4531,7 @@
     "description": "This is a simple tool that will simply execute a program with different privileges. The program will be executed directly and not run as a child, like su and sudo does, which avoids TTY and signal issues. Why reinvent gosu? This does more or less exactly the same thing as gosu but it is only 10kb instead of 1.8MB.",
     "category": "docker",
     "subcategory": "In-Container Tooling",
-    "stars": 1021,
+    "stars": 1020,
     "language": "C",
     "topics": [],
     "last_updated": "2025-10-07T13:49:01Z",
@@ -4560,7 +4545,7 @@
     "description": "Crontab-compatible job runner, designed specifically to run in containers.",
     "category": "docker",
     "subcategory": "In-Container Tooling",
-    "stars": 2529,
+    "stars": 2532,
     "language": "Go",
     "topics": [
       "supercronic"
@@ -4655,7 +4640,7 @@
     "description": "Docker Compose samples.",
     "category": "docker",
     "subcategory": "Awesome Lists",
-    "stars": 45514,
+    "stars": 45519,
     "language": "HTML",
     "topics": [
       "awesome",
@@ -4691,7 +4676,7 @@
     "description": "This repository contains Ansible examples developed to support different sections of `Ansible for DevOps` by Jeff Geerling, which is listed in the following section of books about Ansible.",
     "category": "ansible",
     "subcategory": "Tutorials",
-    "stars": 9781,
+    "stars": 9784,
     "language": "Python",
     "topics": [
       "amazon",
@@ -4719,7 +4704,7 @@
     "description": "Web-based user interface, REST API, and task engine built on top of Ansible. It is the upstream project for Automation Controller.",
     "category": "ansible",
     "subcategory": "Tools",
-    "stars": 15449,
+    "stars": 15452,
     "language": "Python",
     "topics": [
       "ansible",
@@ -4742,7 +4727,7 @@
     "description": "Checks Playbooks for best practices and behavior that could potentially be improved.",
     "category": "ansible",
     "subcategory": "Tools",
-    "stars": 3875,
+    "stars": 3876,
     "language": "Python",
     "topics": [
       "ansible",
@@ -4753,7 +4738,7 @@
       "pep-621",
       "pre-commit-hook"
     ],
-    "last_updated": "2026-06-11T02:36:56Z",
+    "last_updated": "2026-06-11T08:31:49Z",
     "license": "GNU General Public License v3.0",
     "github_description": "ansible-lint checks playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you",
     "install_cmd": "pip install ansible-lint"
@@ -4772,7 +4757,7 @@
       "documentation",
       "python"
     ],
-    "last_updated": "2026-06-11T02:01:22Z",
+    "last_updated": "2026-06-12T00:34:06Z",
     "license": "GNU General Public License v3.0",
     "github_description": "Annotation based documentation for your Ansible roles",
     "install_cmd": "pip install ansible-doctor"
@@ -4859,7 +4844,7 @@
     "description": "Turn any Excel Spreadsheet into an Ansible Inventory.",
     "category": "ansible",
     "subcategory": "Tools",
-    "stars": 102,
+    "stars": 103,
     "language": "Python",
     "topics": [
       "ansible",
@@ -4908,7 +4893,7 @@
       "python",
       "tui"
     ],
-    "last_updated": "2026-06-10T17:07:23Z",
+    "last_updated": "2026-06-12T01:00:10Z",
     "license": "Apache License 2.0",
     "github_description": "A text-based user interface (TUI) for Ansible.",
     "install_cmd": "pip install ansible-navigator"
@@ -4933,7 +4918,7 @@
     "description": "Scans IaC projects for security vulnerabilities, compliance issues, and infrastructure misconfiguration. Currently working with Terraform projects, Kubernetes manifests, Dockerfiles, AWS CloudFormation Templates, and Ansible playbooks.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 2647,
+    "stars": 2648,
     "language": "Open Policy Agent",
     "topics": [
       "appsec",
@@ -5032,7 +5017,7 @@
     "description": "Command line tool to create a graph representing your Ansible playbook plays, tasks and roles.",
     "category": "ansible",
     "subcategory": "Tools",
-    "stars": 751,
+    "stars": 750,
     "language": "Python",
     "topics": [
       "ansible",
@@ -5074,7 +5059,7 @@
     "description": "Modern UI for managing and running Ansible playbooks.",
     "category": "ansible",
     "subcategory": "Tools",
-    "stars": 13734,
+    "stars": 13741,
     "language": "Go",
     "topics": [
       "ansible",
@@ -5093,7 +5078,7 @@
       "terraform-ui",
       "terragrunt"
     ],
-    "last_updated": "2026-06-10T22:06:30Z",
+    "last_updated": "2026-06-12T02:32:54Z",
     "license": "MIT License",
     "github_description": "Modern UI and powerful API for Ansible, Terraform/OpenTofu/Terragrunt, PowerShell and other DevOps tools.",
     "install_cmd": "go get github.com/ansible-semaphore/semaphore"
@@ -5119,7 +5104,7 @@
       "ansible-toolset",
       "hacktoberfest"
     ],
-    "last_updated": "2026-06-03T20:49:47Z",
+    "last_updated": "2026-06-11T09:59:12Z",
     "license": "MIT License",
     "github_description": "Generate documentation automatically from an Ansible role's metadata",
     "install_cmd": "pip install Automated-Ansible-Role-Documentation"
@@ -5253,10 +5238,10 @@
     "description": "Ansible Playbooks for deploying [OpenStack](https://www.openstack.org/).",
     "category": "ansible",
     "subcategory": "Playbooks, Roles and Collections",
-    "stars": 1552,
+    "stars": 1553,
     "language": "Python",
     "topics": [],
-    "last_updated": "2026-06-10T21:18:01Z",
+    "last_updated": "2026-06-11T18:00:59Z",
     "license": "Apache License 2.0",
     "github_description": "Ansible playbooks for deploying OpenStack. Mirror of code maintained at opendev.org.",
     "install_cmd": "pip install openstack-ansible"
@@ -5341,7 +5326,7 @@
       "sysadmin",
       "ubuntu"
     ],
-    "last_updated": "2026-06-10T15:43:30Z",
+    "last_updated": "2026-06-11T15:00:18Z",
     "license": "The Unlicense",
     "github_description": "Ansible Collection of roles, playbooks & plugins for Linux-based cloud infrastructure. Covers OS hardening, MariaDB, Icinga2, Nextcloud, FreeIPA, KVM & more. Bitwarden & Cloud integration.",
     "install_cmd": null
@@ -5366,7 +5351,7 @@
     "description": "A vim syntax plugin for Ansible 2.x, it supports YAML playbooks, Jinja2 templates, and Ansible's hosts files.",
     "category": "ansible",
     "subcategory": "Editor and IDE Integrations",
-    "stars": 821,
+    "stars": 820,
     "language": "Vim Script",
     "topics": [
       "ansible",
@@ -5411,7 +5396,7 @@
     "description": "Git porcelain within Emacs.",
     "category": "ansible",
     "subcategory": "Editor and IDE Integrations",
-    "stars": 7126,
+    "stars": 7131,
     "language": "Emacs Lisp",
     "topics": [],
     "last_updated": "2026-06-09T09:57:02Z",
@@ -5497,7 +5482,7 @@
     "description": "Claude Code skill for Terraform and OpenTofu \u2014 testing, module design, CI/CD workflows, and production patterns.",
     "category": "terraform",
     "subcategory": "Community",
-    "stars": 2002,
+    "stars": 2006,
     "language": null,
     "topics": [
       "agent-skills",
@@ -5522,7 +5507,7 @@
     "description": "Curated list of tools, frameworks, and resources for Terraform compliance and security.",
     "category": "terraform",
     "subcategory": "Community",
-    "stars": 133,
+    "stars": 134,
     "language": null,
     "topics": [
       "awesome",
@@ -5875,7 +5860,7 @@
     "description": "Creates EC2 instances on AWS.",
     "category": "terraform",
     "subcategory": "Community Modules",
-    "stars": 806,
+    "stars": 805,
     "language": "HCL",
     "topics": [
       "aws",
@@ -5958,7 +5943,7 @@
     "description": "Creates Elastic Kubernetes Service on AWS (very popular module).",
     "category": "terraform",
     "subcategory": "Community Modules",
-    "stars": 4967,
+    "stars": 4969,
     "language": "HCL",
     "topics": [
       "aws",
@@ -6262,7 +6247,7 @@
     "description": "Creates RDS resources on AWS (verified module).",
     "category": "terraform",
     "subcategory": "Community Modules",
-    "stars": 957,
+    "stars": 956,
     "language": "HCL",
     "topics": [
       "aws",
@@ -6418,7 +6403,7 @@
     "description": "Creates VPC resources on AWS (verified and very popular module).",
     "category": "terraform",
     "subcategory": "Community Modules",
-    "stars": 3237,
+    "stars": 3239,
     "language": "HCL",
     "topics": [
       "aws",
@@ -6636,7 +6621,7 @@
     "description": "A set of Terraform modules that are designed to deploy NixOS.",
     "category": "terraform",
     "subcategory": "Community Modules",
-    "stars": 409,
+    "stars": 410,
     "language": "HCL",
     "topics": [
       "nixos",
@@ -6839,7 +6824,7 @@
       "terraform-modules",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-11T01:45:34Z",
+    "last_updated": "2026-06-11T11:59:01Z",
     "license": "Apache License 2.0",
     "github_description": "A Private Terraform Registry",
     "install_cmd": null
@@ -6897,7 +6882,7 @@
     "description": "Terraform Private Registry for modules and providers manageable from a REST API.",
     "category": "terraform",
     "subcategory": "Self-Hosted Registries",
-    "stars": 498,
+    "stars": 499,
     "language": "Go",
     "topics": [
       "private-registry",
@@ -6918,14 +6903,14 @@
     "description": "Provider for Amazon Web Services.",
     "category": "terraform",
     "subcategory": "Hashicorp supported providers",
-    "stars": 10920,
+    "stars": 10922,
     "language": "Go",
     "topics": [
       "aws",
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-10T23:06:56Z",
+    "last_updated": "2026-06-11T21:45:53Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "The AWS Provider enables Terraform to manage AWS resources.",
     "install_cmd": "go get github.com/hashicorp/terraform-provider-aws"
@@ -6936,7 +6921,7 @@
     "description": "Provider for Azure.",
     "category": "terraform",
     "subcategory": "Hashicorp supported providers",
-    "stars": 4940,
+    "stars": 4939,
     "language": "Go",
     "topics": [
       "azure",
@@ -6944,7 +6929,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-10T22:14:04Z",
+    "last_updated": "2026-06-12T02:13:07Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "Terraform provider for Azure Resource Manager",
     "install_cmd": "go get github.com/hashicorp/terraform-provider-azurerm"
@@ -6980,7 +6965,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-11T03:08:03Z",
+    "last_updated": "2026-06-12T03:09:07Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "Terraform Provider for Google Cloud Platform",
     "install_cmd": "go get github.com/hashicorp/terraform-provider-google"
@@ -7010,7 +6995,7 @@
     "description": "Provider for Kubernetes.",
     "category": "terraform",
     "subcategory": "Hashicorp supported providers",
-    "stars": 1710,
+    "stars": 1711,
     "language": "Go",
     "topics": [
       "kubernetes",
@@ -7055,7 +7040,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-11T02:54:51Z",
+    "last_updated": "2026-06-12T03:51:44Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "Terraform AliCloud provider",
     "install_cmd": "go get github.com/aliyun/terraform-provider-alicloud"
@@ -7077,7 +7062,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-10T21:52:38Z",
+    "last_updated": "2026-06-11T05:41:23Z",
     "license": "Apache License 2.0",
     "github_description": "Terraform provider to manage JFrog Artifactory",
     "install_cmd": "go get github.com/jfrog/terraform-provider-artifactory"
@@ -7147,7 +7132,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-11T02:08:06Z",
+    "last_updated": "2026-06-11T15:03:00Z",
     "license": "MIT License",
     "github_description": "Terraform provider for Buildkite",
     "install_cmd": "go get github.com/buildkite/terraform-provider-buildkite"
@@ -7194,7 +7179,7 @@
     "stars": 56,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-10T23:28:51Z",
+    "last_updated": "2026-06-11T20:47:35Z",
     "license": "Apache License 2.0",
     "github_description": "Terraform Provider for Confluent",
     "install_cmd": "go get github.com/confluentinc/terraform-provider-confluent"
@@ -7212,7 +7197,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-10T18:06:38Z",
+    "last_updated": "2026-06-11T18:36:28Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "Terraform Datadog provider",
     "install_cmd": "go get github.com/DataDog/terraform-provider-datadog"
@@ -7226,7 +7211,7 @@
     "stars": 0,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-10T20:09:21Z",
+    "last_updated": "2026-06-11T14:42:28Z",
     "license": "MIT License",
     "github_description": "DevHelm Terraform provider \u2014 monitoring-as-code",
     "install_cmd": "go get github.com/devhelmhq/terraform-provider-devhelm"
@@ -7248,7 +7233,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-09T12:02:01Z",
+    "last_updated": "2026-06-11T06:34:12Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "Terraform DigitalOcean provider",
     "install_cmd": "go get github.com/digitalocean/terraform-provider-digitalocean"
@@ -7280,7 +7265,7 @@
       "elasticstack",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-11T03:27:20Z",
+    "last_updated": "2026-06-12T03:38:07Z",
     "license": "Apache License 2.0",
     "github_description": "Terraform provider for Elastic Stack",
     "install_cmd": "go get github.com/elastic/terraform-provider-elasticstack"
@@ -7371,7 +7356,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-10T14:40:34Z",
+    "last_updated": "2026-06-11T11:17:04Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "Terraform Hetzner Cloud provider",
     "install_cmd": "go get github.com/hetznercloud/terraform-provider-hcloud"
@@ -7423,7 +7408,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-10T15:01:01Z",
+    "last_updated": "2026-06-12T02:43:04Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs",
     "install_cmd": "go get github.com/IBM-Cloud/terraform-provider-ibm"
@@ -7599,7 +7584,7 @@
       "terraform-module",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-10T19:18:39Z",
+    "last_updated": "2026-06-11T15:55:14Z",
     "license": null,
     "github_description": "Qovery Terraform Provider",
     "install_cmd": "go get github.com/Qovery/terraform-provider-qovery"
@@ -7693,13 +7678,13 @@
     "description": "Provider for Snowflake data warehouse.",
     "category": "terraform",
     "subcategory": "Vendor supported providers",
-    "stars": 682,
+    "stars": 683,
     "language": "Go",
     "topics": [
       "snowflake",
       "terraform"
     ],
-    "last_updated": "2026-06-10T23:50:03Z",
+    "last_updated": "2026-06-11T17:55:57Z",
     "license": "MIT License",
     "github_description": "Terraform provider for managing Snowflake accounts",
     "install_cmd": "go get github.com/snowflakedb/terraform-provider-snowflake"
@@ -7733,7 +7718,7 @@
       "terraform",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-10T13:12:30Z",
+    "last_updated": "2026-06-11T11:00:16Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "Terraform Spotinst provider.",
     "install_cmd": "go get github.com/spotinst/terraform-provider-spotinst"
@@ -7833,7 +7818,7 @@
     "description": "Terraform Docker provider.",
     "category": "terraform",
     "subcategory": "Community providers",
-    "stars": 802,
+    "stars": 803,
     "language": "Go",
     "topics": [
       "docker",
@@ -7841,7 +7826,7 @@
       "hacktoberfest",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-08T19:01:46Z",
+    "last_updated": "2026-06-11T14:02:24Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "Terraform Docker provider",
     "install_cmd": "go get github.com/kreuzwerker/terraform-provider-docker"
@@ -7860,7 +7845,7 @@
       "s3",
       "terraform-provider"
     ],
-    "last_updated": "2026-06-02T11:48:47Z",
+    "last_updated": "2026-06-11T18:07:59Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Terraform provider for managing MinIO S3 buckets and IAM Users.",
     "install_cmd": "go get github.com/aminueza/terraform-provider-minio"
@@ -8078,7 +8063,7 @@
     "description": "Terratest is a Go library that makes it easier to write automated tests for your infrastructure code.",
     "category": "terraform",
     "subcategory": "Testing",
-    "stars": 7926,
+    "stars": 7925,
     "language": "Go",
     "topics": [
       "aws",
@@ -8180,7 +8165,7 @@
     "description": "Unified workflow for collaborating on Terraform through GitHub.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 9127,
+    "stars": 9132,
     "language": "Go",
     "topics": [
       "atlantis",
@@ -8193,7 +8178,7 @@
       "tacos",
       "terraform"
     ],
-    "last_updated": "2026-06-10T18:20:38Z",
+    "last_updated": "2026-06-12T01:08:30Z",
     "license": "Apache License 2.0",
     "github_description": "Terraform Pull Request Automation",
     "install_cmd": "go get github.com/runatlantis/atlantis"
@@ -8218,7 +8203,7 @@
       "terraform",
       "workflow"
     ],
-    "last_updated": "2026-06-11T03:34:51Z",
+    "last_updated": "2026-06-12T00:41:22Z",
     "license": "Apache License 2.0",
     "github_description": "\ud83d\udc7d Terraform Orchestration Tool for DevOps. Keep environment configuration DRY with hierarchical imports of configurations, inheritance, and WAY more. Native support for Terraform and Helmfile.",
     "install_cmd": "go get github.com/cloudposse/atmos"
@@ -8264,7 +8249,7 @@
     "description": "Interactive visualizations of Terraform dependency graphs. :skull:",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 2187,
+    "stars": 2188,
     "language": "JavaScript",
     "topics": [
       "diagram",
@@ -8283,7 +8268,7 @@
     "description": "A command line utility to facilitate terraforming your existing Cloudflare resources.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 1371,
+    "stars": 1372,
     "language": "Go",
     "topics": [
       "cloudflare",
@@ -8325,7 +8310,7 @@
     "description": "Terraform static analysis tool for terraform>=0.12",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 8781,
+    "stars": 8784,
     "language": "Python",
     "topics": [
       "aws",
@@ -8342,7 +8327,7 @@
       "static-analysis",
       "terraform"
     ],
-    "last_updated": "2026-06-10T23:29:26Z",
+    "last_updated": "2026-06-11T23:29:10Z",
     "license": "Apache License 2.0",
     "github_description": "Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages with Checkov by Bridgecrew.",
     "install_cmd": "pip install checkov"
@@ -8568,7 +8553,7 @@
     "description": "Convert hcl2 to json.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 477,
+    "stars": 478,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-04-20T07:47:45Z",
@@ -8666,7 +8651,7 @@
     "description": "Small tool to convert an IAM Policy in JSON format into a Terraform aws_iam_policy_document",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 818,
+    "stars": 817,
     "language": "JavaScript",
     "topics": [
       "aws",
@@ -8688,7 +8673,7 @@
     "description": "Cloud cost estimates for Terraform in your CLI and pull requests.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 12361,
+    "stars": 12365,
     "language": "Go",
     "topics": [
       "aws",
@@ -8720,7 +8705,7 @@
     "description": "Read your tfstate or HCL to generate a graph specific for each provider, showing only the resources that are most important/relevant.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 2032,
+    "stars": 2035,
     "language": "Go",
     "topics": [
       "aws",
@@ -8862,7 +8847,7 @@
       "security",
       "terraform"
     ],
-    "last_updated": "2026-06-08T11:38:10Z",
+    "last_updated": "2026-06-11T12:19:35Z",
     "license": "Apache License 2.0",
     "github_description": "Pike is a tool for determining the permissions or policy required for IAC code",
     "install_cmd": null
@@ -8900,7 +8885,7 @@
       "terraform-docs",
       "terragrunt"
     ],
-    "last_updated": "2026-06-11T02:12:30Z",
+    "last_updated": "2026-06-11T22:25:32Z",
     "license": "MIT License",
     "github_description": "pre-commit git hooks to take care of Terraform configurations \ud83c\uddfa\ud83c\udde6",
     "install_cmd": null
@@ -9016,7 +9001,7 @@
     "description": "Next-generation red team infrastructure automation tool built on Terraform, supporting multi-cloud deployment (Alibaba Cloud, Tencent Cloud, AWS, etc.) with one-command deployment for creating, configuring, and destroying red team environments.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 165,
+    "stars": 166,
     "language": "Go",
     "topics": [
       "agent",
@@ -9059,7 +9044,7 @@
     "description": "Interactive Terraform state and configuration explorer.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 3310,
+    "stars": 3309,
     "language": "Go",
     "topics": [
       "diagram",
@@ -9275,7 +9260,7 @@
     "description": "Reads from existing Cloud Providers (reverse Terraform) and generates your infrastructure as code on Terraform configuration.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 2378,
+    "stars": 2379,
     "language": "Go",
     "topics": [
       "aws",
@@ -9506,7 +9491,7 @@
     "description": "Quick utility to generate docs from terraform modules.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 4786,
+    "stars": 4785,
     "language": "Go",
     "topics": [
       "documentation",
@@ -9562,7 +9547,7 @@
     "description": "*(only 0.11 and earlier)* Improve Terraform's plan output to be easier to read and understand.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 1630,
+    "stars": 1629,
     "language": "Ruby",
     "topics": [
       "bash",
@@ -9686,7 +9671,7 @@
     "description": "Generates professional cloud architecture diagrams from Terraform code using official AWS/Azure/GCP icons and design standards. Runs 100% client-side with CI/CD integration.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 1555,
+    "stars": 1556,
     "language": "Python",
     "topics": [],
     "last_updated": "2026-06-06T07:20:42Z",
@@ -9717,7 +9702,7 @@
       "terraform-provider",
       "terraformer"
     ],
-    "last_updated": "2026-06-11T02:06:50Z",
+    "last_updated": "2026-06-12T02:20:56Z",
     "license": "Apache License 2.0",
     "github_description": "CLI tool to generate terraform files from existing infrastructure (reverse Terraform).",
     "install_cmd": "go get github.com/chenrui333/terraformer"
@@ -9810,7 +9795,7 @@
     "description": "Terragrunt is a thin wrapper for Terraform that provides extra tools for keeping your Terraform configurations DRY, working with multiple Terraform modules, and managing remote state.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 9643,
+    "stars": 9648,
     "language": "Go",
     "topics": [
       "aws",
@@ -9820,7 +9805,7 @@
       "opentofu",
       "terraform"
     ],
-    "last_updated": "2026-06-10T22:49:43Z",
+    "last_updated": "2026-06-11T21:12:54Z",
     "license": "MIT License",
     "github_description": "Terragrunt is a flexible orchestration tool that allows Infrastructure as Code written in OpenTofu/Terraform to scale.",
     "install_cmd": "go get github.com/gruntwork-io/terragrunt"
@@ -9893,7 +9878,7 @@
     "description": "Tool for managing multiple Terraform stacks that comes with support for change detection and code generation",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 3596,
+    "stars": 3598,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-05-27T11:50:43Z",
@@ -10086,7 +10071,7 @@
     "description": "A command-line utility to print the summary of the terraform plan",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 705,
+    "stars": 707,
     "language": "Go",
     "topics": [
       "hacktoberfest",
@@ -10125,7 +10110,7 @@
       "oss",
       "terraform"
     ],
-    "last_updated": "2026-06-11T02:45:11Z",
+    "last_updated": "2026-06-12T00:59:45Z",
     "license": "MIT License",
     "github_description": "Framework for Monorepo to build high level Terraform Workflows by GitHub Actions",
     "install_cmd": null
@@ -10158,14 +10143,14 @@
     "description": "CLI to notify the result of plan and apply as Pull Request comment.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 531,
+    "stars": 532,
     "language": "Go",
     "topics": [
       "cli",
       "oss",
       "terraform"
     ],
-    "last_updated": "2026-06-11T01:17:55Z",
+    "last_updated": "2026-06-11T16:02:48Z",
     "license": "Other",
     "github_description": "tfcmt enhances mercari/tfnotify in many ways, including Terraform >= v0.15 support and advanced formatting options",
     "install_cmd": "go get github.com/suzuki-shunsuke/tfcmt"
@@ -10190,7 +10175,7 @@
     "description": "Terraform version manager.",
     "category": "devops",
     "subcategory": "Productivity Tools",
-    "stars": 4938,
+    "stars": 4939,
     "language": "Shell",
     "topics": [
       "bash",
@@ -10302,7 +10287,7 @@
       "terraform",
       "tflint"
     ],
-    "last_updated": "2026-06-10T16:17:18Z",
+    "last_updated": "2026-06-11T15:36:26Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "A Pluggable Terraform Linter",
     "install_cmd": "go get github.com/terraform-linters/tflint"
@@ -10433,7 +10418,7 @@
       "security",
       "terraform"
     ],
-    "last_updated": "2026-06-11T03:14:34Z",
+    "last_updated": "2026-06-11T18:53:44Z",
     "license": "MIT License",
     "github_description": "CLI to prevent malicious Terraform Providers from being executed. You can define the allow list of Terraform Providers and their versions, and check if disallowed providers aren't used",
     "install_cmd": "go get github.com/suzuki-shunsuke/tfprovidercheck"
@@ -10524,7 +10509,7 @@
     "description": "Terraform static analysis tool that supports terraform <0.12 & >=0.12 & directly integrates with HCL parser for better results.",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 7011,
+    "stars": 7010,
     "language": "Go",
     "topics": [
       "aws",
@@ -10731,7 +10716,7 @@
     "stars": 108,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-10T17:28:02Z",
+    "last_updated": "2026-06-11T19:22:56Z",
     "license": "MIT License",
     "github_description": "A Terragrunt frontend that allow execution of Terragrunt/Terraform through Docker",
     "install_cmd": "go get github.com/coveooss/tgf"
@@ -10924,7 +10909,7 @@
     "description": "Automatically tag and trace infrastructure as code frameworks (Terraform, Cloudformation, and Serverless).",
     "category": "terraform",
     "subcategory": "Tools",
-    "stars": 926,
+    "stars": 927,
     "language": "Go",
     "topics": [
       "cloud",
@@ -10966,7 +10951,7 @@
     "stars": 1577,
     "language": "JavaScript",
     "topics": [],
-    "last_updated": "2026-06-08T09:03:05Z",
+    "last_updated": "2026-06-11T14:18:28Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "Sets up Terraform CLI in your GitHub Actions workflow.",
     "install_cmd": null
@@ -11214,7 +11199,7 @@
     "topics": [
       "terraform"
     ],
-    "last_updated": "2026-06-08T12:52:35Z",
+    "last_updated": "2026-06-11T17:58:14Z",
     "license": "Mozilla Public License 2.0",
     "github_description": "An open source alternative to terraform enterprise.",
     "install_cmd": "go get github.com/leg100/otf"
@@ -11282,7 +11267,7 @@
     "description": "TACoS Kubernetes Operator - \"ArgoCD for Terraform\"",
     "category": "terraform",
     "subcategory": "Self-hosted Terraform Platforms",
-    "stars": 723,
+    "stars": 725,
     "language": "Go",
     "topics": [
       "cd",
@@ -11297,7 +11282,7 @@
       "terraform",
       "terragrunt"
     ],
-    "last_updated": "2026-06-11T03:46:55Z",
+    "last_updated": "2026-06-12T03:56:16Z",
     "license": "Apache License 2.0",
     "github_description": "\ud83c\udf2f Burrito is a TACoS Kubernetes Operator - \"Argo CD for Terraform\"",
     "install_cmd": "go get github.com/padok-team/burrito"
@@ -11410,7 +11395,7 @@
       "sqs",
       "terraform"
     ],
-    "last_updated": "2026-06-11T02:45:53Z",
+    "last_updated": "2026-06-11T23:46:34Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Free, open-source AWS emulator. LocalStack alternative: 41 services, 3,704 operations, true 100% Smithy conformance (124,255/124,255 variants pass). No account, no auth token, no paid tier.",
     "install_cmd": null
@@ -11421,7 +11406,7 @@
     "description": "Fully functional local AWS cloud stack. Develop and test your cloud & Serverless apps offline.",
     "category": "devops",
     "subcategory": "Open Source Cloud Platforms",
-    "stars": 65031,
+    "stars": 65040,
     "language": "Python",
     "topics": [
       "aws",
@@ -11443,10 +11428,10 @@
     "description": "Linux container host optimized for cloud-native applications, cloud platforms, and VMware infrastructure.",
     "category": "devops",
     "subcategory": "Operating Systems",
-    "stars": 3178,
+    "stars": 3179,
     "language": "Python",
     "topics": [],
-    "last_updated": "2026-06-11T02:04:15Z",
+    "last_updated": "2026-06-11T22:20:59Z",
     "license": "Other",
     "github_description": "Minimal Linux container host",
     "install_cmd": "pip install photon"
@@ -11457,7 +11442,7 @@
     "description": "Define and run multi-container applications with Docker.",
     "category": "devops",
     "subcategory": "Applications Platforms",
-    "stars": 37511,
+    "stars": 37513,
     "language": "Go",
     "topics": [
       "docker",
@@ -11466,7 +11451,7 @@
       "golang",
       "orchestration"
     ],
-    "last_updated": "2026-06-10T07:36:32Z",
+    "last_updated": "2026-06-11T09:03:06Z",
     "license": "Apache License 2.0",
     "github_description": "Define and run multi-container applications with Docker",
     "install_cmd": "go get github.com/docker/compose"
@@ -11477,7 +11462,7 @@
     "description": "Docker-native clustering system.",
     "category": "devops",
     "subcategory": "Applications Platforms",
-    "stars": 5732,
+    "stars": 5731,
     "language": "Go",
     "topics": [],
     "last_updated": "2020-06-11T09:36:02Z",
@@ -11505,7 +11490,7 @@
     "description": "A tool for managing OCI containers and pods.",
     "category": "devops",
     "subcategory": "Applications Platforms",
-    "stars": 32002,
+    "stars": 32003,
     "language": "Go",
     "topics": [
       "containers",
@@ -11514,7 +11499,7 @@
       "linux",
       "oci"
     ],
-    "last_updated": "2026-06-10T19:51:12Z",
+    "last_updated": "2026-06-12T00:15:44Z",
     "license": "Apache License 2.0",
     "github_description": "Podman: A tool for managing OCI containers and pods.",
     "install_cmd": "go get github.com/containers/podman"
@@ -11562,14 +11547,14 @@
     "description": "Managing DNS across multiple providers. DNS as code.",
     "category": "devops",
     "subcategory": "Automation & Orchestration",
-    "stars": 3712,
+    "stars": 3714,
     "language": "Python",
     "topics": [
       "dns",
       "infrastructure-as-code",
       "workflow"
     ],
-    "last_updated": "2026-06-09T19:05:45Z",
+    "last_updated": "2026-06-11T14:32:44Z",
     "license": "MIT License",
     "github_description": "Tools for managing DNS across multiple providers",
     "install_cmd": "pip install octodns"
@@ -11663,7 +11648,7 @@
     "description": "Simple Python version management.",
     "category": "devops",
     "subcategory": "Productivity Tools",
-    "stars": 44881,
+    "stars": 44877,
     "language": "Shell",
     "topics": [
       "python",
@@ -11680,7 +11665,7 @@
     "description": "Bulk port forwarding Kubernetes services for local development.",
     "category": "devops",
     "subcategory": "Productivity Tools",
-    "stars": 4117,
+    "stars": 4120,
     "language": "Go",
     "topics": [
       "api-rest",
@@ -11737,7 +11722,7 @@
     "description": "SSH client with AWS/GCP/Azure sync, Docker/Podman and SCP transfers.",
     "category": "devops",
     "subcategory": "Productivity Tools",
-    "stars": 347,
+    "stars": 348,
     "language": "Rust",
     "topics": [
       "cli",
@@ -11763,7 +11748,7 @@
     ],
     "last_updated": "2026-06-08T15:55:43Z",
     "license": "MIT License",
-    "github_description": "Open-source terminal SSH manager that keeps ~/.ssh/config in sync with your cloud infra across 16 cloud providers. Spin up a VM, it shows up. Destroy it, it dims. Plus live tunnel monitoring, fleet-wide Docker and Podman, scp, Vault SSH certs and an MCP server for AI agents. Rust TUI, MIT.",
+    "github_description": "Free, open-source terminal SSH manager and SSH config editor in Rust for macOS and Linux that keeps ~/.ssh/config in sync with 16 cloud providers, monitors live SSH tunnels and manages Docker and Podman containers fleet-wide. Plus scp, Vault SSH certs and an MCP server for AI agents.",
     "install_cmd": null
   },
   {
@@ -11779,7 +11764,7 @@
     "description": "open-source (Apache-2) CI/CD for building, testing, and deploying any project.",
     "category": "devops",
     "subcategory": "Continuous Integration & Delivery",
-    "stars": 1538,
+    "stars": 1539,
     "language": "Elixir",
     "topics": [
       "build-pipelines",
@@ -11790,7 +11775,7 @@
       "elixir",
       "golang"
     ],
-    "last_updated": "2026-06-10T17:04:01Z",
+    "last_updated": "2026-06-11T19:57:27Z",
     "license": "Other",
     "github_description": "All-in-one delivery platform for AI-driven development.",
     "install_cmd": null
@@ -11804,7 +11789,7 @@
     "stars": 446,
     "language": "Go",
     "topics": [],
-    "last_updated": "2026-06-10T21:06:13Z",
+    "last_updated": "2026-06-11T22:05:03Z",
     "license": "Other",
     "github_description": "A Distributed Continuous Integration System from MongoDB",
     "install_cmd": "go get github.com/evergreen-ci/evergreen"
@@ -11880,7 +11865,7 @@
     "description": "A collection of web applications which help software companies build better software.",
     "category": "devops",
     "subcategory": "Source Code Management",
-    "stars": 12304,
+    "stars": 12303,
     "language": "PHP",
     "topics": [
       "git",
@@ -11941,7 +11926,7 @@
       "letsencrypt",
       "python"
     ],
-    "last_updated": "2026-06-11T00:47:32Z",
+    "last_updated": "2026-06-12T00:13:29Z",
     "license": "Other",
     "github_description": "Certbot is EFF's tool to obtain certs from Let's Encrypt and (optionally) auto-enable HTTPS on your server.  It can also act as a client for any other CA that uses the ACME protocol.",
     "install_cmd": "pip install certbot"
@@ -11952,7 +11937,7 @@
     "description": "K8S add-on to automate the management and issuance of TLS certificates from various issuing sources.",
     "category": "devops",
     "subcategory": "SSL",
-    "stars": 13853,
+    "stars": 13855,
     "language": "Go",
     "topics": [
       "certificate",
@@ -11962,7 +11947,7 @@
       "letsencrypt",
       "tls"
     ],
-    "last_updated": "2026-06-11T00:34:33Z",
+    "last_updated": "2026-06-11T18:43:28Z",
     "license": "Apache License 2.0",
     "github_description": "Automatically provision and manage TLS certificates in Kubernetes",
     "install_cmd": "go get github.com/jetstack/cert-manager"
@@ -11987,7 +11972,7 @@
     "description": "Fast key-value storage library.",
     "category": "devops",
     "subcategory": "Databases",
-    "stars": 39141,
+    "stars": 39146,
     "language": "C++",
     "topics": [],
     "last_updated": "2026-03-11T04:06:29Z",
@@ -12001,7 +11986,7 @@
     "description": "Distributed reliable key-value store for the most critical data of a distributed system.",
     "category": "devops",
     "subcategory": "Databases",
-    "stars": 51804,
+    "stars": 51809,
     "language": "Go",
     "topics": [
       "cncf",
@@ -12015,7 +12000,7 @@
       "kubernetes",
       "raft"
     ],
-    "last_updated": "2026-06-10T15:00:50Z",
+    "last_updated": "2026-06-11T17:42:01Z",
     "license": "Apache License 2.0",
     "github_description": "Distributed reliable key-value store for the most critical data of a distributed system",
     "install_cmd": "go get github.com/etcd-io/etcd"
@@ -12046,7 +12031,7 @@
     "description": "Self-hosted, easily-deployable monitoring and alerts service.",
     "category": "monitoring",
     "subcategory": "Cabot",
-    "stars": 5667,
+    "stars": 5668,
     "language": "JavaScript",
     "topics": [
       "alerting",
@@ -12106,7 +12091,7 @@
     "description": "Monitoring information through a curses or Web based interface.",
     "category": "devops",
     "subcategory": "Observability & Monitoring",
-    "stars": 32798,
+    "stars": 32806,
     "language": "Python",
     "topics": [
       "monitoring",
@@ -12118,7 +12103,7 @@
       "terminal",
       "web"
     ],
-    "last_updated": "2026-06-08T08:13:25Z",
+    "last_updated": "2026-06-11T05:14:33Z",
     "license": "Other",
     "github_description": "Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, Mac OS and Windows operating systems.",
     "install_cmd": "pip install glances"
@@ -12129,7 +12114,7 @@
     "description": "Cron monitoring tool.",
     "category": "devops",
     "subcategory": "Observability & Monitoring",
-    "stars": 10085,
+    "stars": 10089,
     "language": "Python",
     "topics": [
       "cron",
@@ -12139,7 +12124,7 @@
       "monitoring",
       "ops"
     ],
-    "last_updated": "2026-06-09T13:52:18Z",
+    "last_updated": "2026-06-11T15:16:09Z",
     "license": "BSD 3-Clause \"New\" or \"Revised\" License",
     "github_description": "Open-source cron job and background task monitoring service, written in Python & Django",
     "install_cmd": "pip install healthchecks"
@@ -12172,7 +12157,7 @@
     "description": "Open source alerting CLI for developers.",
     "category": "devops",
     "subcategory": "Observability & Monitoring",
-    "stars": 11911,
+    "stars": 11914,
     "language": "Python",
     "topics": [
       "aiops",
@@ -12186,7 +12171,7 @@
       "python3",
       "workflow-automation"
     ],
-    "last_updated": "2026-06-10T07:54:06Z",
+    "last_updated": "2026-06-11T09:42:55Z",
     "license": "Other",
     "github_description": "The open-source AIOps and alert management platform",
     "install_cmd": "pip install keep"
@@ -12254,7 +12239,7 @@
     "description": "Open Source AI assistant that can investigate alerts and find root cause automatically.",
     "category": "devops",
     "subcategory": "Observability & Monitoring",
-    "stars": 2607,
+    "stars": 2615,
     "language": "Python",
     "topics": [
       "aiops",
@@ -12278,7 +12263,7 @@
       "slack",
       "sre"
     ],
-    "last_updated": "2026-06-10T22:11:30Z",
+    "last_updated": "2026-06-11T17:23:38Z",
     "license": "Apache License 2.0",
     "github_description": "SRE Agent - CNCF Sandbox Project",
     "install_cmd": "pip install holmesgpt"
@@ -12408,7 +12393,7 @@
     "description": "Free and open source log management.",
     "category": "devops",
     "subcategory": "Observability & Monitoring",
-    "stars": 8059,
+    "stars": 8061,
     "language": "Java",
     "topics": [
       "amqp",
@@ -12427,7 +12412,7 @@
       "siem",
       "syslog"
     ],
-    "last_updated": "2026-06-11T00:04:36Z",
+    "last_updated": "2026-06-12T00:44:55Z",
     "license": "Other",
     "github_description": "Free and open log management",
     "install_cmd": null
@@ -12438,7 +12423,7 @@
     "description": "Loki: like Prometheus, but for logs.",
     "category": "monitoring",
     "subcategory": "Backend",
-    "stars": 28354,
+    "stars": 28361,
     "language": "Go",
     "topics": [
       "cloudnative",
@@ -12448,7 +12433,7 @@
       "loki",
       "prometheus"
     ],
-    "last_updated": "2026-06-11T02:46:15Z",
+    "last_updated": "2026-06-12T02:20:31Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Like Prometheus, but for logs.",
     "install_cmd": "go get github.com/grafana/loki"
@@ -12459,7 +12444,7 @@
     "description": "Beautiful and powerful open-source status page system.",
     "category": "devops",
     "subcategory": "Observability & Monitoring",
-    "stars": 15090,
+    "stars": 15091,
     "language": "PHP",
     "topics": [
       "cachet",
@@ -12502,7 +12487,7 @@
     "description": "Service mesh for Kubernetes and beyond.",
     "category": "devops",
     "subcategory": "Service Discovery & Service Mesh",
-    "stars": 11417,
+    "stars": 11418,
     "language": "Go",
     "topics": [
       "cloud-native",
@@ -12512,7 +12497,7 @@
       "rust",
       "service-mesh"
     ],
-    "last_updated": "2026-06-11T03:02:59Z",
+    "last_updated": "2026-06-12T03:35:11Z",
     "license": "Apache License 2.0",
     "github_description": "Ultralight, security-first service mesh for Kubernetes. Main repo for Linkerd 2.x.",
     "install_cmd": "go get github.com/linkerd/linkerd2"
@@ -12544,7 +12529,7 @@
     "description": "Simulate network and system conditions for chaos and resiliency testing.",
     "category": "devops",
     "subcategory": "Chaos Engineering",
-    "stars": 12077,
+    "stars": 12081,
     "language": "Go",
     "topics": [
       "chaos",
@@ -12568,7 +12553,7 @@
     "description": "A Chaos Engineering Platform for Kubernetes.",
     "category": "devops",
     "subcategory": "Chaos Engineering",
-    "stars": 7741,
+    "stars": 7743,
     "language": "Go",
     "topics": [
       "chaos",
@@ -12653,7 +12638,7 @@
     "description": "API aware networking and security using BPF and XDP.",
     "category": "devops",
     "subcategory": "API Gateway",
-    "stars": 24486,
+    "stars": 24495,
     "language": "Go",
     "topics": [
       "bpf",
@@ -12673,7 +12658,7 @@
       "troubleshooting",
       "xdp"
     ],
-    "last_updated": "2026-06-11T03:24:08Z",
+    "last_updated": "2026-06-12T02:31:07Z",
     "license": "Apache License 2.0",
     "github_description": "eBPF-based Networking, Security, and Observability",
     "install_cmd": "go get github.com/cilium/cilium"
@@ -12689,7 +12674,7 @@
     "topics": [
       "sec"
     ],
-    "last_updated": "2026-06-08T11:45:31Z",
+    "last_updated": "2026-06-12T03:10:22Z",
     "license": "Apache License 2.0",
     "github_description": "The Cloud-Native API Gateway and AI Gateway",
     "install_cmd": "go get github.com/solo-io/gloo"
@@ -12758,7 +12743,7 @@
     "description": "Simple and flexible tool for managing secrets.",
     "category": "devops",
     "subcategory": "Secret Management",
-    "stars": 22056,
+    "stars": 22068,
     "language": "Go",
     "topics": [
       "aws",
@@ -12806,7 +12791,7 @@
     "description": "A bash-tool to store your private data inside a git repository.",
     "category": "devops",
     "subcategory": "Secret Management",
-    "stars": 4020,
+    "stars": 4021,
     "language": "Shell",
     "topics": [
       "encryption",
@@ -12827,7 +12812,7 @@
     "description": "Open source end-to-end encrypted secrets sync for teams and infrastructure.",
     "category": "devops",
     "subcategory": "Secret Management",
-    "stars": 27298,
+    "stars": 27319,
     "language": "TypeScript",
     "topics": [
       "acme",
@@ -12851,7 +12836,7 @@
       "typescript",
       "vault"
     ],
-    "last_updated": "2026-06-11T00:11:33Z",
+    "last_updated": "2026-06-12T03:28:15Z",
     "license": "Other",
     "github_description": "Infisical is the open-source platform for secrets, certificates, and privileged access management.",
     "install_cmd": null
@@ -12888,7 +12873,7 @@
     "description": "Modern documentation format and toolchain using Git and Markdown.",
     "category": "devops",
     "subcategory": "Sharing",
-    "stars": 28894,
+    "stars": 28897,
     "language": "TypeScript",
     "topics": [
       "documentation",
@@ -12896,7 +12881,7 @@
       "gitbook",
       "markdown"
     ],
-    "last_updated": "2026-06-10T21:13:58Z",
+    "last_updated": "2026-06-11T22:53:36Z",
     "license": "GNU General Public License v3.0",
     "github_description": "The open source frontend for GitBook doc sites",
     "install_cmd": null
@@ -12907,7 +12892,7 @@
     "description": "Easy to maintain open source documentation websites.",
     "category": "devops",
     "subcategory": "Sharing",
-    "stars": 65164,
+    "stars": 65176,
     "language": "TypeScript",
     "topics": [
       "documentation",
@@ -12928,7 +12913,7 @@
     "description": "A magical documentation site generator.",
     "category": "devops",
     "subcategory": "Sharing",
-    "stars": 31279,
+    "stars": 31277,
     "language": "JavaScript",
     "topics": [
       "doc",
@@ -12951,7 +12936,7 @@
     "description": "Project documentation with Markdown.",
     "category": "devops",
     "subcategory": "Sharing",
-    "stars": 22161,
+    "stars": 22163,
     "language": "Python",
     "topics": [
       "documentation",
@@ -12971,7 +12956,7 @@
     "description": "Set up a personal VPN in the cloud.",
     "category": "devops",
     "subcategory": "VPN",
-    "stars": 30274,
+    "stars": 30276,
     "language": "Python",
     "topics": [
       "ansible",
@@ -12997,7 +12982,7 @@
     "description": "Sets up a new VPN service nearly automatically.",
     "category": "devops",
     "subcategory": "VPN",
-    "stars": 23468,
+    "stars": 23467,
     "language": "Shell",
     "topics": [
       "ansible",
@@ -13038,7 +13023,7 @@
     "description": "Transparent proxy server that works as a poor man's VPN.",
     "category": "devops",
     "subcategory": "VPN",
-    "stars": 13372,
+    "stars": 13375,
     "language": "Python",
     "topics": [],
     "last_updated": "2026-06-05T22:09:44Z",
@@ -13059,7 +13044,7 @@
     "description": "Nagios core written in C.",
     "category": "monitoring",
     "subcategory": "Nagios",
-    "stars": 2011,
+    "stars": 2012,
     "language": "C",
     "topics": [],
     "last_updated": "2026-06-02T17:29:24Z",
@@ -13108,7 +13093,7 @@
     "description": "Opserver written in C#.",
     "category": "monitoring",
     "subcategory": "Opserver",
-    "stars": 4561,
+    "stars": 4562,
     "language": "C#",
     "topics": [
       "bosun",
@@ -13130,7 +13115,7 @@
     "description": "Netdata written in C.",
     "category": "monitoring",
     "subcategory": "Netdata",
-    "stars": 79110,
+    "stars": 79124,
     "language": "C",
     "topics": [
       "ai",
@@ -13154,7 +13139,7 @@
       "postgresql",
       "prometheus"
     ],
-    "last_updated": "2026-06-11T00:46:18Z",
+    "last_updated": "2026-06-12T00:49:44Z",
     "license": "GNU General Public License v3.0",
     "github_description": "The fastest path to AI-powered full stack observability, even for lean teams.",
     "install_cmd": null
@@ -13165,7 +13150,7 @@
     "description": "An open-source, real-time monitoring system with custom-monitor and agentless.",
     "category": "monitoring",
     "subcategory": "Backend",
-    "stars": 7278,
+    "stars": 7279,
     "language": "Java",
     "topics": [
       "agent",
@@ -13200,7 +13185,7 @@
     "description": "Icinga2 core written in C++.",
     "category": "monitoring",
     "subcategory": "Icinga",
-    "stars": 2206,
+    "stars": 2207,
     "language": "C++",
     "topics": [
       "cluster",
@@ -13218,7 +13203,7 @@
       "rest-api",
       "tls"
     ],
-    "last_updated": "2026-06-10T15:18:07Z",
+    "last_updated": "2026-06-11T14:56:46Z",
     "license": "GNU General Public License v3.0",
     "github_description": "The core of our monitoring platform with a powerful configuration language and REST API.",
     "install_cmd": null
@@ -13293,7 +13278,7 @@
       "perl",
       "snmp"
     ],
-    "last_updated": "2026-06-10T13:25:51Z",
+    "last_updated": "2026-06-11T16:03:23Z",
     "license": "Apache License 2.0",
     "github_description": "Collection of standard plugins to discover and gather cloud-to-edge metrics and status across your whole IT infrastructure. ",
     "install_cmd": null
@@ -14026,7 +14011,7 @@
     "stars": 274,
     "language": "C",
     "topics": [],
-    "last_updated": "2026-06-10T21:35:16Z",
+    "last_updated": "2026-06-11T20:05:47Z",
     "license": "GNU General Public License v2.0",
     "github_description": "NRPE Agent",
     "install_cmd": null
@@ -14054,7 +14039,7 @@
     "stars": 203,
     "language": "Shell",
     "topics": [],
-    "last_updated": "2026-06-10T20:16:06Z",
+    "last_updated": "2026-06-11T17:24:57Z",
     "license": "Other",
     "github_description": "Nagios Cross-Platform Agent",
     "install_cmd": null
@@ -14079,7 +14064,7 @@
       "prometheus",
       "windows"
     ],
-    "last_updated": "2026-06-10T14:06:58Z",
+    "last_updated": "2026-06-11T07:25:44Z",
     "license": "MIT License",
     "github_description": "SNClient - Cross platform monitoring agent",
     "install_cmd": "go get github.com/ConSol-Monitoring/snclient"
@@ -14143,7 +14128,7 @@
       "thruk",
       "victoriametrics"
     ],
-    "last_updated": "2026-06-09T11:59:39Z",
+    "last_updated": "2026-06-11T11:18:43Z",
     "license": "GNU General Public License v2.0",
     "github_description": "OMD - Open Monitoring Distribution Labs Edition.",
     "install_cmd": null
@@ -14471,7 +14456,7 @@
     "description": "Daemon for easy but powerful stats aggregation.",
     "category": "monitoring",
     "subcategory": "Metric Storage",
-    "stars": 18044,
+    "stars": 18043,
     "language": "JavaScript",
     "topics": [
       "graphite",
@@ -14505,7 +14490,7 @@
     "description": "Script that scrapes alert statistics from Nagios and reports them to Graphite.",
     "category": "monitoring",
     "subcategory": "Metric Forwarding",
-    "stars": 37,
+    "stars": 38,
     "language": "Ruby",
     "topics": [],
     "last_updated": "2015-01-10T18:23:15Z",
@@ -14577,7 +14562,7 @@
     "description": "Graphite web.",
     "category": "monitoring",
     "subcategory": "Metric Graphing",
-    "stars": 6093,
+    "stars": 6092,
     "language": "JavaScript",
     "topics": [
       "django",
@@ -14864,7 +14849,7 @@
     "description": "TICK stack, The plugin-driven server agent for collecting & reporting metrics.",
     "category": "monitoring",
     "subcategory": "Collector",
-    "stars": 17613,
+    "stars": 17618,
     "language": "Go",
     "topics": [
       "golang",
@@ -14885,7 +14870,7 @@
       "windows-eventlog",
       "xpath"
     ],
-    "last_updated": "2026-06-10T11:26:10Z",
+    "last_updated": "2026-06-11T16:38:05Z",
     "license": "MIT License",
     "github_description": "Agent for collecting, processing, aggregating, and writing metrics, logs, and other arbitrary data.",
     "install_cmd": "go get github.com/influxdata/telegraf"
@@ -14896,7 +14881,7 @@
     "description": "Prometheus stack, Exporter for machine metrics.",
     "category": "monitoring",
     "subcategory": "Collector",
-    "stars": 13485,
+    "stars": 13496,
     "language": "Go",
     "topics": [
       "host-metrics",
@@ -14965,7 +14950,7 @@
       "packetbeat",
       "winlogbeat"
     ],
-    "last_updated": "2026-06-10T20:18:52Z",
+    "last_updated": "2026-06-11T21:30:24Z",
     "license": "Other",
     "github_description": ":tropical_fish: Beats - Lightweight shippers for Elasticsearch & Logstash",
     "install_cmd": "go get github.com/elastic/beats"
@@ -14976,7 +14961,7 @@
     "description": "Transport and process your logs, events, or other data, Elastic stack.",
     "category": "monitoring",
     "subcategory": "Collector",
-    "stars": 14873,
+    "stars": 14875,
     "language": "Java",
     "topics": [
       "etl-framework",
@@ -14997,7 +14982,7 @@
     "description": "Fast and Lightweight Logs and Metrics processor for Linux, BSD, OSX and Windows.",
     "category": "monitoring",
     "subcategory": "Collector",
-    "stars": 7919,
+    "stars": 7920,
     "language": "C",
     "topics": [
       "c",
@@ -15015,7 +15000,7 @@
       "stream-processing",
       "traces"
     ],
-    "last_updated": "2026-06-10T23:45:20Z",
+    "last_updated": "2026-06-11T13:16:56Z",
     "license": "Apache License 2.0",
     "github_description": "Fast and Lightweight Logs, Metrics and Traces processor for Linux, BSD, OSX and Windows",
     "install_cmd": null
@@ -15026,7 +15011,7 @@
     "description": "Fluentd is an open-source logging solution to unify data collection and consumption.",
     "category": "monitoring",
     "subcategory": "Collector",
-    "stars": 13551,
+    "stars": 13552,
     "language": "Ruby",
     "topics": [
       "cncf",
@@ -15053,7 +15038,7 @@
     "description": "The source code.",
     "category": "monitoring",
     "subcategory": "Backend",
-    "stars": 3042,
+    "stars": 3041,
     "language": "Java",
     "topics": [
       "apm",
@@ -15096,7 +15081,7 @@
     "description": "TICK stack.",
     "category": "monitoring",
     "subcategory": "Backend",
-    "stars": 31542,
+    "stars": 31544,
     "language": "Rust",
     "topics": [
       "database",
@@ -15108,7 +15093,7 @@
       "rust",
       "time-series"
     ],
-    "last_updated": "2026-06-10T23:36:43Z",
+    "last_updated": "2026-06-11T19:49:02Z",
     "license": "Apache License 2.0",
     "github_description": "Scalable datastore for metrics, events, and real-time analytics",
     "install_cmd": null
@@ -15119,7 +15104,7 @@
     "description": "Prometheus stack.",
     "category": "monitoring",
     "subcategory": "Backend",
-    "stars": 64432,
+    "stars": 64441,
     "language": "Go",
     "topics": [
       "alerting",
@@ -15130,7 +15115,7 @@
       "prometheus",
       "time-series"
     ],
-    "last_updated": "2026-06-10T16:05:45Z",
+    "last_updated": "2026-06-12T01:48:05Z",
     "license": "Apache License 2.0",
     "github_description": "The Prometheus monitoring system and time series database.",
     "install_cmd": "go get github.com/prometheus/prometheus"
@@ -15141,7 +15126,7 @@
     "description": "VictoriaMetrics stack.",
     "category": "monitoring",
     "subcategory": "Backend",
-    "stars": 17136,
+    "stars": 17141,
     "language": "Go",
     "topics": [
       "database",
@@ -15158,7 +15143,7 @@
       "thanos",
       "tsdb"
     ],
-    "last_updated": "2026-06-11T03:16:14Z",
+    "last_updated": "2026-06-12T03:29:56Z",
     "license": "Apache License 2.0",
     "github_description": "VictoriaMetrics: fast, cost-effective monitoring solution and time series database",
     "install_cmd": "go get github.com/VictoriaMetrics/VictoriaMetrics"
@@ -15210,7 +15195,7 @@
       "java",
       "search-engine"
     ],
-    "last_updated": "2026-06-11T01:45:36Z",
+    "last_updated": "2026-06-12T03:32:36Z",
     "license": "Other",
     "github_description": "Free and Open Source, Distributed, RESTful Search Engine",
     "install_cmd": null
@@ -15227,7 +15212,7 @@
       "distributed-tracing",
       "grafana"
     ],
-    "last_updated": "2026-06-11T02:53:55Z",
+    "last_updated": "2026-06-12T03:22:38Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Grafana Tempo is a high volume, minimal dependency distributed tracing backend.",
     "install_cmd": "go get github.com/grafana/tempo"
@@ -15269,7 +15254,7 @@
       "pagerduty",
       "slack"
     ],
-    "last_updated": "2026-06-07T20:47:02Z",
+    "last_updated": "2026-06-11T21:46:03Z",
     "license": "Apache License 2.0",
     "github_description": "Prometheus Alertmanager",
     "install_cmd": "go get github.com/prometheus/alertmanager"
@@ -15287,7 +15272,7 @@
     "description": "Grafana stack.",
     "category": "monitoring",
     "subcategory": "Dashboard",
-    "stars": 74339,
+    "stars": 74360,
     "language": "TypeScript",
     "topics": [
       "alerting",
@@ -15306,7 +15291,7 @@
       "postgres",
       "prometheus"
     ],
-    "last_updated": "2026-06-11T02:32:55Z",
+    "last_updated": "2026-06-12T03:22:08Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
     "install_cmd": null
@@ -15344,7 +15329,7 @@
     "description": "Elastic stack.",
     "category": "monitoring",
     "subcategory": "Dashboard",
-    "stars": 21132,
+    "stars": 21136,
     "language": "TypeScript",
     "topics": [
       "dashboards",
@@ -15355,7 +15340,7 @@
       "observability",
       "visualizations"
     ],
-    "last_updated": "2026-06-11T01:19:57Z",
+    "last_updated": "2026-06-11T22:29:19Z",
     "license": "Other",
     "github_description": "Your window into all of your data",
     "install_cmd": null
@@ -15366,7 +15351,7 @@
     "description": "A distributed tracing system.",
     "category": "monitoring",
     "subcategory": "Zipkin",
-    "stars": 17432,
+    "stars": 17430,
     "language": "Java",
     "topics": [
       "distributed-tracing",
@@ -15393,7 +15378,7 @@
     "description": "Sentry is cross-platform application monitoring, with a focus on error reporting.",
     "category": "monitoring",
     "subcategory": "Sentry",
-    "stars": 44089,
+    "stars": 44091,
     "language": "Python",
     "topics": [
       "apm",
@@ -15412,7 +15397,7 @@
       "sentry",
       "tag-production"
     ],
-    "last_updated": "2026-06-11T03:31:28Z",
+    "last_updated": "2026-06-12T04:03:16Z",
     "license": "Other",
     "github_description": "Developer-first error tracking and performance monitoring",
     "install_cmd": "pip install sentry"
@@ -15423,7 +15408,7 @@
     "description": "APM, (Application Performance Management) tool for large-scale distributed systems.",
     "category": "monitoring",
     "subcategory": "Pinpoint",
-    "stars": 13827,
+    "stars": 13826,
     "language": "Java",
     "topics": [
       "agent",
