@@ -235,7 +235,7 @@ function App() {
             onCopy={copy}
           />
         )}
-        {status === 'ready' && filters.mode === 'new' && <WhatsNew tools={tools} onOpen={openTool} />}
+        {status === 'ready' && filters.mode === 'new' && <WhatsNew tools={tools} onOpen={openTool} onCopy={copy} />}
         {filters.mode === 'browse' && <>
         {status === 'ready' && <StatsBar tools={tools} categories={categories} meta={meta} />}
 

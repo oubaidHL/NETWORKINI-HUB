@@ -311,7 +311,7 @@ def add_trend(tool, samples):
             tool['trend_measured'] = False
 
 
-def write_changelog(new_tools):
+def write_changelog(new_tools, categories=()):
     log = read_json(CHANGELOG_FILE, [])
     if new_tools:
         top = sorted(new_tools, key=lambda t: -(t.get('stars') or 0))[:30]
@@ -320,7 +320,7 @@ def write_changelog(new_tools):
                        'added': [{k: t.get(k) for k in ('name', 'url', 'category', 'description', 'stars')} for t in top]})
     log = log[:52]
     write_json(CHANGELOG_FILE, log, indent=1)
-    write_feeds(log)
+    write_feeds(log, categories)
 
 
 def hub_link(url):
@@ -345,12 +345,12 @@ def build_feed(title, entries, category=None):
             '<description>Newly added DevOps tools</description>' + ''.join(items) + '</channel></rss>\n')
 
 
-def write_feeds(log):
+def write_feeds(log, categories=()):
     """feed.xml with everything, plus feed-<category>.xml so people can follow one topic."""
     out_dir = os.path.dirname(FEED_FILE)
     with open(FEED_FILE, 'w', encoding='utf-8') as f:
         f.write(build_feed('NETWORKINI-HUB: new tools', log))
-    cats = sorted({t['category'] for e in log for t in e['added'] if t.get('category')})
+    cats = sorted(set(categories) | {t['category'] for e in log for t in e['added'] if t.get('category')})
     for cat in cats:
         with open(os.path.join(out_dir, f'feed-{cat}.xml'), 'w', encoding='utf-8') as f:
             f.write(build_feed(f'NETWORKINI-HUB: new {cat} tools', log, cat))
@@ -408,7 +408,7 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     write_json(OUTPUT_FILE, tools, indent=2)
     write_json(HISTORY_FILE, history)
-    write_changelog(new_tools)
+    write_changelog(new_tools, {t['category'] for t in tools})
     write_json(META_FILE, {'generated_at': datetime.now(timezone.utc).isoformat(timespec='seconds'),
                            'total': len(tools), 'new_this_run': len(new_tools),
                            'rate_limited': rate_limited}, indent=2)

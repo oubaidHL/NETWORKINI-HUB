@@ -4,7 +4,7 @@ import { newness, formatNumber } from '../utils';
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/`;
 
-const WhatsNew = ({ tools, onOpen }) => {
+const WhatsNew = ({ tools, onOpen, onCopy }) => {
   const categories = [...new Set(tools.map((t) => t.category))].filter(Boolean).sort();
   const [log, setLog] = useState(null);
 
@@ -21,7 +21,7 @@ const WhatsNew = ({ tools, onOpen }) => {
         <h2>What's new</h2>
       </div>
 
-      <FollowBox categories={categories} />
+      <FollowBox categories={categories} onCopy={onCopy} />
 
       <h3>Added to the hub</h3>
       {log === null && <p className="muted-note">Loading…</p>}

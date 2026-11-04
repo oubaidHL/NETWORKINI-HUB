@@ -876,3 +876,7 @@ button.modal-link { background: none; border: none; font: inherit; cursor: point
 .follow-form input { flex: 1; min-width: 200px; background: var(--card-bg); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.55rem 0.8rem; font: inherit; }
 a.chip { text-decoration: none; }
 footer .link-btn { margin-left: 0.5rem; }
+
+.follow-ok { display: flex; align-items: center; gap: 0.5rem; color: #22c55e; margin: 0; }
+.follow-err { color: #ef4444; font-size: 0.85rem; }
+button.chip { font-family: inherit; }
