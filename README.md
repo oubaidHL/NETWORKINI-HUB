@@ -66,3 +66,27 @@ MIT License.
 
 ---
 *Created by [Oubaid Hlaimi](https://linkedin.com/in/oubaidhlaimi/)*
+
+---
+
+## 🔔 Following new tools (RSS, email, chat)
+
+- **RSS**: `https://hub.networkini.com/data/feed.xml` (all) or `data/feed-<category>.xml` (one topic, e.g. `feed-kubernetes.xml`). Browsers/readers auto-discover it.
+- **Email, no backend**: the site embeds a [Buttondown](https://buttondown.com) subscribe form. Buttondown stores and protects the addresses (double opt-in, unsubscribe link). **No email is ever written to this public repo.**
+- **Chat**: optional Discord / Telegram announcements.
+
+After each daily refresh, `scripts/notify.py` announces newly discovered tools on every channel that is configured. A channel is skipped when its secret is missing.
+
+### One-time setup (repository *Settings → Secrets and variables → Actions*)
+
+| Kind | Name | Purpose |
+| --- | --- | --- |
+| Variable | `BUTTONDOWN_USER` | Buttondown username → shows the subscribe form on the site |
+| Secret | `BUTTONDOWN_API_KEY` | lets the workflow create the digest email |
+| Variable | `BUTTONDOWN_AUTO_SEND` | `true` = send automatically; unset = saved as a **draft** to review first |
+| Secret | `DISCORD_WEBHOOK_URL` | post to a Discord channel |
+| Variable | `DISCORD_INVITE` | invite link shown on the site |
+| Secrets | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | post to a Telegram channel |
+| Variable | `TELEGRAM_CHANNEL` | channel link shown on the site |
+
+Variables are public settings; secrets stay private to Actions.

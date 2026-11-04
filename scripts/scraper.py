@@ -17,6 +17,7 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta, timezone
+from urllib.parse import quote
 from xml.sax.saxutils import escape
 
 import requests
@@ -319,20 +320,40 @@ def write_changelog(new_tools):
                        'added': [{k: t.get(k) for k in ('name', 'url', 'category', 'description', 'stars')} for t in top]})
     log = log[:52]
     write_json(CHANGELOG_FILE, log, indent=1)
+    write_feeds(log)
+
+
+def hub_link(url):
+    key = url.replace('https://github.com/', '')
+    return f'{SITE_URL}?tool={quote(key, safe="/")}'
+
+
+def build_feed(title, entries, category=None):
     items = []
-    for entry in log[:10]:
+    for entry in entries[:10]:
+        pub = datetime.fromisoformat(entry['date']).strftime('%a, %d %b %Y 00:00:00 +0000')
         for t in entry['added']:
+            if category and t['category'] != category:
+                continue
             items.append(
-                f"<item><title>{escape(t['name'])}</title><link>{escape(t['url'])}</link>"
-                f"<guid>{escape(t['url'])}</guid><category>{escape(t['category'] or '')}</category>"
-                f"<pubDate>{datetime.fromisoformat(entry['date']).strftime('%a, %d %b %Y 00:00:00 +0000')}</pubDate>"
+                f"<item><title>{escape(t['name'])}</title><link>{escape(hub_link(t['url']))}</link>"
+                f"<guid isPermaLink=\"false\">{escape(t['url'])}</guid>"
+                f"<category>{escape(t['category'] or '')}</category><pubDate>{pub}</pubDate>"
                 f"<description>{escape(t.get('description') or '')}</description></item>")
-    feed = ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel>'
-            '<title>NETWORKINI-HUB: new tools</title>'
-            f'<link>{SITE_URL}</link><description>Newly added DevOps tools</description>'
-            + ''.join(items) + '</channel></rss>\n')
+    return ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel>'
+            f'<title>{escape(title)}</title><link>{SITE_URL}</link>'
+            '<description>Newly added DevOps tools</description>' + ''.join(items) + '</channel></rss>\n')
+
+
+def write_feeds(log):
+    """feed.xml with everything, plus feed-<category>.xml so people can follow one topic."""
+    out_dir = os.path.dirname(FEED_FILE)
     with open(FEED_FILE, 'w', encoding='utf-8') as f:
-        f.write(feed)
+        f.write(build_feed('NETWORKINI-HUB: new tools', log))
+    cats = sorted({t['category'] for e in log for t in e['added'] if t.get('category')})
+    for cat in cats:
+        with open(os.path.join(out_dir, f'feed-{cat}.xml'), 'w', encoding='utf-8') as f:
+            f.write(build_feed(f'NETWORKINI-HUB: new {cat} tools', log, cat))
 
 
 def main():

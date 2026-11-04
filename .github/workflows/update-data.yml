@@ -50,3 +50,13 @@ jobs:
           git commit -m "chore(data): update tools data"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
+
+      - name: Announce new tools
+        # Optional channels; each is skipped unless its secret exists.
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          BUTTONDOWN_AUTO_SEND: ${{ vars.BUTTONDOWN_AUTO_SEND }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notify.py

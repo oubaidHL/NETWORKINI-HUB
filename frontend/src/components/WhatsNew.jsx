@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Rss } from 'lucide-react';
+import FollowBox from './FollowBox';
 import { newness, formatNumber } from '../utils';
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/`;
 
 const WhatsNew = ({ tools, onOpen }) => {
+  const categories = [...new Set(tools.map((t) => t.category))].filter(Boolean).sort();
   const [log, setLog] = useState(null);
 
   useEffect(() => {
@@ -18,8 +19,9 @@ const WhatsNew = ({ tools, onOpen }) => {
     <div className="panel">
       <div className="panel-head">
         <h2>What's new</h2>
-        <a className="link-btn" href={`${DATA_URL}feed.xml`} target="_blank" rel="noopener noreferrer"><Rss size={14} /> RSS feed</a>
       </div>
+
+      <FollowBox categories={categories} />
 
       <h3>Added to the hub</h3>
       {log === null && <p className="muted-note">Loading…</p>}

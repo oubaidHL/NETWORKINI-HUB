@@ -390,7 +390,7 @@ function App() {
       <Toast message={toast} />
 
       <footer>
-        <p>Data from community <em>Awesome</em> lists, refreshed daily.</p>
+        <p>Data from community <em>Awesome</em> lists, refreshed daily. <button className="link-btn" onClick={() => update({ mode: 'new' })}>Follow new tools</button></p>
       </footer>
     </div>
   );

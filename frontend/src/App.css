@@ -867,3 +867,12 @@ button.modal-link { background: none; border: none; font: inherit; cursor: point
 @media (max-width: 800px) { .stack-layout { grid-template-columns: 1fr; } .stack-summary { position: static; } }
 .mini-card { min-width: 0; }
 .mini-top strong { overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+.follow-box { background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; display: grid; gap: 0.6rem; }
+.follow-box h3 { margin: 0; }
+.follow-box details { color: var(--text-secondary); font-size: 0.85rem; }
+.follow-box summary { cursor: pointer; margin-bottom: 0.5rem; }
+.follow-form { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.follow-form input { flex: 1; min-width: 200px; background: var(--card-bg); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.55rem 0.8rem; font: inherit; }
+a.chip { text-decoration: none; }
+footer .link-btn { margin-left: 0.5rem; }

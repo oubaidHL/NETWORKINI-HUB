@@ -50,6 +50,11 @@ jobs:
 
       - name: Build
         working-directory: frontend
+        env:
+          # Public, non-secret settings for the "Follow" box (set under Settings > Variables).
+          VITE_BUTTONDOWN_USER: ${{ vars.BUTTONDOWN_USER }}
+          VITE_DISCORD_INVITE: ${{ vars.DISCORD_INVITE }}
+          VITE_TELEGRAM_CHANNEL: ${{ vars.TELEGRAM_CHANNEL }}
         run: npm run build
 
       - uses: actions/configure-pages@v5
