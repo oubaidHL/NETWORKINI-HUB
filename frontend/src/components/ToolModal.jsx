@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { X, ExternalLink, Github, Terminal, Star, GitFork, Scale, Copy, Link2, Heart, GitCompare, Archive } from 'lucide-react';
-import { formatNumber, timeAgo } from '../utils';
+import { formatNumber, timeAgo, trendLabel } from '../utils';
 
 const readmeCache = new Map();
 
@@ -87,6 +87,8 @@ const ToolModal = ({ tool, related, onClose, onOpen, onCopy, onFilter, isFav, on
             <div className="modal-facts">
               {facts.map(({ Icon, text }) => <span key={text}><Icon size={14} /> {text}</span>)}
               {tool.language && <span>{tool.language}</span>}
+              {trendLabel(tool) && <span title={tool.trend_measured ? 'Measured' : 'Estimated from repo age'}>🔥 {trendLabel(tool)}{tool.trend_measured ? '' : ' (est.)'}</span>}
+              {tool.latest_release?.tag && <span>Release {tool.latest_release.tag} · {timeAgo(tool.latest_release.published_at)}</span>}
               {tool.last_updated && <span>Updated {timeAgo(tool.last_updated)}</span>}
             </div>
           )}

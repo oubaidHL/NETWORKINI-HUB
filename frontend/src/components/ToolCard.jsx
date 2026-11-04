@@ -1,10 +1,10 @@
 import { Star, ExternalLink, Copy, Download, Heart, Archive, GitCompare } from 'lucide-react';
-import { formatNumber, timeAgo, isActive } from '../utils';
+import { formatNumber, timeAgo, isActive, newness, trendLabel } from '../utils';
 
-const ToolCard = ({ tool, onClick, isFav, onToggleFav, onCopy, inCompare, onToggleCompare, onFilter }) => {
+const ToolCard = ({ tool, onClick, isFav, onToggleFav, onCopy, inCompare, onToggleCompare, onFilter, hot }) => {
   const {
     name, description, stars, url, category, subcategory, language,
-    docker_pulls, install_cmd, last_updated, archived, topics,
+    docker_pulls, install_cmd, last_updated, archived, topics, latest_release,
   } = tool;
   const stop = (fn) => (e) => { e.stopPropagation(); fn(); };
 
@@ -52,6 +52,9 @@ const ToolCard = ({ tool, onClick, isFav, onToggleFav, onCopy, inCompare, onTogg
         <div className="tags">
           <span className={`tag category-${category}`}>{category}</span>
           {language && <span className="tag language">{language}</span>}
+          {newness(tool) && <span className="tag badge-new">NEW</span>}
+          {hot && trendLabel(tool) && <span className="tag badge-hot" title="Stars gained per week">🔥 {trendLabel(tool)}</span>}
+          {latest_release?.tag && <span className="tag" title="Latest release">{latest_release.tag}</span>}
           {archived && <span className="tag archived"><Archive size={11} /> archived</span>}
           {last_updated && (
             <span className={`tag freshness ${isActive(last_updated) ? 'fresh' : ''}`} title="Last push">

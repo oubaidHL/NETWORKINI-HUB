@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from 'react';
 import Fuse from 'fuse.js';
-import { Github, Linkedin, HelpCircle, X, RefreshCw, Shuffle, GitCompare } from 'lucide-react';
+import { Github, Linkedin, HelpCircle, X, RefreshCw, Shuffle, GitCompare, Compass, Layers, Sparkles } from 'lucide-react';
 import ToolCard from './components/ToolCard';
 import FilterBar from './components/FilterBar';
 import ThemeToggle from './components/ThemeToggle';
@@ -9,6 +9,9 @@ import Pagination from './components/Pagination';
 import Toast from './components/Toast';
 import TopicCloud from './components/TopicCloud';
 import CompareModal from './components/CompareModal';
+import Highlights from './components/Highlights';
+import WhatsNew from './components/WhatsNew';
+import StackBuilder from './components/StackBuilder';
 import useLocalStorage from './hooks/useLocalStorage';
 import useUrlFilters, { toolKey, keyToUrl } from './hooks/useUrlFilters';
 import { SORTS, isActive } from './utils';
@@ -166,10 +169,17 @@ function App() {
       .slice(0, 6)
       .map((x) => x.t);
   }, [tools, selectedTool]);
+  const hotSet = useMemo(
+    () => new Set(tools.filter((t) => t.trend > 0).sort((a, b) => b.trend - a.trend).slice(0, 40).map((t) => t.url)),
+    [tools]
+  );
   const compareTools = useMemo(() => compare.map((u) => tools.find((t) => t.url === u)).filter(Boolean), [compare, tools]);
   const surprise = () => {
     if (results.length) openTool(results[Math.floor(Math.random() * results.length)]);
   };
+
+  const isFiltered = !!(filters.q || filters.cat !== 'all' || filters.lang !== 'all' || filters.topic ||
+    filters.sub || filters.fav || filters.active || filters.sort !== 'stars');
 
   const totalPages = Math.max(1, Math.ceil(results.length / ITEMS_PER_PAGE));
   const page = Math.min(filters.page, totalPages);
@@ -205,7 +215,28 @@ function App() {
         </div>
       </header>
 
+      <nav className="mode-nav" aria-label="Sections">
+        {[['browse', 'Browse', Compass], ['stack', 'Stack builder', Layers], ['new', "What's new", Sparkles]].map(([id, label, Icon]) => (
+          <button key={id} className={filters.mode === id ? 'active' : ''} onClick={() => update({ mode: id, tool: filters.tool })}>
+            <Icon size={16} /> {label}
+          </button>
+        ))}
+      </nav>
+
       <main>
+        {status === 'ready' && filters.mode === 'stack' && (
+          <StackBuilder
+            tools={tools}
+            needs={filters.stack ? filters.stack.split(',') : []}
+            picks={filters.pick ? filters.pick.split(',') : []}
+            onNeeds={(n) => update({ stack: n.join(','), tool: filters.tool })}
+            onPicks={(p) => update({ pick: p.join(','), tool: filters.tool })}
+            onOpen={openTool}
+            onCopy={copy}
+          />
+        )}
+        {status === 'ready' && filters.mode === 'new' && <WhatsNew tools={tools} onOpen={openTool} />}
+        {filters.mode === 'browse' && <>
         {status === 'ready' && <StatsBar tools={tools} categories={categories} meta={meta} />}
 
         <FilterBar
@@ -220,6 +251,16 @@ function App() {
           setView={setView}
           favCount={favorites.length}
         />
+
+        {status === 'ready' && !isFiltered && page === 1 && (
+          <Highlights
+            tools={tools}
+            domain={filters.dom}
+            onDomain={(dom) => update({ dom, tool: filters.tool })}
+            onOpen={openTool}
+            onSeeMore={() => update({ mode: 'new' })}
+          />
+        )}
 
         {status === 'ready' && topics.length > 0 && (
           <TopicCloud topics={topics} active={filters.topic} onSelect={(topic) => update({ topic })} />
@@ -257,6 +298,7 @@ function App() {
                     isFav={favorites.includes(tool.url)}
                     onToggleFav={() => toggleFav(tool.url)}
                     onCopy={copy}
+                    hot={hotSet.has(tool.url)}
                     inCompare={compare.includes(tool.url)}
                     onToggleCompare={() => toggleCompare(tool.url)}
                     onFilter={update}
@@ -273,6 +315,7 @@ function App() {
             <Pagination page={page} totalPages={totalPages} onChange={goToPage} />
           </>
         )}
+        </>}
       </main>
 
       {compare.length > 0 && (

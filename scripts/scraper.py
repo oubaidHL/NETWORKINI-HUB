@@ -4,7 +4,11 @@ Design notes
 - Previous output is used as a cache: if GitHub rate-limits us or a source is
   down, existing tools keep their last known metadata instead of losing it.
 - GitHub lookups run in a small thread pool and stop cleanly on rate limit.
-- A second file, meta.json, records when/what was generated (shown in the UI).
+- Per-run API budget: the stalest tools are refreshed first, so the 1000 req/h
+  GITHUB_TOKEN limit is never hit and every tool is refreshed every few days.
+- Star history (history.json) gives measured weekly star gains for "trending".
+- changelog.json / feed.xml record newly discovered tools.
+- meta.json records when/what was generated (shown in the UI).
 """
 import json
 import os
@@ -12,7 +16,8 @@ import re
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
+from xml.sax.saxutils import escape
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -21,6 +26,15 @@ from urllib3.util.retry import Retry
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 OUTPUT_FILE = 'public/data/tools.json'
 META_FILE = 'public/data/meta.json'
+HISTORY_FILE = 'public/data/history.json'
+CHANGELOG_FILE = 'public/data/changelog.json'
+FEED_FILE = 'public/data/feed.xml'
+SITE_URL = 'https://hub.networkini.com/'
+REPO_BUDGET = int(os.getenv('REPO_BUDGET', 650))        # GitHub repo lookups per run
+RELEASE_BUDGET = int(os.getenv('RELEASE_BUDGET', 150))  # latest-release lookups (popular tools only)
+BASELINE = os.getenv('BASELINE') == '1'  # first import: don't flag everything as "new"
+RELEASE_MIN_STARS = 1000
+HISTORY_DAYS = 60
 MAX_WORKERS = 8
 
 SOURCES = {
@@ -33,18 +47,39 @@ SOURCES = {
     ],
     'ansible': ['https://raw.githubusercontent.com/ansible-community/awesome-ansible/main/README.md'],
     'terraform': ['https://raw.githubusercontent.com/shuaibiyy/awesome-terraform/master/README.md'],
+    'security': [
+        'https://raw.githubusercontent.com/sbilly/awesome-security/master/README.md',
+        'https://raw.githubusercontent.com/devsecops/awesome-devsecops/master/README.md',
+    ],
+    'databases': ['https://raw.githubusercontent.com/mgramin/awesome-db-tools/master/README.md'],
+    'observability': [
+        'https://raw.githubusercontent.com/adriannovegil/awesome-observability/master/README.md',
+        'https://raw.githubusercontent.com/dastergon/awesome-sre/master/README.md',
+        'https://raw.githubusercontent.com/dastergon/awesome-chaos-engineering/master/README.md',
+    ],
+    'cloud': [
+        'https://raw.githubusercontent.com/donnemartin/awesome-aws/master/README.md',
+        'https://raw.githubusercontent.com/rootsongjc/awesome-cloud-native/master/README.md',
+    ],
+    'gitops': ['https://raw.githubusercontent.com/weaveworks/awesome-gitops/master/README.md'],
+    'sysadmin': ['https://raw.githubusercontent.com/awesome-foss/awesome-sysadmin/master/README.md'],
     'devops': ['https://raw.githubusercontent.com/wmariuss/awesome-devops/master/README.md'],
-    'cicd': ['https://raw.githubusercontent.com/cicdops/awesome-ciandcd/master/README.md'],
+    'cicd': ['https://raw.githubusercontent.com/cicdops/awesome-ciandcd/master/README.md',
+        'https://raw.githubusercontent.com/sdras/awesome-actions/master/README.md',
+        'https://raw.githubusercontent.com/meirwah/awesome-workflow-engines/master/README.md',],
     'monitoring': ['https://raw.githubusercontent.com/crazy-canux/awesome-monitoring/master/README.md'],
 }
 
 TOOL_RE = re.compile(r'^\s*[-*]\s*\[(.*?)\]\((.*?)\)\s*[-–:]?\s*(.*)')
 HEADER_RE = re.compile(r'^#{2,4}\s+(.*)')
 GITHUB_REPO_RE = re.compile(r'^https?://(?:www\.)?github\.com/([^/\s]+)/([^/\s#?]+)', re.I)
-ENRICHED_KEYS = ('stars', 'language', 'topics', 'last_updated', 'license',
-                 'github_description', 'install_cmd', 'archived', 'forks')
+ENRICHED_KEYS = ('stars', 'language', 'topics', 'last_updated', 'license', 'github_description',
+                 'install_cmd', 'archived', 'forks', 'created_at', 'latest_release', 'checked_at', 'first_seen')
 
 rate_limited = False
+repo_calls = 0
+release_calls = 0
+TODAY = date.today().isoformat()
 
 
 def make_session():
@@ -137,8 +172,10 @@ def docker_hub_stats(url):
 def github_metadata(url):
     global rate_limited
     m = GITHUB_REPO_RE.match(url)
-    if rate_limited or not m:
+    global repo_calls
+    if rate_limited or not m or repo_calls >= REPO_BUDGET:
         return None
+    repo_calls += 1
     owner, repo = m.group(1), m.group(2).removesuffix('.git')
     try:
         r = SESSION.get(f'https://api.github.com/repos/{owner}/{repo}', headers=GH_HEADERS, timeout=20)
@@ -149,6 +186,8 @@ def github_metadata(url):
         rate_limited = True
         print('  ! GitHub rate limit reached; remaining tools keep cached metadata.')
         return None
+    if r.headers.get('X-RateLimit-Remaining') == '0':
+        rate_limited = True
     if r.status_code != 200:
         return None
     d = r.json()
@@ -161,11 +200,31 @@ def github_metadata(url):
         'language': lang,
         'topics': d.get('topics', []),
         'last_updated': d.get('pushed_at'),
+        'created_at': d.get('created_at'),
+        'checked_at': TODAY,
         'license': (d.get('license') or {}).get('name'),
         'github_description': d.get('description'),
         'archived': bool(d.get('archived')),
         'install_cmd': install,
     }
+
+
+def latest_release(tool):
+    global release_calls
+    m = GITHUB_REPO_RE.match(tool['url'])
+    if rate_limited or not m or release_calls >= RELEASE_BUDGET:
+        return
+    if (tool.get('stars') or 0) < RELEASE_MIN_STARS or tool.get('checked_at') != TODAY:
+        return
+    release_calls += 1
+    try:
+        r = SESSION.get(f'https://api.github.com/repos/{m.group(1)}/{m.group(2)}/releases/latest',
+                        headers=GH_HEADERS, timeout=20)
+        if r.status_code == 200:
+            d = r.json()
+            tool['latest_release'] = {'tag': d.get('tag_name'), 'published_at': d.get('published_at')}
+    except requests.RequestException:
+        pass
 
 
 def enrich(tool):
@@ -181,10 +240,13 @@ def _enrich(tool):
         tool.update(docker_hub_stats(tool['url']))
     else:
         meta = github_metadata(tool['url'])
+        latest_release_pending = bool(meta)
         if meta:
             tool.update(meta)
             if not tool['description'] and meta.get('github_description'):
                 tool['description'] = meta['github_description']
+        if latest_release_pending:
+            latest_release(tool)
     return tool
 
 
@@ -194,6 +256,83 @@ def load_previous():
             return {dedupe_key(t['url']): t for t in json.load(f)}
     except (OSError, ValueError):
         return {}
+
+
+def write_json(path, data, indent=None):
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=indent, ensure_ascii=False, separators=None if indent else (',', ':'))
+        f.write('\n')
+
+
+def read_json(path, default):
+    try:
+        with open(path, encoding='utf-8') as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return default
+
+
+def update_history(tools):
+    """One [date, stars] sample per tool per day, kept for HISTORY_DAYS."""
+    history = read_json(HISTORY_FILE, {})
+    cutoff = (date.today() - timedelta(days=HISTORY_DAYS)).isoformat()
+    for t in tools:
+        if t.get('stars') is None or t.get('checked_at') != TODAY:
+            continue
+        samples = [s for s in history.get(t['url'], []) if s[0] >= cutoff and s[0] != TODAY]
+        samples.append([TODAY, t['stars']])
+        history[t['url']] = samples
+    return {u: h for u, h in history.items() if u in {t['url'] for t in tools}}
+
+
+def add_trend(tool, samples):
+    """`trend` = stars gained per week; measured from history when possible, else estimated."""
+    tool.pop('trend', None)
+    tool.pop('trend_measured', None)
+    stars = tool.get('stars')
+    if stars is None or tool.get('archived'):
+        return
+    pushed = tool.get('last_updated')
+    if pushed and (datetime.now(timezone.utc) - datetime.fromisoformat(pushed.replace('Z', '+00:00'))).days > 180:
+        return
+    old = [s for s in samples if (date.today() - date.fromisoformat(s[0])).days >= 3]
+    if old:
+        base = old[-1]
+        days = max((date.today() - date.fromisoformat(base[0])).days, 1)
+        tool['trend'] = round((stars - base[1]) / days * 7)
+        tool['trend_measured'] = True
+        return
+    created = tool.get('created_at')
+    if created:
+        age = max((datetime.now(timezone.utc) - datetime.fromisoformat(created.replace('Z', '+00:00'))).days, 30)
+        if age <= 730:  # an old giant's lifetime average says nothing about momentum
+            tool['trend'] = round(stars / age * 7)
+            tool['trend_measured'] = False
+
+
+def write_changelog(new_tools):
+    log = read_json(CHANGELOG_FILE, [])
+    if new_tools:
+        top = sorted(new_tools, key=lambda t: -(t.get('stars') or 0))[:30]
+        log = [e for e in log if e['date'] != TODAY]
+        log.insert(0, {'date': TODAY, 'count': len(new_tools),
+                       'added': [{k: t.get(k) for k in ('name', 'url', 'category', 'description', 'stars')} for t in top]})
+    log = log[:52]
+    write_json(CHANGELOG_FILE, log, indent=1)
+    items = []
+    for entry in log[:10]:
+        for t in entry['added']:
+            items.append(
+                f"<item><title>{escape(t['name'])}</title><link>{escape(t['url'])}</link>"
+                f"<guid>{escape(t['url'])}</guid><category>{escape(t['category'] or '')}</category>"
+                f"<pubDate>{datetime.fromisoformat(entry['date']).strftime('%a, %d %b %Y 00:00:00 +0000')}</pubDate>"
+                f"<description>{escape(t.get('description') or '')}</description></item>")
+    feed = ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel>'
+            '<title>NETWORKINI-HUB: new tools</title>'
+            f'<link>{SITE_URL}</link><description>Newly added DevOps tools</description>'
+            + ''.join(items) + '</channel></rss>\n')
+    with open(FEED_FILE, 'w', encoding='utf-8') as f:
+        f.write(feed)
 
 
 def main():
@@ -226,21 +365,33 @@ def main():
             if key in old:
                 t[key] = old[key]
 
+    new_tools = []
+    for t in tools:
+        if previous and not BASELINE and dedupe_key(t['url']) not in previous:
+            t['first_seen'] = TODAY
+            new_tools.append(t)
+
+    # Refresh never-checked / stalest tools first; the rest keep cached metadata.
+    tools.sort(key=lambda t: t.get('checked_at') or '')
     start = time.time()
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         tools = list(pool.map(enrich, tools))
-    print(f'Enriched {len(tools)} tools in {time.time() - start:.0f}s')
+    print(f'Enriched {len(tools)} tools in {time.time() - start:.0f}s '
+          f'({repo_calls} repo + {release_calls} release lookups)')
+
+    history = update_history(tools)
+    for t in tools:
+        add_trend(t, history.get(t['url'], []))
 
     tools.sort(key=lambda t: (-(t.get('stars') or 0), t['name'].lower()))
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(tools, f, indent=2, ensure_ascii=False)
-        f.write('\n')
-    with open(META_FILE, 'w', encoding='utf-8') as f:
-        json.dump({'generated_at': datetime.now(timezone.utc).isoformat(timespec='seconds'),
-                   'total': len(tools), 'rate_limited': rate_limited}, f, indent=2)
-        f.write('\n')
-    print(f'Saved {len(tools)} tools to {OUTPUT_FILE}')
+    write_json(OUTPUT_FILE, tools, indent=2)
+    write_json(HISTORY_FILE, history)
+    write_changelog(new_tools)
+    write_json(META_FILE, {'generated_at': datetime.now(timezone.utc).isoformat(timespec='seconds'),
+                           'total': len(tools), 'new_this_run': len(new_tools),
+                           'rate_limited': rate_limited}, indent=2)
+    print(f'Saved {len(tools)} tools ({len(new_tools)} new) to {OUTPUT_FILE}')
     return 0
 
 

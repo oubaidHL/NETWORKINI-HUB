@@ -17,6 +17,9 @@ NETWORKINI-HUB is a dynamic, searchable, and always-up-to-date registry of the b
 - **🔗 Shareable views**: every filter lives in the URL.
 - **❤️ Saved tools**: bookmark tools locally and filter to them.
 - **📊 Rich metadata**: stars, forks, license, topics, freshness, archived flag, Docker pulls, install command.
+- **🔥 Trending**: stars gained per week, per domain (Infrastructure, CI/CD, Observability, Security, Data), measured from daily snapshots.
+- **✨ New**: newly discovered tools are highlighted on the homepage, listed in a changelog and published as an RSS feed (`/data/feed.xml`).
+- **🧱 Stack builder**: pick needs (containers, IaC, GitOps, security…), get suggested tools, export your stack as Markdown or a shareable link.
 - **🖥️ Grid / list views**, dark/light/system theme, keyboard-friendly, skeleton loading and error retry.
 - **🛠️ Automated**: a daily GitHub Action refreshes the data (keeping cached metadata if rate-limited) and redeploys the site.
 
