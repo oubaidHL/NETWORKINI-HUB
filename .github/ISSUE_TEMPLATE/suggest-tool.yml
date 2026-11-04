@@ -1,0 +1,21 @@
+name: Suggest a tool
+description: Propose a DevOps tool, or report a wrong/spam entry
+labels: [tool-suggestion]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Repository URL
+      placeholder: https://github.com/owner/repo
+    validations: { required: true }
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this?
+      options: [Add this tool, Remove this tool (spam / off-topic), Fix wrong information]
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: One or two sentences. Do not include secrets or personal data (this issue is public).

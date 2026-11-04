@@ -1,21 +1,32 @@
+import { useState } from 'react';
 import { Trophy, Star } from 'lucide-react';
+import { toolKey } from '../hooks/useUrlFilters';
 import { DOMAINS, formatNumber, trendLabel, timeAgo } from '../utils';
 
 const MEDALS = ['🥇', '🥈', '🥉'];
 
-const TopWeek = ({ tools, domain, onDomain, onOpen, generatedAt }) => {
+const TopWeek = ({ tools, domain, onDomain, onOpen, generatedAt, interactions }) => {
+  const [view, setView] = useState('stars'); // stars | community
   const cats = DOMAINS[domain]?.cats;
-  const ranked = tools
+  const hasCommunity = Object.keys(interactions || {}).length > 0;
+  const score = (t) => interactions?.[toolKey(t.url)] || 0;
+  const ranked = (view === 'community' ? tools.filter((t) => score(t) > 0 && (!cats || cats.includes(t.category))).sort((a, b) => score(b) - score(a) || (b.stars || 0) - (a.stars || 0)).slice(0, 25) : tools
     .filter((t) => t.trend > 0 && !t.archived && (!cats || cats.includes(t.category)))
     // Measured weekly gains outrank estimates; ties fall back to total stars.
     .sort((a, b) => (b.trend_measured ? 1 : 0) - (a.trend_measured ? 1 : 0) || b.trend - a.trend || (b.stars || 0) - (a.stars || 0))
-    .slice(0, 25);
+    .slice(0, 25));
   const measured = ranked.some((t) => t.trend_measured);
 
   return (
     <div className="panel">
       <div className="panel-head">
         <h2><Trophy size={20} /> Top of the week</h2>
+        {hasCommunity && (
+          <div className="chips">
+            <button className={`chip ${view === 'stars' ? 'active' : ''}`} onClick={() => setView('stars')}>Stars gained</button>
+            <button className={`chip ${view === 'community' ? 'active' : ''}`} onClick={() => setView('community')}>Community interest</button>
+          </div>
+        )}
         <div className="chips">
           {Object.entries(DOMAINS).map(([key, { label }]) => (
             <button key={key} className={`chip small ${domain === key ? 'active' : ''}`} onClick={() => onDomain(key)}>{label}</button>
@@ -39,7 +50,9 @@ const TopWeek = ({ tools, domain, onDomain, onOpen, generatedAt }) => {
                 <small>{t.description || t.github_description}</small>
               </button>
               <div className="top-nums">
-                <span className="badge-hot">{trendLabel(t)}{t.trend_measured ? '' : ' est.'}</span>
+                {view === 'community'
+                  ? <span className="badge-hot">{score(t)} interactions</span>
+                  : <span className="badge-hot">{trendLabel(t)}{t.trend_measured ? '' : ' est.'}</span>}
                 <span className="saved-stars"><Star size={12} /> {formatNumber(t.stars || 0)}</span>
               </div>
             </li>

@@ -20,6 +20,7 @@ NETWORKINI-HUB is a dynamic, searchable, and always-up-to-date registry of the b
 - **🔥 Trending**: stars gained per week, per domain (Infrastructure, CI/CD, Observability, Security, Data), measured from daily snapshots.
 - **✨ New**: newly discovered tools are highlighted on the homepage, listed in a changelog and published as an RSS feed (`/data/feed.xml`).
 - **🧱 Stack builder**: pick needs (containers, IaC, GitOps, security…), get suggested tools, export your stack as Markdown or a shareable link.
+- **⌨️ Command palette** (`Ctrl/⌘ + K`) to jump to any tool, category or page; category intros; "Suggest or report a tool" issue form.
 - **🖥️ Grid / list views**, dark/light/system theme, keyboard-friendly, skeleton loading and error retry.
 - **🛠️ Automated**: a daily GitHub Action refreshes the data (keeping cached metadata if rate-limited) and redeploys the site.
 
@@ -88,6 +89,8 @@ After each daily refresh, `scripts/notify.py` announces newly discovered tools o
 | Variable | `DISCORD_INVITE` | invite link shown on the site |
 | Secrets | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | post to a Telegram channel |
 | Variable | `TELEGRAM_CHANNEL` | channel link shown on the site |
+| Variable | `GOATCOUNTER_CODE` | optional: your [GoatCounter](https://www.goatcounter.com) site code, enables anonymous tool-open/save counts (no cookies, honours Do Not Track) |
+| Secret | `GOATCOUNTER_TOKEN` | optional: GoatCounter API token so the daily job can build the "Community interest" ranking |
 
 Variables are public settings; secrets stay private to Actions.
 

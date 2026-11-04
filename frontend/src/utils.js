@@ -19,6 +19,22 @@ export const isActive = (iso) => !!iso && Date.now() - new Date(iso).getTime() <
 
 export const capitalize = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
+export const CATEGORY_INFO = {
+  docker: 'Containers, images, registries and local runtimes.',
+  kubernetes: 'Orchestration, Helm charts, operators, cluster tooling and security.',
+  terraform: 'Infrastructure as Code: modules, providers, linters and test tools.',
+  ansible: 'Configuration management, roles, playbooks and automation.',
+  cicd: 'Pipelines, runners, GitHub Actions and workflow engines.',
+  devops: 'General DevOps tooling, practices and platform engineering.',
+  monitoring: 'Metrics, alerting, dashboards and uptime checks.',
+  observability: 'Tracing, logging, SRE practice and chaos engineering.',
+  security: 'DevSecOps, scanners, hardening and secrets management.',
+  databases: 'Database tooling: migrations, backups, GUIs and monitoring.',
+  cloud: 'AWS and cloud-native ecosystem projects.',
+  gitops: 'Git-driven delivery, Argo CD, Flux and friends.',
+  sysadmin: 'Self-hosted and sysadmin tools for running your own infrastructure.',
+};
+
 export const SORTS = {
   stars: { label: 'Most stars', fn: (a, b) => (b.stars || 0) - (a.stars || 0) },
   updated: { label: 'Recently updated', fn: (a, b) => (b.last_updated || '').localeCompare(a.last_updated || '') },

@@ -14,9 +14,11 @@ import WhatsNew from './components/WhatsNew';
 import StackBuilder from './components/StackBuilder';
 import SavedView from './components/SavedView';
 import TopWeek from './components/TopWeek';
+import CommandPalette from './components/CommandPalette';
+import { track } from './analytics';
 import useLocalStorage from './hooks/useLocalStorage';
 import useUrlFilters, { toolKey, keyToUrl } from './hooks/useUrlFilters';
-import { SORTS, isActive } from './utils';
+import { SORTS, isActive, CATEGORY_INFO, capitalize } from './utils';
 import './App.css';
 
 const ToolModal = lazy(() => import('./components/ToolModal'));
@@ -40,6 +42,8 @@ const FUSE_OPTIONS = {
 function App() {
   const [tools, setTools] = useState([]);
   const [meta, setMeta] = useState(null);
+  const [interactions, setInteractions] = useState({});
+  const [showPalette, setShowPalette] = useState(false);
   const [status, setStatus] = useState('loading'); // loading | ready | error
   const [compare, setCompare] = useState([]);
   const [showCompare, setShowCompare] = useState(false);
@@ -86,7 +90,11 @@ function App() {
   }, [setRawFavorites, aliasMap]);
 
   const toggleFav = useCallback((url) => {
-    setFavorites((favs) => (favs.includes(url) ? favs.filter((u) => u !== url) : [...favs, url]));
+    setFavorites((favs) => {
+      if (favs.includes(url)) return favs.filter((u) => u !== url);
+      track('save', toolKey(url), url);
+      return [...favs, url];
+    });
   }, [setFavorites]);
 
   const toggleCompare = useCallback((url) => {
@@ -105,6 +113,7 @@ function App() {
       })
       .then((data) => { setTools(data); setStatus('ready'); })
       .catch((err) => { console.error('Error fetching tools:', err); setStatus('error'); });
+    fetch(`${DATA_URL}interactions.json`).then((r) => (r.ok ? r.json() : null)).then((d) => d && setInteractions(d.scores || {})).catch(() => {});
     fetch(`${DATA_URL}meta.json`).then((r) => (r.ok ? r.json() : null)).then(setMeta).catch(() => {});
   }, []);
 
@@ -114,7 +123,10 @@ function App() {
   useEffect(() => {
     const onKey = (e) => {
       const typing = ['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement?.tagName);
-      if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'f')) {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        setShowPalette((v) => !v);
+      } else if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
         e.preventDefault();
         searchInputRef.current?.focus();
       } else if (e.key === '/' && !typing) {
@@ -172,7 +184,10 @@ function App() {
   }, [searched, filters, favorites]);
 
   const selectedTool = useMemo(() => (filters.tool ? keyToUrl(tools, filters.tool) : null), [tools, filters.tool]);
-  const openTool = useCallback((t) => update({ tool: toolKey(t.url) }), [update]);
+  const openTool = useCallback((t) => {
+    track('tool', toolKey(t.url), t.name);
+    update({ tool: toolKey(t.url) });
+  }, [update]);
   const related = useMemo(() => {
     if (!selectedTool) return [];
     const mine = new Set(selectedTool.topics || []);
@@ -250,6 +265,7 @@ function App() {
             onDomain={(dom) => update({ dom, tool: filters.tool })}
             onOpen={openTool}
             generatedAt={meta?.generated_at}
+            interactions={interactions}
           />
         )}
         {status === 'ready' && filters.mode === 'stack' && (
@@ -290,6 +306,13 @@ function App() {
           setView={setView}
           favCount={favorites.length}
         />
+
+        {status === 'ready' && filters.cat !== 'all' && CATEGORY_INFO[filters.cat] && (
+          <div className="category-intro" data-cat={filters.cat}>
+            <h2>{capitalize(filters.cat)}</h2>
+            <p>{CATEGORY_INFO[filters.cat]}</p>
+          </div>
+        )}
 
         {status === 'ready' && !isFiltered && page === 1 && (
           <Highlights
@@ -400,7 +423,7 @@ function App() {
             <div className="modal-body">
               <div className="shortcut-list">
                 {[
-                  [['Ctrl/⌘', 'K'], 'Focus search'],
+                  [['Ctrl/⌘', 'K'], 'Command palette: jump anywhere'],
                   [['/'], 'Focus search'],
                   [['?'], 'Open this help'],
                   [['Esc'], 'Close dialogs / leave search'],
@@ -426,10 +449,21 @@ function App() {
         </div>
       )}
 
+      {showPalette && (
+        <CommandPalette
+          fuse={fuse}
+          categories={categories}
+          onClose={() => setShowPalette(false)}
+          onTool={openTool}
+          onTab={(mode) => update({ mode, tool: filters.tool })}
+          onCategory={(cat) => update({ mode: 'browse', cat })}
+        />
+      )}
+
       <Toast message={toast} />
 
       <footer>
-        <p>Data from community <em>Awesome</em> lists, refreshed daily. <button className="link-btn" onClick={() => update({ mode: 'new' })}>Follow new tools</button></p>
+        <p>Data from community <em>Awesome</em> lists, refreshed daily. <button className="link-btn" onClick={() => update({ mode: 'new' })}>Follow new tools</button> · <a href="https://github.com/oubaidHL/NETWORKINI-HUB/issues/new?template=suggest-tool.yml" target="_blank" rel="noopener noreferrer">Suggest or report a tool</a></p>
       </footer>
     </div>
   );
