@@ -11,9 +11,13 @@ const feedUrl = (name) => new URL(`${DATA_URL}${name}`, window.location.href).hr
 
 const FollowBox = ({ categories = [], onCopy }) => {
   const [state, setState] = useState('idle'); // idle | sending | done | error
+  const [shownAt] = useState(() => Date.now());
 
   const subscribe = async (e) => {
     e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    // Bots fill hidden fields and submit instantly; pretend success, send nothing.
+    if (form.get('website') || Date.now() - shownAt < 2000) { setState('done'); return; }
     setState('sending');
     try {
       // Buttondown's embed endpoint has no CORS headers, so the reply is opaque;
@@ -21,7 +25,7 @@ const FollowBox = ({ categories = [], onCopy }) => {
       await fetch(`https://buttondown.com/api/emails/embed-subscribe/${encodeURIComponent(BUTTONDOWN_USER)}`, {
         method: 'POST',
         mode: 'no-cors',
-        body: new FormData(e.currentTarget),
+        body: form,
       });
       setState('done');
     } catch {
@@ -43,6 +47,7 @@ const FollowBox = ({ categories = [], onCopy }) => {
           <Mail size={18} />
           <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
           <input type="hidden" name="embed" value="1" />
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp-field" />
           <button type="submit" className="chip active" disabled={state === 'sending'}>
             {state === 'sending' ? 'Subscribing…' : 'Subscribe'}
           </button>

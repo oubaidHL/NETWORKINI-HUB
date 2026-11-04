@@ -942,3 +942,16 @@ header { margin-bottom: 1.25rem; }
   .panel { padding: 1rem; }
   .panel-head { flex-wrap: wrap; gap: 0.5rem; }
 }
+
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.top-list { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 0.5rem; }
+.top-list li { display: flex; align-items: center; gap: 0.9rem; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 0.65rem 0.9rem; }
+.rank { width: 2rem; text-align: center; font-weight: 700; color: var(--text-secondary); font-size: 1.1rem; }
+.top-main { all: unset; cursor: pointer; flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.6rem; }
+.top-main small { flex-basis: 100%; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.top-nums { display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem; }
+@media (max-width: 640px) { .top-list li { flex-wrap: wrap; } .top-nums { flex-direction: row; } }
+.top-list, .saved-list { grid-template-columns: minmax(0, 1fr); }
+.top-list li, .saved-list li { min-width: 0; }
+.top-main, .saved-main { overflow: hidden; }

@@ -1,0 +1,2 @@
+# Repositories or owners that must never be listed (spam, malware, off-topic).
+# One entry per line: `owner` or `owner/repo`, case-insensitive. Lines starting with # are ignored.

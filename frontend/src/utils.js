@@ -47,3 +47,13 @@ export const DOMAINS = {
 };
 
 export const trendLabel = (t) => (t.trend > 0 ? `+${formatNumber(t.trend)}★/wk` : null);
+
+/** Only ever render http(s) links from scraped data (blocks javascript: / data: URLs). */
+export const safeHref = (url) => {
+  try {
+    const u = new URL(url);
+    return u.protocol === 'https:' || u.protocol === 'http:' ? u.href : undefined;
+  } catch {
+    return undefined;
+  }
+};

@@ -1,5 +1,5 @@
 import { Star, ExternalLink, Copy, Download, Heart, Archive, GitCompare } from 'lucide-react';
-import { formatNumber, timeAgo, isActive, newness, trendLabel } from '../utils';
+import { formatNumber, timeAgo, isActive, newness, trendLabel, safeHref } from '../utils';
 
 const ToolCard = ({ tool, onClick, isFav, onToggleFav, onCopy, inCompare, onToggleCompare, onFilter, hot }) => {
   const {
@@ -86,7 +86,7 @@ const ToolCard = ({ tool, onClick, isFav, onToggleFav, onCopy, inCompare, onTogg
               <Copy size={16} />
             </button>
           )}
-          <a href={url} target="_blank" rel="noopener noreferrer" className="icon-btn" onClick={(e) => e.stopPropagation()} title="Open source">
+          <a href={safeHref(url)} target="_blank" rel="noopener noreferrer" className="icon-btn" onClick={(e) => e.stopPropagation()} title="Open source">
             <ExternalLink size={18} />
           </a>
         </div>

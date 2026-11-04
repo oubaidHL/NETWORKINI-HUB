@@ -76393,26 +76393,6 @@
   },
   {
     "name": "go-devops",
-    "url": "https://godoc.org/github.com/crazy-canux/go-devops",
-    "description": "Tons of devops tools for devops related project.",
-    "category": "monitoring",
-    "subcategory": "go-devops",
-    "stars": 9,
-    "language": "Go",
-    "topics": [
-      "automation",
-      "development",
-      "devops",
-      "operation",
-      "testing"
-    ],
-    "last_updated": "2023-05-11T20:38:56Z",
-    "license": "GNU General Public License v3.0",
-    "github_description": "Tons of devops tools for devops related project.",
-    "install_cmd": "go get github.com/crazy-canux/go-devops"
-  },
-  {
-    "name": "go-devops",
     "url": "https://github.com/crazy-canux/go-devops",
     "description": "Tons of devops tools for devops related project.",
     "category": "monitoring",
@@ -80265,14 +80245,6 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Actions Hub",
-    "url": "https://github.com/actionshub",
-    "description": "",
-    "category": "cicd",
-    "subcategory": "Collection of Actions",
-    "first_seen": "2026-11-04"
-  },
-  {
     "name": "agent-watch",
     "url": "https://github.com/soul-sol/agent-watch",
     "description": "POSIX shell monitor that classifies background Claude Code and Codex jobs from process, exit-code, and log-tail signals, with credential-free transport preflight.",
@@ -80309,13 +80281,6 @@
     "trend_measured": false
   },
   {
-    "name": "All you need to know to get started with the Kube Scheduler",
-    "url": "https://gist.github.com/luisalfonsopreciado/40a0fc2319241d517832affdce2bc1ff",
-    "description": "",
-    "category": "kubernetes",
-    "subcategory": "Kubernetes Scheduler. Kube Scheduler"
-  },
-  {
     "name": "Anevicon",
     "url": "https://github.com/rozgo/anevicon",
     "description": "The most powerful UDP-based load generator, written in Rust.",
@@ -80329,13 +80294,6 @@
     "description": "Takes the output of Ansible's fact gathering and converts it into a static HTML page.",
     "category": "ansible",
     "subcategory": "Tools"
-  },
-  {
-    "name": "Ansible Lockdown",
-    "url": "https://github.com/ansible-lockdown",
-    "description": "Ansible content to assist in both auditing and remediating against CIS or STIG baseline compliance for OS's and Applications.",
-    "category": "ansible",
-    "subcategory": "Playbooks, Roles and Collections"
   },
   {
     "name": "ansible-roster",
@@ -80417,22 +80375,6 @@
     "install_cmd": "go install github.com/nudgebee/application-profiler@latest"
   },
   {
-    "name": "AWS Labs",
-    "url": "https://github.com/awslabs",
-    "description": "",
-    "category": "security",
-    "subcategory": "Initiatives",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "aws-quickstart",
-    "url": "https://github.com/aws-quickstart",
-    "description": "Official repository for AWS Quick Start.",
-    "category": "cloud",
-    "subcategory": "Accompanying Repos",
-    "first_seen": "2026-11-04"
-  },
-  {
     "name": "ax-lint",
     "url": "https://github.com/royalpinto007/ax-lint",
     "description": "Linter for Google AX manifests that checks Kubernetes-style YAML for contract errors plus policy warnings, offline and CI-ready.",
@@ -80487,33 +80429,11 @@
     "subcategory": "Deployment & Platforms"
   },
   {
-    "name": "Bosun",
-    "url": "https://github.com/bosun-monitor",
-    "description": "Bosun written in Go.",
-    "category": "monitoring",
-    "subcategory": "Alerting"
-  },
-  {
-    "name": "calico",
-    "url": "https://github.com/projectcalico",
-    "description": "Cloud native networking and network security.",
-    "category": "cloud",
-    "subcategory": "Networking & Connectivity",
-    "first_seen": "2026-11-04"
-  },
-  {
     "name": "Celery-Nagios-Plugin",
     "url": "https://github.com/wilhelm-murdoch/Celery-Nagios-Plugin",
     "description": "For celery.",
     "category": "monitoring",
     "subcategory": "Monitoring Application"
-  },
-  {
-    "name": "Chaos Toolkit",
-    "url": "https://github.com/chaostoolkit",
-    "description": "The Open Source Platform for Chaos Engineering. oss",
-    "category": "devops",
-    "subcategory": "Chaos Engineering"
   },
   {
     "name": "check events",
@@ -80534,22 +80454,6 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "circleci",
-    "url": "https://github.com/circleci",
-    "description": "Continuous Integration and Deployment.",
-    "category": "cloud",
-    "subcategory": "Continuous Delivery & GitOps",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "cloudfoundry",
-    "url": "https://github.com/cloudfoundry",
-    "description": "Cloud Foundry is an open source, multi cloud application platform as a service (PaaS) governed by the Cloud Foundry Foundation.",
-    "category": "cloud",
-    "subcategory": "Dashboards & Portals",
-    "first_seen": "2026-11-04"
-  },
-  {
     "name": "coffeesaint",
     "url": "https://github.com/flok99/CoffeeSaint",
     "description": "Coffeesaint source code.",
@@ -80562,14 +80466,6 @@
     "description": "A Debugging Tool for your Kubernetes Deployments.",
     "category": "cloud",
     "subcategory": "Diagnostics & Troubleshooting",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "contiv",
-    "url": "https://github.com/contiv",
-    "description": "Container networking for various use cases.",
-    "category": "cloud",
-    "subcategory": "Networking & Connectivity",
     "first_seen": "2026-11-04"
   },
   {
@@ -80586,14 +80482,6 @@
     "description": "Instant thin cloning for PostgreSQL to scale the development process.",
     "category": "databases",
     "subcategory": "Cloning",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "dcos",
-    "url": "https://github.com/dcos",
-    "description": "Datacenter Operating System.",
-    "category": "cloud",
-    "subcategory": "Workload Orchestration & Scheduling",
     "first_seen": "2026-11-04"
   },
   {
@@ -80646,13 +80534,6 @@
     "description": "Docker API client for JavaScript, automatically generated from Swagger API definition from moby repository.",
     "category": "docker",
     "subcategory": "API Client"
-  },
-  {
-    "name": "Docker Hub",
-    "url": "https://hub.docker.com",
-    "description": "",
-    "category": "docker",
-    "subcategory": "Official Projects"
   },
   {
     "name": "DockProc",
@@ -80719,64 +80600,12 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Epsagon",
-    "url": "https://github.com/epsagon",
-    "description": "Application Monitoring Built for Containers and Serverless.",
-    "category": "observability",
-    "subcategory": "12. Application Performance Monitoring Solutions (APM)",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "ExplorViz",
-    "url": "https://github.com/ExplorViz",
-    "description": "Live trace visualization for large software landscapes.",
-    "category": "observability",
-    "subcategory": "General & Tools",
-    "first_seen": "2026-11-04"
-  },
-  {
     "name": "Expose slug of some GitHub variables",
     "url": "https://github.com/marketplace/actions",
     "description": "",
     "category": "cicd",
     "subcategory": "Utility",
     "first_seen": "2026-11-04"
-  },
-  {
-    "name": "Ganglia",
-    "url": "https://github.com/ganglia",
-    "description": "Related source code.",
-    "category": "monitoring",
-    "subcategory": "Ganglia"
-  },
-  {
-    "name": "Get applied and effective apiVersion from Kubernetes objects",
-    "url": "https://gist.github.com/ninlil/affbf7514d4e74c7634e77f47e172236",
-    "description": "",
-    "category": "kubernetes",
-    "subcategory": "Kubernetes Scripts"
-  },
-  {
-    "name": "Getting a shell on each node",
-    "url": "https://gist.github.com/xandout/8d24558c75c53f3cb8bf0a97ec25fcfc",
-    "description": "Learn how you can use a DaemonSet to expose an SSH shell on each node of your cluster (even if you don't have SSH installed)",
-    "category": "kubernetes",
-    "subcategory": "Kubernetes DaemonSets"
-  },
-  {
-    "name": "Getting the Gist of GitHub Actions",
-    "url": "https://gist.github.com/br3ndonland/f9c753eb27381f97336aa21b8d932be6",
-    "description": "",
-    "category": "cicd",
-    "subcategory": "Tutorials",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "GitHub",
-    "url": "https://github.com",
-    "description": "Helps developers store and manage their code, as well as track and control changes to their code. free paid",
-    "category": "devops",
-    "subcategory": "Source Code Management"
   },
   {
     "name": "Github actions",
@@ -80786,92 +80615,11 @@
     "subcategory": "Continuous Integration & Delivery"
   },
   {
-    "name": "GitHub Actions for Logtalk and Prolog",
-    "url": "https://github.com/logtalk-actions",
-    "description": "",
-    "category": "cicd",
-    "subcategory": "Collection of Actions",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "GitHub Actions for Rust",
-    "url": "https://github.com/actions-rs",
-    "description": "",
-    "category": "cicd",
-    "subcategory": "Collection of Actions",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "GitHub CLI",
-    "url": "https://cli.github.com",
-    "description": "Official GitHub command-line tool for pull requests, issues and workflows. oss",
-    "category": "devops",
-    "subcategory": "Source Code Management"
-  },
-  {
-    "name": "GitHub Container Registry",
-    "url": "https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry",
-    "description": "GitHub's solution for storing and managing Docker images, with tight integration into GitHub Actions.",
-    "category": "docker",
-    "subcategory": "Registry"
-  },
-  {
-    "name": "Gitlab",
-    "url": "https://gitlab.com",
-    "description": "Entire DevOps lifecycle in one application. oss paid",
-    "category": "devops",
-    "subcategory": "Source Code Management"
-  },
-  {
-    "name": "gitlab",
-    "url": "https://about.gitlab.com",
-    "description": "Open source self-hosted Git management software",
-    "category": "cicd",
-    "subcategory": "Source Code Management"
-  },
-  {
-    "name": "GitLab CI",
-    "url": "https://about.gitlab.com/solutions/continuous-integration",
-    "description": "Gitlab's built-in, full-featured CI/CD solution. (Source Code) MIT Ruby",
-    "category": "sysadmin",
-    "subcategory": "Continuous Integration & Continuous Deployment",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "Gitlab CI",
-    "url": "https://about.gitlab.com/product/continuous-integration",
-    "description": "pipelines build, test, deploy, and monitor your code as part of a single, integrated workflow. oss paid",
-    "category": "devops",
-    "subcategory": "Continuous Integration & Delivery"
-  },
-  {
-    "name": "GitLab CI",
-    "url": "https://about.gitlab.com/gitlab-ci",
-    "description": "Based off of ruby. They also provide GitLab, which manages git repositories.",
-    "category": "cicd",
-    "subcategory": "Online Build System"
-  },
-  {
-    "name": "GitLab Container Registry",
-    "url": "https://docs.gitlab.com/user/packages/container_registry",
-    "description": "Registry focused on using its images in GitLab CI.",
-    "category": "docker",
-    "subcategory": "Registry"
-  },
-  {
     "name": "GitLab Runner",
     "url": "https://gitlab.com/gitlab-org/gitlab-runner",
     "description": "GitLab has integrated CI to test, build and deploy your code with the use of GitLab runners.",
     "category": "docker",
     "subcategory": "CI/CD"
-  },
-  {
-    "name": "grpc",
-    "url": "https://github.com/grpc",
-    "description": "A high performance, open source, general-purpose RPC framework.",
-    "category": "cloud",
-    "subcategory": "RPC Frameworks",
-    "first_seen": "2026-11-04"
   },
   {
     "name": "GuardRails",
@@ -80880,28 +80628,6 @@
     "category": "security",
     "subcategory": "Development",
     "first_seen": "2026-11-04"
-  },
-  {
-    "name": "How our production team runs the weekly on-call handover",
-    "url": "https://about.gitlab.com/blog/2018/03/14/the-on-call-handover-at-gitlab",
-    "description": "",
-    "category": "observability",
-    "subcategory": "On-Call",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "Hubot",
-    "url": "https://hubot.github.com",
-    "description": "A customizable, life embetterment robot. (Source Code) MIT Nodejs",
-    "category": "sysadmin",
-    "subcategory": "ChatOps"
-  },
-  {
-    "name": "icinga-addons",
-    "url": "https://github.com/Icinga",
-    "description": "Icinga addons.",
-    "category": "monitoring",
-    "subcategory": "Nagios Monitoring Addons"
   },
   {
     "name": "ingero",
@@ -80939,13 +80665,6 @@
     "install_cmd": null
   },
   {
-    "name": "Jaeger",
-    "url": "https://github.com/jaegertracing",
-    "description": "Distributed Tracing System",
-    "category": "monitoring",
-    "subcategory": "Jaeger"
-  },
-  {
     "name": "k100s",
     "url": "https://github.com/AndrewVos/k100s",
     "description": "Free, open-source desktop Kubernetes app for browsing pods, streaming logs, and opening pod shells.",
@@ -80965,14 +80684,6 @@
     "install_cmd": "npm install k100s",
     "trend": 0,
     "trend_measured": false
-  },
-  {
-    "name": "k8guard",
-    "url": "https://github.com/k8guard",
-    "description": "An auditing system for Kubernetes.",
-    "category": "cloud",
-    "subcategory": "Security & Compliance",
-    "first_seen": "2026-11-04"
   },
   {
     "name": "kismatic",
@@ -81024,13 +80735,6 @@
     "github_description": "KubeDB CLI",
     "archived": false,
     "install_cmd": "go install github.com/k8sdb/cli@latest"
-  },
-  {
-    "name": "Kubernetes SIGs",
-    "url": "https://github.com/kubernetes-sigs",
-    "description": "Org for Kubernetes SIG-related work.",
-    "category": "kubernetes",
-    "subcategory": "Kubernetes SIG's Repos"
   },
   {
     "name": "kubernetes-supply-chain-admission",
@@ -81100,102 +80804,12 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Moira",
-    "url": "https://github.com/moira-alert",
-    "description": "Most powerful alerting system, backed by Graphite.",
-    "category": "observability",
-    "subcategory": "Alerts",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "monitoring-plugins",
-    "url": "https://github.com/monitoring-plugins",
-    "description": "Monitoring plugins source code.",
-    "category": "monitoring",
-    "subcategory": "Nagios Monitoring Plugins"
-  },
-  {
-    "name": "My week shadowing a GitLab Site Reliability Engineer",
-    "url": "https://about.gitlab.com/blog/2019/12/16/sre-shadow",
-    "description": "",
-    "category": "observability",
-    "subcategory": "On-Call",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "naemon-addons",
-    "url": "https://github.com/naemon",
-    "description": "Naemon addons.",
-    "category": "monitoring",
-    "subcategory": "Nagios Monitoring Addons"
-  },
-  {
-    "name": "nagios-addons",
-    "url": "https://github.com/NagiosEnterprises",
-    "description": "Nagios addons.",
-    "category": "monitoring",
-    "subcategory": "Nagios Monitoring Addons"
-  },
-  {
-    "name": "Nebula",
-    "url": "https://github.com/nebula-orchestrator",
-    "description": "A Docker orchestration tool designed to manage massive scale distributed clusters.",
-    "category": "docker",
-    "subcategory": "Orchestration"
-  },
-  {
-    "name": "new relic",
-    "url": "https://github.com/newrelic",
-    "description": "New relic written in Ruby.",
-    "category": "monitoring",
-    "subcategory": "Collector"
-  },
-  {
-    "name": "NexClipper",
-    "url": "https://github.com/NexClipper",
-    "description": "Full stack visibility and intelligence for cloud native applications.",
-    "category": "observability",
-    "subcategory": "14. Observability as a Service",
-    "first_seen": "2026-11-04"
-  },
-  {
     "name": "gulp-aws-splash",
     "url": "https://github.com/niftylettuce/gulp-aws-splash",
     "description": "Open-source LaunchRock alternative. Build beautiful splash pages.",
     "category": "cloud",
     "subcategory": "Miscellaneous Repos",
     "first_seen": "2026-11-04"
-  },
-  {
-    "name": "Official Actions organization",
-    "url": "https://github.com/actions",
-    "description": "",
-    "category": "cicd",
-    "subcategory": "Official Resources",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "Official Documentation",
-    "url": "https://help.github.com/en/actions",
-    "description": "",
-    "category": "cicd",
-    "subcategory": "Official Resources",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "opencensus",
-    "url": "https://github.com/census-instrumentation",
-    "description": "A single distribution of libraries that automatically collect traces and metrics from your app, display them locally, and send them to any backend.",
-    "category": "cloud",
-    "subcategory": "Tracing & Profiling",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "opentelementry",
-    "url": "https://github.com/open-telemetry",
-    "description": "",
-    "category": "monitoring",
-    "subcategory": "OpenTelementry"
   },
   {
     "name": "OpenTelemetry Collector Recipes",
@@ -81238,21 +80852,6 @@
     "first_seen": "2026-11-04",
     "trend": 0,
     "trend_measured": false
-  },
-  {
-    "name": "opentracing",
-    "url": "https://github.com/opentracing",
-    "description": "Consistent, expressive, vendor-neutral APIs for distributed tracing and context propagation.",
-    "category": "cloud",
-    "subcategory": "Tracing & Profiling",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "pagerduty",
-    "url": "https://github.com/PagerDuty",
-    "description": "Related source code.",
-    "category": "monitoring",
-    "subcategory": "PagerDuty"
   },
   {
     "name": "pgWikiDont",
@@ -81316,14 +80915,6 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "postgres_queries_and_commands.sql",
-    "url": "https://gist.github.com/rgreenjr/3637525",
-    "description": "Useful PostgreSQL Queries and Commands.",
-    "category": "databases",
-    "subcategory": "Scripts",
-    "first_seen": "2026-11-04"
-  },
-  {
     "name": "Pull Request Description Enforcer",
     "url": "https://github.com/derkinderfietsen/pr-description-enforcer",
     "description": "Enforces description on pull requests.",
@@ -81340,14 +80931,6 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "rabbitmq",
-    "url": "https://github.com/rabbitmq",
-    "description": "RabbitMQ is the most widely deployed open source message broker.",
-    "category": "cloud",
-    "subcategory": "Streaming & Messaging",
-    "first_seen": "2026-11-04"
-  },
-  {
     "name": "rafter",
     "url": "https://github.com/kyma-project/rafter",
     "description": "Kubernetes-native S3-like files/assets store based on CRDs and powered by MinIO.",
@@ -81361,21 +80944,6 @@
     "description": "Realopinsight source code.",
     "category": "monitoring",
     "subcategory": "Visualization"
-  },
-  {
-    "name": "redhat-cop",
-    "url": "https://github.com/search?q=topic%3Aansible+org%3Aredhat-cop&type=Repositories&s=updated&o=desc",
-    "description": "Repositories with Ansible topic of the Red Hat Communities of Practice project.",
-    "category": "ansible",
-    "subcategory": "Playbooks, Roles and Collections"
-  },
-  {
-    "name": "rsocket",
-    "url": "https://github.com/rsocket",
-    "description": "Streaming message protocol with Reactive Extension/Stream semantics.",
-    "category": "cloud",
-    "subcategory": "RPC Frameworks",
-    "first_seen": "2026-11-04"
   },
   {
     "name": "lean-package-validator-action",
@@ -81403,40 +80971,11 @@
     "install_cmd": null
   },
   {
-    "name": "Sangam Biradar",
-    "url": "https://github.com/sangam14",
-    "description": "",
-    "category": "kubernetes",
-    "subcategory": "Twitter Accounts"
-  },
-  {
     "name": "Scanmycode CE (Community Edition)",
     "url": "https://github.com/marcinguy/scanmycode-ce",
     "description": "Code Scanning/SAST/Static Analysis/Linting using many tools/Scanners with One Report. Currently supports: PHP, Java, Scala, Python, Ruby, Javascript, GO, Secret Scanning, Dependency Confusion, Trojan Source, Open Source and Proprietary Checks (total ca. 1000 checks)",
     "category": "security",
     "subcategory": "Scanning / Pentesting",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "Sensu-plugins",
-    "url": "https://github.com/sensu-plugins",
-    "description": "Sensu plugins source code.",
-    "category": "monitoring",
-    "subcategory": "Sensu"
-  },
-  {
-    "name": "server density",
-    "url": "https://github.com/serverdensity",
-    "description": "Related source code.",
-    "category": "monitoring",
-    "subcategory": "Server Density"
-  },
-  {
-    "name": "servicecomb",
-    "url": "https://github.com/ServiceComb",
-    "description": "ServiceComb is a microservice framework that provides an easy way to develop and deploy applications in the cloud.",
-    "category": "cloud",
-    "subcategory": "Service Mesh",
     "first_seen": "2026-11-04"
   },
   {
@@ -81448,26 +80987,11 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Shinken exchange",
-    "url": "https://github.com/shinken-monitoring",
-    "description": "Shinken exchange.",
-    "category": "monitoring",
-    "subcategory": "Shinken"
-  },
-  {
     "name": "EC2Box",
     "url": "https://github.com/skavanagh/EC2Box",
     "description": "A web-based SSH console to manage multiple instances simultaneously.",
     "category": "cloud",
     "subcategory": "Elastic Compute Cloud",
-    "first_seen": "2026-11-04"
-  },
-  {
-    "name": "Spam Scanner",
-    "url": "https://github.com/spamscanner",
-    "description": "Anti-Spam Scanning Service and Anti-Spam API by @niftylettuce.",
-    "category": "security",
-    "subcategory": "Anti-Spam",
     "first_seen": "2026-11-04"
   },
   {
@@ -81559,20 +81083,6 @@
     "checked_at": "2026-11-04",
     "trend": 0,
     "trend_measured": false
-  },
-  {
-    "name": "Terraform AWS Modules",
-    "url": "https://github.com/terraform-aws-modules",
-    "description": "+ meta-configurations repository",
-    "category": "terraform",
-    "subcategory": "Community"
-  },
-  {
-    "name": "Terraform Community Modules",
-    "url": "https://github.com/terraform-community-modules",
-    "description": "",
-    "category": "terraform",
-    "subcategory": "Community"
   },
   {
     "name": "terraform-azurerm-aks",
@@ -81835,20 +81345,6 @@
     "category": "cloud",
     "subcategory": "Continuous Delivery & GitOps",
     "first_seen": "2026-11-04"
-  },
-  {
-    "name": "Zabbix",
-    "url": "https://github.com/zabbix",
-    "description": "Zabbix github.",
-    "category": "monitoring",
-    "subcategory": "Zabbix"
-  },
-  {
-    "name": "Zenoss",
-    "url": "https://github.com/zenoss",
-    "description": "Zenoss github.",
-    "category": "monitoring",
-    "subcategory": "Zenoss"
   },
   {
     "name": "zplugin",

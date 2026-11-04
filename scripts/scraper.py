@@ -17,7 +17,7 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta, timezone
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 from xml.sax.saxutils import escape
 
 import requests
@@ -75,7 +75,7 @@ TOOL_RE = re.compile(r'^\s*[-*]\s*\[(.*?)\]\((.*?)\)\s*[-–:]?\s*(.*)')
 HEADER_RE = re.compile(r'^#{2,4}\s+(.*)')
 GITHUB_REPO_RE = re.compile(r'^https?://(?:www\.)?github\.com/([^/\s]+)/([^/\s#?]+)', re.I)
 ENRICHED_KEYS = ('stars', 'language', 'topics', 'last_updated', 'license', 'github_description',
-                 'install_cmd', 'archived', 'forks', 'created_at', 'latest_release', 'checked_at', 'first_seen')
+                 'install_cmd', 'archived', 'forks', 'created_at', 'latest_release', 'checked_at', 'first_seen', 'aliases')
 
 rate_limited = False
 repo_calls = 0
@@ -126,6 +126,41 @@ def fetch_markdown(url):
         return None
 
 
+ALLOWED_HOSTS = {'github.com', 'www.github.com', 'gitlab.com', 'www.gitlab.com', 'hub.docker.com'}
+BLOCKLIST_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'blocklist.txt')
+
+
+def load_blocklist():
+    """Lines are `owner` or `owner/repo` (case-insensitive); `#` starts a comment."""
+    try:
+        with open(BLOCKLIST_FILE, encoding='utf-8') as f:
+            lines = (ln.split('#', 1)[0].strip().lower() for ln in f)
+            return {ln for ln in lines if ln}
+    except OSError:
+        return set()
+
+
+BLOCKLIST = load_blocklist()
+
+
+def is_allowed_url(url):
+    """Only real http(s) repo/page URLs on known hosts. A substring test such as
+    `'github.com' in url` would let `javascript:alert(1)//github.com` through."""
+    try:
+        u = urlparse(url)
+    except ValueError:
+        return False
+    if u.scheme not in ('http', 'https') or u.hostname not in ALLOWED_HOSTS:
+        return False
+    parts = [p for p in u.path.split('/') if p]
+    if u.hostname == 'hub.docker.com':
+        return len(parts) >= 2
+    if len(parts) < 2:  # owner/repo needed; rejects docs.github.com, profile pages, etc.
+        return False
+    key = f'{parts[0]}/{parts[1]}'.lower()
+    return parts[0].lower() not in BLOCKLIST and key not in BLOCKLIST
+
+
 def parse_markdown(markdown, category):
     tools, subcategory = [], 'General'
     for line in markdown.split('\n'):
@@ -140,7 +175,7 @@ def parse_markdown(markdown, category):
         if not m:
             continue
         name, url, description = (g.strip() for g in m.groups())
-        if any(host in url for host in ('github.com', 'hub.docker.com', 'gitlab.com')):
+        if is_allowed_url(url):
             tools.append({
                 'name': name,
                 'url': normalize_url(url),
@@ -196,6 +231,7 @@ def github_metadata(url):
     install = {'Python': f'pip install {repo}', 'Go': f'go install github.com/{owner}/{repo}@latest',
                'JavaScript': f'npm install {repo}', 'TypeScript': f'npm install {repo}'}.get(lang)
     return {
+        'canonical_url': d.get('html_url'),
         'stars': d.get('stargazers_count', 0),
         'forks': d.get('forks_count', 0),
         'language': lang,
@@ -254,7 +290,12 @@ def _enrich(tool):
 def load_previous():
     try:
         with open(OUTPUT_FILE, encoding='utf-8') as f:
-            return {dedupe_key(t['url']): t for t in json.load(f)}
+            index = {}
+            for t in json.load(f):
+                index[dedupe_key(t['url'])] = t
+                for alias in t.get('aliases', []):  # old URLs that redirect to this repo
+                    index.setdefault(dedupe_key(alias), t)
+            return index
     except (OSError, ValueError):
         return {}
 
@@ -273,9 +314,41 @@ def read_json(path, default):
         return default
 
 
+def canonicalize(tools):
+    """Adopt GitHub's canonical URL (follows renames/redirects) and merge duplicates.
+    Old URLs are kept as `aliases` so saved lists and shared links keep working."""
+    merged = {}
+    for t in tools:
+        canon = t.pop('canonical_url', None)
+        if canon and canon != t['url'] and is_allowed_url(canon):
+            aliases = t.setdefault('aliases', [])
+            if t['url'] not in aliases:
+                aliases.append(t['url'])
+            t['url'] = canon
+        key = dedupe_key(t['url'])
+        keep = merged.get(key)
+        if keep is None:
+            merged[key] = t
+            continue
+        if (t.get('stars') or 0) > (keep.get('stars') or 0):
+            keep, t = t, keep
+            merged[key] = keep
+        aliases = set(keep.get('aliases', [])) | set(t.get('aliases', [])) | {t['url']}
+        aliases.discard(keep['url'])
+        if aliases:
+            keep['aliases'] = sorted(aliases)
+        if t.get('first_seen') and (not keep.get('first_seen') or t['first_seen'] < keep['first_seen']):
+            keep['first_seen'] = t['first_seen']
+    return list(merged.values())
+
+
 def update_history(tools):
     """One [date, stars] sample per tool per day, kept for HISTORY_DAYS."""
     history = read_json(HISTORY_FILE, {})
+    for t in tools:  # carry samples over when a tool's URL became canonical
+        for alias in t.get('aliases', []):
+            if alias in history and t['url'] not in history:
+                history[t['url']] = history.pop(alias)
     cutoff = (date.today() - timedelta(days=HISTORY_DAYS)).isoformat()
     for t in tools:
         if t.get('stars') is None or t.get('checked_at') != TODAY:
@@ -424,7 +497,7 @@ def main():
     print(f'Enriched {len(tools)} tools in {time.time() - start:.0f}s '
           f'({repo_calls} repo + {release_calls} release lookups)')
 
-    tools = [polish(t) for t in tools]
+    tools = canonicalize([polish(t) for t in tools])
     history = update_history(tools)
     for t in tools:
         add_trend(t, history.get(t['url'], []))

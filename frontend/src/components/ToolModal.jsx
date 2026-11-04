@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import { X, ExternalLink, Github, Terminal, Star, GitFork, Scale, Copy, Link2, Heart, GitCompare, Archive } from 'lucide-react';
-import { formatNumber, timeAgo, trendLabel } from '../utils';
+import { formatNumber, timeAgo, trendLabel, safeHref } from '../utils';
 
 const readmeCache = new Map();
 
@@ -90,11 +90,11 @@ const ToolModal = ({ tool, related, onClose, onOpen, onCopy, onFilter, isFav, on
         <div className="modal-header">
           <h2>{tool.name}</h2>
           <div className="modal-links">
-            <a href={tool.url} target="_blank" rel="noopener noreferrer" className="modal-link">
+            <a href={safeHref(tool.url)} target="_blank" rel="noopener noreferrer" className="modal-link">
               {isGithub ? <Github size={18} /> : <ExternalLink size={18} />} {isGithub ? 'Source' : 'Website'}
             </a>
             {tool.docker_url && (
-              <a href={tool.docker_url} target="_blank" rel="noopener noreferrer" className="modal-link">
+              <a href={safeHref(tool.docker_url)} target="_blank" rel="noopener noreferrer" className="modal-link">
                 <Terminal size={18} /> Docker Hub
               </a>
             )}

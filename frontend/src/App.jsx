@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from 'react';
 import Fuse from 'fuse.js';
-import { Github, Linkedin, HelpCircle, X, RefreshCw, Shuffle, GitCompare, Compass, Layers, Sparkles, Heart } from 'lucide-react';
+import { Github, Linkedin, HelpCircle, X, RefreshCw, Shuffle, GitCompare, Compass, Layers, Sparkles, Heart, Trophy } from 'lucide-react';
 import ToolCard from './components/ToolCard';
 import FilterBar from './components/FilterBar';
 import ThemeToggle from './components/ThemeToggle';
@@ -13,6 +13,7 @@ import Highlights from './components/Highlights';
 import WhatsNew from './components/WhatsNew';
 import StackBuilder from './components/StackBuilder';
 import SavedView from './components/SavedView';
+import TopWeek from './components/TopWeek';
 import useLocalStorage from './hooks/useLocalStorage';
 import useUrlFilters, { toolKey, keyToUrl } from './hooks/useUrlFilters';
 import { SORTS, isActive } from './utils';
@@ -44,7 +45,7 @@ function App() {
   const [showCompare, setShowCompare] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
   const [toast, setToast] = useState('');
-  const [favorites, setFavorites] = useLocalStorage('favorites', []);
+  const [rawFavorites, setRawFavorites] = useLocalStorage('favorites', []);
   const [view, setView] = useLocalStorage('view', 'grid');
   const [filters, update, reset] = useUrlFilters();
   const searchInputRef = useRef(null);
@@ -66,6 +67,23 @@ function App() {
       showToast('Copy failed');
     }
   }, [showToast]);
+
+  // Tools can be renamed upstream; old URLs are kept as aliases so saved lists survive.
+  const aliasMap = useMemo(() => {
+    const m = new Map();
+    tools.forEach((t) => t.aliases?.forEach((a) => m.set(a, t.url)));
+    return m;
+  }, [tools]);
+  const favorites = useMemo(
+    () => [...new Set(rawFavorites.map((u) => aliasMap.get(u) || u))],
+    [rawFavorites, aliasMap]
+  );
+  const setFavorites = useCallback((next) => {
+    setRawFavorites((prev) => {
+      const base = [...new Set(prev.map((u) => aliasMap.get(u) || u))];
+      return typeof next === 'function' ? next(base) : next;
+    });
+  }, [setRawFavorites, aliasMap]);
 
   const toggleFav = useCallback((url) => {
     setFavorites((favs) => (favs.includes(url) ? favs.filter((u) => u !== url) : [...favs, url]));
@@ -217,7 +235,7 @@ function App() {
       </header>
 
       <nav className="mode-nav" aria-label="Sections">
-        {[['browse', 'Browse', Compass], ['stack', 'Stack builder', Layers], ['new', "What's new", Sparkles], ['saved', 'Saved', Heart]].map(([id, label, Icon]) => (
+        {[['browse', 'Browse', Compass], ['top', 'Top of the week', Trophy], ['stack', 'Stack builder', Layers], ['new', "What's new", Sparkles], ['saved', 'Saved', Heart]].map(([id, label, Icon]) => (
           <button key={id} className={filters.mode === id ? 'active' : ''} onClick={() => update({ mode: id, tool: filters.tool })}>
             <Icon size={16} /> {label}{id === 'saved' && favorites.length > 0 && <span className="count-pill">{favorites.length}</span>}
           </button>
@@ -225,6 +243,15 @@ function App() {
       </nav>
 
       <main>
+        {status === 'ready' && filters.mode === 'top' && (
+          <TopWeek
+            tools={tools}
+            domain={filters.dom}
+            onDomain={(dom) => update({ dom, tool: filters.tool })}
+            onOpen={openTool}
+            generatedAt={meta?.generated_at}
+          />
+        )}
         {status === 'ready' && filters.mode === 'stack' && (
           <StackBuilder
             tools={tools}

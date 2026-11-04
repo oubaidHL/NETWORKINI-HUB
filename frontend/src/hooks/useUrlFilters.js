@@ -44,4 +44,7 @@ export default function useUrlFilters() {
 
 export const toolKey = (url) => url.replace(/^https:\/\/github\.com\//, '');
 export const keyToUrl = (tools, key) =>
-  tools.find((t) => t.url === key || t.url === `https://github.com/${key}`) || null;
+  tools.find((t) => {
+    const full = key.startsWith('http') ? key : `https://github.com/${key}`;
+    return t.url === full || t.aliases?.includes(full);
+  }) || null;

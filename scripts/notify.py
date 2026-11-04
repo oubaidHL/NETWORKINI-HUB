@@ -12,8 +12,10 @@ subscribers is ever stored in this (public) repository:
 """
 import json
 import os
+import re
 import sys
 from datetime import date
+from urllib.parse import quote
 
 import requests
 
@@ -39,7 +41,15 @@ def digest():
 
 
 def tool_link(url):
-    return f"{SITE_URL}?tool={url.replace('https://github.com/', '')}"
+    return f"{SITE_URL}?tool={quote(url.replace('https://github.com/', ''), safe='/')}"
+
+
+def md_safe(text, limit=140):
+    """Names/descriptions come from third-party lists: neutralise markdown, links and mentions."""
+    text = re.sub(r'https?://\S+', '', text or '')
+    text = re.sub(r'[\[\]()<>*_`~|@#\\]', '', text)
+    text = ' '.join(text.split())
+    return text[:limit] + ('…' if len(text) > limit else '')
 
 
 def post(label, fn):
@@ -62,7 +72,7 @@ def main():
     subject = f'{count} new DevOps tools on NETWORKINI-HUB'
 
     md = [f'**{count} new tools** were added to the hub:\n']
-    md += [f"- [{t['name']}]({tool_link(t['url'])}) ({t['category']}): {t.get('description') or ''}" for t in tools]
+    md += [f"- [{md_safe(t['name'], 60)}]({tool_link(t['url'])}) ({md_safe(t['category'], 30)}): {md_safe(t.get('description'))}" for t in tools]
     if count > len(tools):
         md.append(f'\n…and {count - len(tools)} more. [Browse what\'s new]({SITE_URL}?mode=new)')
     body = '\n'.join(md)
@@ -82,7 +92,7 @@ def main():
                       '→ *Run workflow*')
 
     if hook := os.getenv('DISCORD_WEBHOOK_URL'):
-        post('discord', lambda: requests.post(hook, json={'content': (f'**{subject}**\n{body}'[:1700] + review)[:1990]}, timeout=30))
+        post('discord', lambda: requests.post(hook, json={'content': (f'**{subject}**\n{body}'[:1700] + review)[:1990], 'allowed_mentions': {'parse': []}}, timeout=30))
 
     if (token := os.getenv('TELEGRAM_BOT_TOKEN')) and (chat := os.getenv('TELEGRAM_CHAT_ID')):
         post('telegram', lambda: requests.post(
