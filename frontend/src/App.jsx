@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from 'react';
 import Fuse from 'fuse.js';
-import { Github, Linkedin, HelpCircle, X, RefreshCw, Shuffle, GitCompare, Compass, Layers, Sparkles } from 'lucide-react';
+import { Github, Linkedin, HelpCircle, X, RefreshCw, Shuffle, GitCompare, Compass, Layers, Sparkles, Heart } from 'lucide-react';
 import ToolCard from './components/ToolCard';
 import FilterBar from './components/FilterBar';
 import ThemeToggle from './components/ThemeToggle';
@@ -12,6 +12,7 @@ import CompareModal from './components/CompareModal';
 import Highlights from './components/Highlights';
 import WhatsNew from './components/WhatsNew';
 import StackBuilder from './components/StackBuilder';
+import SavedView from './components/SavedView';
 import useLocalStorage from './hooks/useLocalStorage';
 import useUrlFilters, { toolKey, keyToUrl } from './hooks/useUrlFilters';
 import { SORTS, isActive } from './utils';
@@ -57,9 +58,9 @@ function App() {
     toastTimer.current = setTimeout(() => setToast(''), 2000);
   }, []);
 
-  const copy = useCallback(async (text, message) => {
+  const copy = useCallback(async (text, message, messageOnly) => {
     try {
-      await navigator.clipboard.writeText(text);
+      if (!messageOnly) await navigator.clipboard.writeText(text);
       showToast(message || `Copied: ${text}`);
     } catch {
       showToast('Copy failed');
@@ -197,7 +198,7 @@ function App() {
         <div className="header-content">
           <div className="logo-section">
             <h1>NETWORKINI-HUB</h1>
-            <p>Curated list of awesome DevOps tools</p>
+            <p>{tools.length ? `${tools.length.toLocaleString()} curated DevOps tools · refreshed daily` : 'Curated list of awesome DevOps tools'}</p>
           </div>
           <div className="header-controls">
             <a href="https://github.com/oubaidHL/NETWORKINI-HUB" target="_blank" rel="noopener noreferrer" className="icon-link" title="Source Code">
@@ -216,9 +217,9 @@ function App() {
       </header>
 
       <nav className="mode-nav" aria-label="Sections">
-        {[['browse', 'Browse', Compass], ['stack', 'Stack builder', Layers], ['new', "What's new", Sparkles]].map(([id, label, Icon]) => (
+        {[['browse', 'Browse', Compass], ['stack', 'Stack builder', Layers], ['new', "What's new", Sparkles], ['saved', 'Saved', Heart]].map(([id, label, Icon]) => (
           <button key={id} className={filters.mode === id ? 'active' : ''} onClick={() => update({ mode: id, tool: filters.tool })}>
-            <Icon size={16} /> {label}
+            <Icon size={16} /> {label}{id === 'saved' && favorites.length > 0 && <span className="count-pill">{favorites.length}</span>}
           </button>
         ))}
       </nav>
@@ -233,6 +234,17 @@ function App() {
             onPicks={(p) => update({ pick: p.join(','), tool: filters.tool })}
             onOpen={openTool}
             onCopy={copy}
+          />
+        )}
+        {status === 'ready' && filters.mode === 'saved' && (
+          <SavedView
+            tools={tools}
+            favorites={favorites}
+            setFavorites={setFavorites}
+            shared={filters.shared ? filters.shared.split(',') : []}
+            onOpen={openTool}
+            onCopy={copy}
+            onDismissShared={() => update({ shared: '', tool: filters.tool })}
           />
         )}
         {status === 'ready' && filters.mode === 'new' && <WhatsNew tools={tools} onOpen={openTool} onCopy={copy} />}

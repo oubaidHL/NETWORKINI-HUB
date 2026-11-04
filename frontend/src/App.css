@@ -880,3 +880,65 @@ footer .link-btn { margin-left: 0.5rem; }
 .follow-ok { display: flex; align-items: center; gap: 0.5rem; color: #22c55e; margin: 0; }
 .follow-err { color: #ef4444; font-size: 0.85rem; }
 button.chip { font-family: inherit; }
+
+/* ---- v5: UI polish ---- */
+:root {
+  --cat: #64748b;
+  --radius: 14px;
+}
+[data-cat="docker"] { --cat: #38bdf8; }
+[data-cat="kubernetes"] { --cat: #6366f1; }
+[data-cat="terraform"] { --cat: #a855f7; }
+[data-cat="ansible"] { --cat: #ef4444; }
+[data-cat="cicd"] { --cat: #22c55e; }
+[data-cat="devops"] { --cat: #14b8a6; }
+[data-cat="monitoring"] { --cat: #f59e0b; }
+[data-cat="observability"] { --cat: #f97316; }
+[data-cat="security"] { --cat: #ec4899; }
+[data-cat="databases"] { --cat: #0ea5e9; }
+[data-cat="cloud"] { --cat: #8b5cf6; }
+[data-cat="gitops"] { --cat: #10b981; }
+[data-cat="sysadmin"] { --cat: #84cc16; }
+
+body { background-image: radial-gradient(1200px 500px at 50% -150px, rgba(99, 102, 241, 0.16), transparent 70%); background-repeat: no-repeat; }
+header { margin-bottom: 1.25rem; }
+.logo-section h1 { font-size: 2.1rem; letter-spacing: -0.02em; margin-bottom: 0.15rem; }
+.logo-section p { font-size: 1rem; }
+.header-controls { padding: 0.35rem 0.85rem; }
+
+.mode-nav { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg-color) 85%, transparent); backdrop-filter: blur(10px); overflow-x: auto; scrollbar-width: none; margin-left: -0.25rem; padding: 0.25rem; }
+.mode-nav button { white-space: nowrap; border-radius: 10px 10px 0 0; }
+.count-pill { background: var(--accent-color); color: #fff; border-radius: 999px; font-size: 0.7rem; padding: 0.05rem 0.45rem; margin-left: 0.35rem; font-weight: 600; }
+.panel-head h2 { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+.filter-bar { border-radius: var(--radius); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 8px 24px -12px rgba(0, 0, 0, 0.35); }
+.search-container { padding: 0.35rem 1rem; }
+.search-container:focus-within { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 25%, transparent); }
+
+.tool-card { position: relative; border-radius: var(--radius); overflow: hidden; }
+.tool-card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--cat); opacity: 0.85; }
+.tool-card:hover { border-color: var(--cat); box-shadow: 0 14px 28px -14px color-mix(in srgb, var(--cat) 55%, black); }
+.card-title h3 { color: var(--text-primary); font-size: 1.1rem; overflow-wrap: anywhere; }
+.tool-card .description { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
+.tag[class*="category-"] { background: color-mix(in srgb, var(--cat) 18%, transparent); color: var(--cat); }
+.mini-card { border-top: 3px solid var(--cat); }
+.tools-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+:root.light .header-controls, :root.light .tool-card, :root.light .panel { box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); }
+:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+
+.saved-list { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 0.5rem; }
+.saved-list li { display: flex; align-items: center; gap: 0.5rem; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 0.6rem 0.9rem; }
+.saved-main { all: unset; cursor: pointer; flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.6rem; }
+.saved-main small { flex-basis: 100%; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.saved-stars { color: var(--text-secondary); font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.2rem; }
+.shared-banner { border: 1px dashed var(--accent-color); border-radius: 12px; padding: 0.9rem 1rem; margin: 1rem 0; display: grid; gap: 0.6rem; }
+.empty-state { text-align: center; color: var(--text-secondary); padding: 2.5rem 0; }
+
+@media (max-width: 640px) {
+  .logo-section h1 { font-size: 1.6rem; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .header-content { gap: 0.5rem; }
+  .panel { padding: 1rem; }
+  .panel-head { flex-wrap: wrap; gap: 0.5rem; }
+}

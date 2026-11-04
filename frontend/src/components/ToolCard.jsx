@@ -11,6 +11,7 @@ const ToolCard = ({ tool, onClick, isFav, onToggleFav, onCopy, inCompare, onTogg
   return (
     <article
       className="tool-card"
+      data-cat={category}
       onClick={onClick}
       tabIndex={0}
       onKeyDown={(e) => { if (e.key === 'Enter') onClick(); }}
@@ -38,7 +39,7 @@ const ToolCard = ({ tool, onClick, isFav, onToggleFav, onCopy, inCompare, onTogg
         </div>
       </div>
 
-      <p className="description">{description || 'No description available.'}</p>
+      <p className="description">{description || tool.github_description || 'No description available.'}</p>
 
       {topics?.length > 0 && (
         <div className="tags card-topics">

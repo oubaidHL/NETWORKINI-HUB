@@ -356,6 +356,29 @@ def write_feeds(log, categories=()):
             f.write(build_feed(f'NETWORKINI-HUB: new {cat} tools', log, cat))
 
 
+GENERIC_NAMES = {'repo', 'link', 'here', 'website', 'homepage', 'source', 'github', 'code'}
+NAME_PREFIX_RE = re.compile(r'^(github(\.com)?|gitlab(\.com)?)\s*[/:]\s*', re.I)
+
+
+def polish(tool):
+    """Tidy scraped names and fill empty descriptions from the repository."""
+    m = GITHUB_REPO_RE.match(tool['url'])
+    name = tool['name'].strip()
+    if NAME_PREFIX_RE.match(name):
+        # "github.com/owner: Nice Title - blurb" -> "Nice Title"
+        name = NAME_PREFIX_RE.sub('', name)
+        if ': ' in name:
+            name = name.split(': ', 1)[1]
+        name = re.sub(r'\s+[-–]\s+.*$', '', name)
+    name = re.sub(r':[a-z0-9_+-]+:|[\U0001F300-\U0001FAFF\u2600-\u27BF]', '', name).strip(' :-')
+    if m and (not name or '/' in name or name.lower() in GENERIC_NAMES):
+        name = m.group(2).removesuffix('.git')
+    tool['name'] = name
+    if not tool.get('description') and tool.get('github_description'):
+        tool['description'] = clean_text(tool['github_description'])
+    return tool
+
+
 def main():
     if not GITHUB_TOKEN:
         print('WARNING: GITHUB_TOKEN not set; GitHub API limit is 60 requests/hour.')
@@ -400,6 +423,7 @@ def main():
     print(f'Enriched {len(tools)} tools in {time.time() - start:.0f}s '
           f'({repo_calls} repo + {release_calls} release lookups)')
 
+    tools = [polish(t) for t in tools]
     history = update_history(tools)
     for t in tools:
         add_trend(t, history.get(t['url'], []))

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 const DEFAULTS = {
   q: '', cat: 'all', lang: 'all', sort: 'stars', topic: '', sub: '',
   fav: false, active: false, page: 1, tool: '',
-  mode: 'browse', dom: 'infra', stack: '', pick: '',
+  mode: 'browse', dom: 'infra', stack: '', pick: '', shared: '',
 };
 
 const read = () => {
