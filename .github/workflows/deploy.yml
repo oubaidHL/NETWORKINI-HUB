@@ -2,7 +2,12 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
+  # Pushes made with GITHUB_TOKEN do not trigger `push` workflows, so the
+  # data refresh would never reach the site. Chain off it explicitly.
+  workflow_run:
+    workflows: ["Update Tools Data"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -11,52 +16,54 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
   build:
+    # Skip when the data job failed or changed nothing worth deploying.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch || github.ref }}
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
+          cache: npm
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd frontend
-          npm ci
+        working-directory: frontend
+        run: npm ci
 
-      - name: Copy Data to Public
-        # Ensure the data scraped by the other workflow is available for the build
-        # The scraper outputs to root public/data, we need it in frontend/public/data
+      - name: Lint
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Copy data into the frontend
         run: |
           mkdir -p frontend/public/data
-          cp -r public/data/* frontend/public/data/ || echo "No data found, skipping"
+          cp -r public/data/. frontend/public/data/
 
       - name: Build
-        run: |
-          cd frontend
-          npm run build
+        working-directory: frontend
+        run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: frontend/dist
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4

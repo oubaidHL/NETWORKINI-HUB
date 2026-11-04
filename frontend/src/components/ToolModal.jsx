@@ -1,95 +1,153 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { X, ExternalLink, Github, Terminal } from 'lucide-react';
+import { X, ExternalLink, Github, Terminal, Star, GitFork, Scale, Copy, Link2, Heart, GitCompare, Archive } from 'lucide-react';
+import { formatNumber, timeAgo } from '../utils';
 
-const ToolModal = ({ tool, onClose }) => {
-    const [readmeContent, setReadmeContent] = useState('');
-    const [loadingReadme, setLoadingReadme] = useState(false);
-    const [activeTab, setActiveTab] = useState('details'); // details | installation
+const readmeCache = new Map();
 
-    useEffect(() => {
-        if (tool && tool.url && tool.url.includes('github.com')) {
-            setLoadingReadme(true);
-            // Construct raw URL
-            // https://github.com/user/repo -> https://raw.githubusercontent.com/user/repo/master/README.md
-            // This is a naive heuristic, might fail for main branch or other default branches.
-            // But we can try 'master', then 'main'.
+const resolveUrl = (repo, url, key) => {
+  if (!url || /^(https?:|mailto:|#)/i.test(url)) return url;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(url) || url.startsWith('//')) return ''; // javascript:, data:, …
+  const path = url.replace(/^\.?\//, '');
+  return key === 'src'
+    ? `https://raw.githubusercontent.com/${repo}/HEAD/${path}`
+    : `https://github.com/${repo}/blob/HEAD/${path}`;
+};
 
-            const repoPath = tool.url.replace('https://github.com/', '');
-            const fetchReadme = async () => {
-                try {
-                    let res = await fetch(`https://raw.githubusercontent.com/${repoPath}/master/README.md`);
-                    if (!res.ok) {
-                        res = await fetch(`https://raw.githubusercontent.com/${repoPath}/main/README.md`);
-                    }
-                    if (res.ok) {
-                        const text = await res.text();
-                        setReadmeContent(text);
-                    } else {
-                        setReadmeContent("Could not load README. Please visit the repository.");
-                    }
-                } catch (e) {
-                    setReadmeContent("Error loading README.");
-                } finally {
-                    setLoadingReadme(false);
-                }
-            };
+const markdownComponents = {
+  a: ({ node: _node, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer" />,
+  img: ({ node: _node, ...props }) => <img {...props} loading="lazy" />,
+};
 
-            fetchReadme();
+const ToolModal = ({ tool, related, onClose, onOpen, onCopy, onFilter, isFav, onToggleFav, inCompare, onToggleCompare }) => {
+  const [readme, setReadme] = useState({ url: null, text: '' });
+  const isGithub = tool.url.includes('github.com');
+  const repo = tool.url.replace(/^https?:\/\/(www\.)?github\.com\//, '');
+  const loading = isGithub && readme.url !== tool.url;
+
+  useEffect(() => {
+    if (!isGithub) return;
+    const cached = readmeCache.get(tool.url);
+    if (cached !== undefined) {
+      Promise.resolve().then(() => setReadme({ url: tool.url, text: cached }));
+      return;
+    }
+    const controller = new AbortController();
+    (async () => {
+      let text = 'Could not load the README. Open the repository for details.';
+      try {
+        for (const file of ['README.md', 'readme.md', 'README.rst', 'README']) {
+          const res = await fetch(`https://raw.githubusercontent.com/${repo}/HEAD/${file}`, { signal: controller.signal });
+          if (res.ok) { text = await res.text(); readmeCache.set(tool.url, text); break; }
         }
-    }, [tool]);
+      } catch (err) {
+        if (err.name === 'AbortError') return;
+        text = 'Error loading the README.';
+      }
+      setReadme({ url: tool.url, text });
+    })();
+    return () => controller.abort();
+  }, [tool.url, isGithub, repo]);
 
-    if (!tool) return null;
+  const facts = [
+    tool.stars !== undefined && { Icon: Star, text: `${formatNumber(tool.stars)} stars` },
+    tool.forks !== undefined && { Icon: GitFork, text: `${formatNumber(tool.forks)} forks` },
+    tool.license && { Icon: Scale, text: tool.license },
+    tool.archived && { Icon: Archive, text: 'Archived' },
+  ].filter(Boolean);
 
-    return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={e => e.stopPropagation()}>
-                <button className="close-btn" onClick={onClose}><X size={24} /></button>
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" role="dialog" aria-modal="true" aria-label={tool.name} onClick={(e) => e.stopPropagation()}>
+        <button className="close-btn" onClick={onClose} aria-label="Close"><X size={24} /></button>
 
-                <div className="modal-header">
-                    <h2>{tool.name}</h2>
-                    <div className="modal-links">
-                        <a href={tool.url} target="_blank" rel="noopener noreferrer" className="modal-link">
-                            <Github size={18} /> GitHub
-                        </a>
-                        {tool.docker_url && (
-                            <a href={tool.docker_url} target="_blank" rel="noopener noreferrer" className="modal-link">
-                                <Terminal size={18} /> Docker Hub
-                            </a>
-                        )}
-                    </div>
-                </div>
-
-                <div className="modal-tabs">
-                    <button
-                        className={`tab-btn ${activeTab === 'details' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('details')}
-                    >
-                        Details & README
-                    </button>
-                    {/* Future: Add Installation tab if we parse commands specifically */}
-                </div>
-
-                <div className="modal-body">
-                    <p className="tool-full-description">{tool.description}</p>
-
-                    <div className="readme-container">
-                        <h3>README</h3>
-                        {loadingReadme ? (
-                            <div className="spinner">Loading README...</div>
-                        ) : (
-                            <div className="markdown-body">
-                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                    {readmeContent}
-                                </ReactMarkdown>
-                            </div>
-                        )}
-                    </div>
-                </div>
+        <div className="modal-header">
+          <h2>{tool.name}</h2>
+          <div className="modal-links">
+            <a href={tool.url} target="_blank" rel="noopener noreferrer" className="modal-link">
+              {isGithub ? <Github size={18} /> : <ExternalLink size={18} />} {isGithub ? 'Source' : 'Website'}
+            </a>
+            {tool.docker_url && (
+              <a href={tool.docker_url} target="_blank" rel="noopener noreferrer" className="modal-link">
+                <Terminal size={18} /> Docker Hub
+              </a>
+            )}
+            <button className="modal-link" onClick={() => onToggleFav(tool.url)}>
+              <Heart size={18} fill={isFav ? 'currentColor' : 'none'} /> {isFav ? 'Saved' : 'Save'}
+            </button>
+            <button className="modal-link" onClick={() => onToggleCompare(tool.url)}>
+              <GitCompare size={18} /> {inCompare ? 'In compare' : 'Compare'}
+            </button>
+            <button className="modal-link" onClick={() => onCopy(window.location.href, 'Link copied')}>
+              <Link2 size={18} /> Share
+            </button>
+          </div>
+          {facts.length > 0 && (
+            <div className="modal-facts">
+              {facts.map(({ Icon, text }) => <span key={text}><Icon size={14} /> {text}</span>)}
+              {tool.language && <span>{tool.language}</span>}
+              {tool.last_updated && <span>Updated {timeAgo(tool.last_updated)}</span>}
             </div>
+          )}
         </div>
-    );
+
+        <div className="modal-body">
+          <p className="tool-full-description">{tool.description || tool.github_description}</p>
+
+          <div className="tags topic-tags">
+            <button className="tag clickable" onClick={() => onFilter({ cat: tool.category })}>{tool.category}</button>
+            {tool.subcategory && (
+              <button className="tag clickable" onClick={() => onFilter({ sub: tool.subcategory })}>{tool.subcategory}</button>
+            )}
+            {tool.topics?.map((t) => (
+              <button key={t} className="tag clickable" onClick={() => onFilter({ topic: t })}>#{t}</button>
+            ))}
+          </div>
+
+          {tool.install_cmd && (
+            <button className="install-cmd" onClick={() => onCopy(tool.install_cmd)} title="Click to copy">
+              <code>$ {tool.install_cmd}</code> <Copy size={14} />
+            </button>
+          )}
+
+          {related.length > 0 && (
+            <div className="related">
+              <h3>Similar tools</h3>
+              <div className="related-list">
+                {related.map((r) => (
+                  <button key={r.url} className="related-item" onClick={() => onOpen(r)}>
+                    <strong>{r.name}</strong>
+                    <span><Star size={12} /> {formatNumber(r.stars || 0)}</span>
+                    <small>{r.description}</small>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {isGithub && (
+            <div className="readme-container">
+              <h3>README</h3>
+              {loading ? (
+                <div className="spinner">Loading README…</div>
+              ) : (
+                <div className="markdown-body">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={markdownComponents}
+                    urlTransform={(url, key) => resolveUrl(repo, url, key)}
+                  >
+                    {readme.text}
+                  </ReactMarkdown>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ToolModal;

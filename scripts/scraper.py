@@ -1,258 +1,248 @@
+"""Builds public/data/tools.json from curated "Awesome" lists.
+
+Design notes
+- Previous output is used as a cache: if GitHub rate-limits us or a source is
+  down, existing tools keep their last known metadata instead of losing it.
+- GitHub lookups run in a small thread pool and stop cleanly on rate limit.
+- A second file, meta.json, records when/what was generated (shown in the UI).
+"""
+import json
 import os
 import re
-import json
+import sys
 import time
-import requests
-from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timezone
 
-# Configuration
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 OUTPUT_FILE = 'public/data/tools.json'
+META_FILE = 'public/data/meta.json'
+MAX_WORKERS = 8
 
-# Target Awesome Lists - DevOps Focus Only
-# key: category -> list of URLs
 SOURCES = {
-    'docker': [
-        'https://raw.githubusercontent.com/veggiemonk/awesome-docker/master/README.md'
-    ],
+    'docker': ['https://raw.githubusercontent.com/veggiemonk/awesome-docker/master/README.md'],
     'kubernetes': [
-        'https://raw.githubusercontent.com/ramitsurana/awesome-kubernetes/master/README.md',
-        'https://raw.githubusercontent.com/tomhuang12/awesome-k8s-resources/master/README.md'
+        'https://raw.githubusercontent.com/nubenetes/awesome-kubernetes/master/docs/kubernetes.md',
+        'https://raw.githubusercontent.com/nubenetes/awesome-kubernetes/master/docs/helm.md',
+        'https://raw.githubusercontent.com/nubenetes/awesome-kubernetes/master/docs/kubectl-commands.md',
+        'https://raw.githubusercontent.com/ksoclabs/awesome-kubernetes-security/master/README.md',
     ],
-    'ansible': [
-        'https://raw.githubusercontent.com/ansible-community/awesome-ansible/main/README.md'
-    ],
-    'terraform': [
-        'https://raw.githubusercontent.com/shuaibiyy/awesome-terraform/master/README.md'
-    ],
-    'devops': [
-        'https://raw.githubusercontent.com/wmariuss/awesome-devops/master/README.md'
-    ],
-    'cicd': [
-        'https://raw.githubusercontent.com/cicdops/awesome-ciandcd/master/README.md'
-    ],
-    'monitoring': [
-        'https://raw.githubusercontent.com/crazy-canux/awesome-monitoring/master/README.md'
-    ]
+    'ansible': ['https://raw.githubusercontent.com/ansible-community/awesome-ansible/main/README.md'],
+    'terraform': ['https://raw.githubusercontent.com/shuaibiyy/awesome-terraform/master/README.md'],
+    'devops': ['https://raw.githubusercontent.com/wmariuss/awesome-devops/master/README.md'],
+    'cicd': ['https://raw.githubusercontent.com/cicdops/awesome-ciandcd/master/README.md'],
+    'monitoring': ['https://raw.githubusercontent.com/crazy-canux/awesome-monitoring/master/README.md'],
 }
 
-HEADERS = {
-    'Authorization': f'token {GITHUB_TOKEN}' if GITHUB_TOKEN else None,
-    'Accept': 'application/vnd.github.v3+json'
-}
+TOOL_RE = re.compile(r'^\s*[-*]\s*\[(.*?)\]\((.*?)\)\s*[-–:]?\s*(.*)')
+HEADER_RE = re.compile(r'^#{2,4}\s+(.*)')
+GITHUB_REPO_RE = re.compile(r'^https?://(?:www\.)?github\.com/([^/\s]+)/([^/\s#?]+)', re.I)
+ENRICHED_KEYS = ('stars', 'language', 'topics', 'last_updated', 'license',
+                 'github_description', 'install_cmd', 'archived', 'forks')
 
-# Global flag to track GitHub rate limit status
-GITHUB_RATE_LIMIT_HIT = False
+rate_limited = False
+
+
+def make_session():
+    session = requests.Session()
+    retry = Retry(total=3, backoff_factor=1, status_forcelist=(500, 502, 503, 504))
+    session.mount('https://', HTTPAdapter(max_retries=retry, pool_maxsize=MAX_WORKERS))
+    session.headers['User-Agent'] = 'networkini-hub-scraper'
+    return session
+
+
+SESSION = make_session()
+GH_HEADERS = {'Accept': 'application/vnd.github+json'}
+if GITHUB_TOKEN:
+    GH_HEADERS['Authorization'] = f'Bearer {GITHUB_TOKEN}'
+
+
+def normalize_url(url):
+    url = url.strip().rstrip('/')
+    m = GITHUB_REPO_RE.match(url)
+    if m:
+        repo = m.group(2).removesuffix('.git')
+        return f'https://github.com/{m.group(1)}/{repo}'
+    return url
+
+
+def dedupe_key(url):
+    return normalize_url(url).lower()
+
+
+def clean_text(text):
+    """Strips inline markdown (backticks, emphasis, links) from a description."""
+    text = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', text)
+    return re.sub(r'[`*_]{1,3}', '', text).strip()
+
 
 def fetch_markdown(url):
-    """Fetches raw markdown content from a URL."""
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.text
-    except Exception as e:
-        print(f"Error fetching {url}: {e}")
+        r = SESSION.get(url, timeout=30)
+        r.raise_for_status()
+        return r.text
+    except requests.RequestException as e:
+        print(f'  ! could not fetch {url}: {e}')
         return None
 
-def parse_markdown_sections(markdown, category):
-    """
-    Parses markdown to extract links [Name](URL) - Description
-    AND capture the current header/section as subcategory.
-    """
-    tools = []
-    
-    # Regex for tool link: [Name](URL) - Description
-    # Improved regex to handle variations
-    tool_pattern = re.compile(r'^\s*[-*]\s*\[(.*?)\]\((.*?)\)\s*[-–:]\s*(.*)')
-    
-    # Regex for header: ## Section Name
-    header_pattern = re.compile(r'^#{2,4}\s+(.*)')
-    
-    current_subcategory = "General"
-    
-    lines = markdown.split('\n')
-    for line in lines:
+
+def parse_markdown(markdown, category):
+    tools, subcategory = [], 'General'
+    for line in markdown.split('\n'):
         line = line.strip()
         if not line:
             continue
-            
-        # Check for header
-        header_match = header_pattern.match(line)
-        if header_match:
-            current_subcategory = header_match.group(1).strip()
+        h = HEADER_RE.match(line)
+        if h:
+            subcategory = re.sub(r'[\*_`]|\[(.*?)\]\(.*?\)', r'\1', h.group(1)).strip() or 'General'
             continue
-            
-        # Check for tool
-        tool_match = tool_pattern.match(line)
-        if tool_match:
-            name, url, description = tool_match.groups()
-            
-            # Filter for valid/useful links
-            if 'github.com' in url or 'hub.docker.com' in url or 'gitlab.com' in url:
-                tools.append({
-                    'name': name.strip(),
-                    'url': url.strip(),
-                    'description': description.strip(),
-                    'category': category,
-                    'subcategory': current_subcategory
-                })
+        m = TOOL_RE.match(line)
+        if not m:
+            continue
+        name, url, description = (g.strip() for g in m.groups())
+        if any(host in url for host in ('github.com', 'hub.docker.com', 'gitlab.com')):
+            tools.append({
+                'name': name,
+                'url': normalize_url(url),
+                'description': clean_text(description),
+                'category': category,
+                'subcategory': subcategory,
+            })
     return tools
 
-def get_docker_hub_stats(url):
-    """Enriches with Docker Hub stats if applicable."""
-    if 'hub.docker.com' not in url:
+
+def docker_hub_stats(url):
+    parts = [p for p in url.split('hub.docker.com', 1)[1].split('/') if p]
+    if len(parts) >= 3 and parts[0] == 'r':
+        namespace, repo = parts[1], parts[2]
+    elif len(parts) >= 2 and parts[0] == '_':
+        namespace, repo = 'library', parts[1]
+    else:
         return {}
-        
     try:
-        # url format: https://hub.docker.com/r/prom/prometheus or /_/alpine
-        parts = url.replace('https://hub.docker.com/', '').strip('/').split('/')
-        
-        # Handling /r/ namespace or official /_/
-        if 'r/' in parts:
-             # promoteus/prometheus
-             idx = parts.index('r')
-             if len(parts) > idx + 2:
-                 namespace = parts[idx+1]
-                 repo = parts[idx+2]
-             else:
-                 return {}
-        elif '_/' in parts:
-             # official library
-             idx = parts.index('_')
-             if len(parts) > idx + 1:
-                 namespace = 'library'
-                 repo = parts[idx+1]
-             else: 
-                 return {}
-        elif len(parts) == 2:
-             # user/repo style directly?
-             namespace = parts[0]
-             repo = parts[1]
-        else:
-             return {}
+        r = SESSION.get(f'https://hub.docker.com/v2/repositories/{namespace}/{repo}/', timeout=20)
+        if r.status_code == 200:
+            d = r.json()
+            return {'docker_pulls': d.get('pull_count', 0), 'docker_stars': d.get('star_count', 0),
+                    'docker_url': url, 'is_docker': True}
+    except requests.RequestException as e:
+        print(f'  ! docker hub {url}: {e}')
+    return {'docker_url': url, 'is_docker': True}
 
-        api_url = f"https://hub.docker.com/v2/repositories/{namespace}/{repo}/"
-        res = requests.get(api_url)
-        if res.status_code == 200:
-            data = res.json()
-            return {
-                'docker_pulls': data.get('pull_count', 0),
-                'docker_stars': data.get('star_count', 0),
-                'is_docker': True
-            }
-    except Exception as e:
-        print(f"Error fetching Docker Hub stats: {e}")
-    
-    return {'is_docker': True} # At least mark it as docker related
 
-def get_github_metadata(repo_url):
-    """Fetches metadata from GitHub API."""
-    global GITHUB_RATE_LIMIT_HIT
-    
-    if GITHUB_RATE_LIMIT_HIT:
+def github_metadata(url):
+    global rate_limited
+    m = GITHUB_REPO_RE.match(url)
+    if rate_limited or not m:
         return None
-
-    if 'github.com' not in repo_url:
-        return None
-
+    owner, repo = m.group(1), m.group(2).removesuffix('.git')
     try:
-        parts = repo_url.rstrip('/').split('/')
-        if len(parts) < 2:
-            return None
-        owner, repo = parts[-2], parts[-1]
-        
-        api_url = f"https://api.github.com/repos/{owner}/{repo}"
-        
-        response = requests.get(api_url, headers=HEADERS)
-        
-        if response.status_code == 403:
-            remaining = int(response.headers.get('X-RateLimit-Remaining', 0))
-            if remaining == 0:
-                print("GitHub Rate limit hit! Switching to offline extraction.")
-                GITHUB_RATE_LIMIT_HIT = True
-                return None
+        r = SESSION.get(f'https://api.github.com/repos/{owner}/{repo}', headers=GH_HEADERS, timeout=20)
+    except requests.RequestException as e:
+        print(f'  ! github {owner}/{repo}: {e}')
+        return None
+    if r.status_code in (403, 429) and r.headers.get('X-RateLimit-Remaining') == '0':
+        rate_limited = True
+        print('  ! GitHub rate limit reached; remaining tools keep cached metadata.')
+        return None
+    if r.status_code != 200:
+        return None
+    d = r.json()
+    lang = d.get('language')
+    install = {'Python': f'pip install {repo}', 'Go': f'go install github.com/{owner}/{repo}@latest',
+               'JavaScript': f'npm install {repo}', 'TypeScript': f'npm install {repo}'}.get(lang)
+    return {
+        'stars': d.get('stargazers_count', 0),
+        'forks': d.get('forks_count', 0),
+        'language': lang,
+        'topics': d.get('topics', []),
+        'last_updated': d.get('pushed_at'),
+        'license': (d.get('license') or {}).get('name'),
+        'github_description': d.get('description'),
+        'archived': bool(d.get('archived')),
+        'install_cmd': install,
+    }
 
-        if response.status_code == 200:
-            data = response.json()
-            
-            # Simple install command detection based on language/content
-            install_cmd = None
-            if data.get('language') == 'Python':
-                install_cmd = f"pip install {repo}"
-            elif data.get('language') == 'Go':
-                install_cmd = f"go get github.com/{owner}/{repo}"
-            
-            # Check for Dockerfile
-            has_dockerfile = False
-            # naive check logic, for robustness we'd need file listing API call
-            # minimizing API calls for now.
-            
-            return {
-                'stars': data.get('stargazers_count', 0),
-                'language': data.get('language'),
-                'topics': data.get('topics', []),
-                'last_updated': data.get('pushed_at'),
-                'license': data.get('license', {}).get('name') if data.get('license') else None,
-                'github_description': data.get('description'),
-                'install_cmd': install_cmd
-            }
-    except Exception as e:
-        print(f"Error fetching GitHub metadata for {repo_url}: {e}")
-    
-    return None
+
+def enrich(tool):
+    try:
+        return _enrich(tool)
+    except Exception as e:  # one bad entry must not abort the whole run
+        print(f"  ! skipped enrichment for {tool['url']}: {e}")
+        return tool
+
+
+def _enrich(tool):
+    if 'hub.docker.com' in tool['url']:
+        tool.update(docker_hub_stats(tool['url']))
+    else:
+        meta = github_metadata(tool['url'])
+        if meta:
+            tool.update(meta)
+            if not tool['description'] and meta.get('github_description'):
+                tool['description'] = meta['github_description']
+    return tool
+
+
+def load_previous():
+    try:
+        with open(OUTPUT_FILE, encoding='utf-8') as f:
+            return {dedupe_key(t['url']): t for t in json.load(f)}
+    except (OSError, ValueError):
+        return {}
+
 
 def main():
-    all_tools = []
-    
     if not GITHUB_TOKEN:
-        print("WARNING: GITHUB_TOKEN not found. Rate limits will be strict (60 req/hr).")
-
-    print(f"Starting Scraper v2... Target output: {OUTPUT_FILE}")
+        print('WARNING: GITHUB_TOKEN not set; GitHub API limit is 60 requests/hour.')
+    previous = load_previous()
+    scraped, ok_sources = {}, 0
 
     for category, urls in SOURCES.items():
-        print(f"== Processing Category: {category} ==")
-        for url in urls:
-            print(f"Fetching list: {url}")
-            md = fetch_markdown(url)
-            if md:
-                parsed = parse_markdown_sections(md, category)
-                print(f"Found {len(parsed)} tools in {url}...")
-                
-                # Enrich logic
-                for i, tool in enumerate(parsed):
-                    # Progress log every 50 items
-                    if i % 50 == 0:
-                        print(f"Processed {i}/{len(parsed)} items...")
+        for src in urls:
+            print(f'[{category}] {src}')
+            md = fetch_markdown(src)
+            if md is None:
+                continue
+            ok_sources += 1
+            parsed = parse_markdown(md, category)
+            print(f'  {len(parsed)} tools')
+            for t in parsed:
+                scraped.setdefault(dedupe_key(t['url']), t)
 
-                    # 1. Docker Hub Stats (No Rate Limit usually)
-                    if 'hub.docker.com' in tool['url']:
-                        d_stats = get_docker_hub_stats(tool['url'])
-                        tool.update(d_stats)
-                    
-                    # 2. GitHub Stats (Rate Limited)
-                    if 'github.com' in tool['url'] and not GITHUB_RATE_LIMIT_HIT:
-                        gh_stats = get_github_metadata(tool['url'])
-                        if gh_stats:
-                            tool.update(gh_stats)
-                            # Prefer GitHub desc if available
-                            if not tool['description'] and tool['github_description']:
-                                tool['description'] = tool['github_description']
-                        
-                        time.sleep(0.2) # Throttling
+    if ok_sources == 0 or not scraped:
+        print('No source could be read; keeping existing data.')
+        return 1
 
-                    all_tools.append(tool)
+    tools = list(scraped.values())
+    # Seed with cached metadata so rate limiting never wipes known values.
+    for t in tools:
+        old = previous.get(dedupe_key(t['url']), {})
+        for key in ENRICHED_KEYS + ('docker_pulls', 'docker_stars', 'docker_url', 'is_docker'):
+            if key in old:
+                t[key] = old[key]
 
-    # Dedup by URL
-    unique_tools = {t['url']: t for t in all_tools}.values()
-    final_list = list(unique_tools)
+    start = time.time()
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        tools = list(pool.map(enrich, tools))
+    print(f'Enriched {len(tools)} tools in {time.time() - start:.0f}s')
 
-    # Ensure output directory exists
+    tools.sort(key=lambda t: (-(t.get('stars') or 0), t['name'].lower()))
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-    
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(final_list, f, indent=2)
-    
-    print(f"Scraping complete. Saved {len(final_list)} tools to {OUTPUT_FILE}.")
+        json.dump(tools, f, indent=2, ensure_ascii=False)
+        f.write('\n')
+    with open(META_FILE, 'w', encoding='utf-8') as f:
+        json.dump({'generated_at': datetime.now(timezone.utc).isoformat(timespec='seconds'),
+                   'total': len(tools), 'rate_limited': rate_limited}, f, indent=2)
+        f.write('\n')
+    print(f'Saved {len(tools)} tools to {OUTPUT_FILE}')
+    return 0
 
-if __name__ == "__main__":
-    main()
+
+if __name__ == '__main__':
+    sys.exit(main())

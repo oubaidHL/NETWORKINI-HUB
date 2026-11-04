@@ -12,11 +12,13 @@ Linkedin: [linkedin.com/in/oubaidhlaimi/](https://linkedin.com/in/oubaidhlaimi/)
 NETWORKINI-HUB is a dynamic, searchable, and always-up-to-date registry of the best DevOps tools. It aggregates data from curated "Awesome" lists, Docker Hub, and GitHub to provide a single pane of glass for discovering tools.
 
 ### Key Features
-- **🔍 Smart Search**: Fuzzy search by name, description, or category (`Ctrl + K` / `Ctrl + F`).
-- **📊 Rich Metadata**: Shows GitHub stars, Docker pull counts, and subcategories.
-- **⚡ Performance**: Paginated, lazy-loaded interface handling thousands of tools.
-- **🌙 Pro Interface**: System-aware Dark/Light mode.
-- **🛠️ Automated**: Daily updates via GitHub Actions.
+- **🔍 Smart Search**: Fuzzy search by name, description, topics or category (`Ctrl/⌘ + K` or `/`).
+- **🧭 Filters & sorting**: category chips with live counts, language filter, "recently active" filter, sort by stars / last update / name / Docker pulls.
+- **🔗 Shareable views**: every filter lives in the URL.
+- **❤️ Saved tools**: bookmark tools locally and filter to them.
+- **📊 Rich metadata**: stars, forks, license, topics, freshness, archived flag, Docker pulls, install command.
+- **🖥️ Grid / list views**, dark/light/system theme, keyboard-friendly, skeleton loading and error retry.
+- **🛠️ Automated**: a daily GitHub Action refreshes the data (keeping cached metadata if rate-limited) and redeploys the site.
 
 ---
 
