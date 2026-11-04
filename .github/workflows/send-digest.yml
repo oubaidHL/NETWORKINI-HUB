@@ -1,0 +1,24 @@
+name: Send digest
+
+# One-click approval: the daily digest is saved as a Buttondown draft; run this
+# workflow (Actions tab > Send digest > Run workflow) to email it to subscribers.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - run: pip install -r scripts/requirements.txt
+      - env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: python scripts/send_digest.py

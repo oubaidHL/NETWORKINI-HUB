@@ -90,3 +90,6 @@ After each daily refresh, `scripts/notify.py` announces newly discovered tools o
 | Variable | `TELEGRAM_CHANNEL` | channel link shown on the site |
 
 Variables are public settings; secrets stay private to Actions.
+
+### Approving the daily email
+Unless `BUTTONDOWN_AUTO_SEND=true`, each digest is saved as a Buttondown **draft** and the Discord message links to it. To send it, open *Actions → Send digest → Run workflow* (the workflow sends the newest draft to your subscribers).

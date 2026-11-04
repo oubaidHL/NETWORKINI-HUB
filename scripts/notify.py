@@ -5,7 +5,8 @@ subscribers is ever stored in this (public) repository:
 
   BUTTONDOWN_API_KEY   email digest to your Buttondown subscribers (they sign up
                        through the form on the site; Buttondown stores the emails)
-  BUTTONDOWN_AUTO_SEND 'true' sends immediately; anything else saves a draft to review
+  BUTTONDOWN_AUTO_SEND 'true' sends immediately; anything else saves a draft and the Discord
+                       message links to the one-click "Send digest" workflow to approve it
   DISCORD_WEBHOOK_URL  post to a Discord channel
   TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID   post to a Telegram channel/group
 """
@@ -46,8 +47,10 @@ def post(label, fn):
         r = fn()
         r.raise_for_status()
         print(f'{label}: ok')
+        return r
     except requests.RequestException as e:
         print(f'{label}: failed ({e})')  # a broken channel must not fail the data pipeline
+        return None
 
 
 def main():
@@ -64,15 +67,22 @@ def main():
         md.append(f'\n…and {count - len(tools)} more. [Browse what\'s new]({SITE_URL}?mode=new)')
     body = '\n'.join(md)
 
+    review = ''
     if key := os.getenv('BUTTONDOWN_API_KEY'):
         status = 'about_to_send' if os.getenv('BUTTONDOWN_AUTO_SEND', '').lower() == 'true' else 'draft'
-        post(f'buttondown ({status})', lambda: requests.post(
+        res = post(f'buttondown ({status})', lambda: requests.post(
             'https://api.buttondown.com/v1/emails',
             headers={'Authorization': f'Token {key}'},
             json={'subject': subject, 'body': body, 'status': status}, timeout=30))
+        if res is not None and status == 'draft':
+            repo = os.getenv('GITHUB_REPOSITORY', 'oubaidHL/NETWORKINI-HUB')
+            review = ('\n\n📬 **Email digest saved as a draft.**\n'
+                      '• Review: <https://buttondown.com/emails>\n'
+                      f'• Approve & send: <https://github.com/{repo}/actions/workflows/send-digest.yml> '
+                      '→ *Run workflow*')
 
     if hook := os.getenv('DISCORD_WEBHOOK_URL'):
-        post('discord', lambda: requests.post(hook, json={'content': f'**{subject}**\n{body}'[:1990]}, timeout=30))
+        post('discord', lambda: requests.post(hook, json={'content': (f'**{subject}**\n{body}'[:1700] + review)[:1990]}, timeout=30))
 
     if (token := os.getenv('TELEGRAM_BOT_TOKEN')) and (chat := os.getenv('TELEGRAM_CHAT_ID')):
         post('telegram', lambda: requests.post(
