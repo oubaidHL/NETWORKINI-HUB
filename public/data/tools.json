@@ -54,7 +54,7 @@
     "github_description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
     "install_cmd": "npm install developer-roadmap",
     "archived": false,
-    "forks": 45221
+    "forks": 45222
   },
   {
     "name": "Awesome Selfhosted",
@@ -62,7 +62,7 @@
     "description": "list of Free Software network services and web applications which can be hosted locally by running in a classical way (setup local web server and run applications from there) or in a Docker container.",
     "category": "docker",
     "subcategory": "Awesome Lists",
-    "stars": 333510,
+    "stars": 333511,
     "language": null,
     "topics": [
       "awesome",
@@ -87,7 +87,7 @@
     "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
     "category": "cicd",
     "subcategory": "OS And Shell",
-    "stars": 332309,
+    "stars": 332310,
     "language": "Python",
     "topics": [
       "awesome",
@@ -175,7 +175,7 @@
       "postgresql",
       "prometheus"
     ],
-    "last_updated": "2026-11-04T06:14:26Z",
+    "last_updated": "2026-11-04T06:19:17Z",
     "license": "GNU General Public License v3.0",
     "github_description": "The fastest path to AI-powered full stack observability, even for lean teams.",
     "install_cmd": "go install github.com/firehol/netdata@latest",
@@ -1047,7 +1047,6 @@
     "category": "kubernetes",
     "subcategory": "Helm",
     "stars": 30391,
-    "forks": 7965,
     "language": "Go",
     "topics": [
       "chart",
@@ -1059,8 +1058,9 @@
     "last_updated": "2026-11-03T21:34:16Z",
     "license": "Apache License 2.0",
     "github_description": "The Kubernetes Package Manager",
+    "install_cmd": "go install github.com/helm/helm@latest",
     "archived": false,
-    "install_cmd": "go install github.com/helm/helm@latest"
+    "forks": 7965
   },
   {
     "name": "Infisical",
@@ -1858,7 +1858,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Charts",
     "stars": 15396,
-    "forks": 16228,
     "language": "Go",
     "topics": [
       "charts",
@@ -1868,8 +1867,9 @@
     "last_updated": "2022-02-20T14:09:39Z",
     "license": "Apache License 2.0",
     "github_description": "⚠️(OBSOLETE) Curated applications for Kubernetes",
+    "install_cmd": "go install github.com/helm/charts@latest",
     "archived": true,
-    "install_cmd": "go install github.com/helm/charts@latest"
+    "forks": 16228
   },
   {
     "name": "Cachet",
@@ -2220,7 +2220,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Scalability Thresholds",
     "stars": 13054,
-    "forks": 5387,
     "language": "Jupyter Notebook",
     "topics": [
       "kubernetes"
@@ -2228,8 +2227,9 @@
     "last_updated": "2026-11-03T02:05:46Z",
     "license": "Apache License 2.0",
     "github_description": "Kubernetes Community Documentation",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 5387
   },
   {
     "name": "Komodo",
@@ -2446,7 +2446,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes SIG's Repos",
     "stars": 12191,
-    "forks": 2443,
     "language": "Go",
     "topics": [
       "hacktoberfest",
@@ -2455,8 +2454,9 @@
     "last_updated": "2026-11-01T11:05:12Z",
     "license": "Apache License 2.0",
     "github_description": "Customization of kubernetes YAML configurations",
+    "install_cmd": "go install github.com/kubernetes-sigs/kustomize@latest",
     "archived": false,
-    "install_cmd": "go install github.com/kubernetes-sigs/kustomize@latest"
+    "forks": 2443
   },
   {
     "name": "earthly",
@@ -2497,7 +2497,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 11842,
-    "forks": 1087,
     "language": "Go",
     "topics": [
       "best-practice",
@@ -2511,8 +2510,9 @@
     "last_updated": "2026-11-04T02:45:06Z",
     "license": "Apache License 2.0",
     "github_description": "Kubescape is an open-source Kubernetes security platform for your IDE, CI/CD pipelines, and clusters. It includes risk analysis, security, compliance, and misconfiguration scanning, saving Kubernetes users and administrators precious time, effort, and resources.",
+    "install_cmd": "go install github.com/kubescape/kubescape@latest",
     "archived": false,
-    "install_cmd": "go install github.com/kubescape/kubescape@latest"
+    "forks": 1087
   },
   {
     "name": "Linkerd",
@@ -2980,7 +2980,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 9144,
-    "forks": 2953,
     "language": "Go",
     "topics": [
       "aws",
@@ -3000,8 +2999,9 @@
     "last_updated": "2026-11-02T23:27:36Z",
     "license": "Apache License 2.0",
     "github_description": "Configure external DNS servers dynamically from Kubernetes resources",
+    "install_cmd": "go install github.com/kubernetes-sigs/external-dns@latest",
     "archived": false,
-    "install_cmd": "go install github.com/kubernetes-sigs/external-dns@latest"
+    "forks": 2953
   },
   {
     "name": "Checkov",
@@ -3090,7 +3090,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 8246,
-    "forks": 1348,
     "language": "Go",
     "topics": [
       "cis-benchmark",
@@ -3105,8 +3104,9 @@
     "last_updated": "2026-10-26T19:32:45Z",
     "license": "Apache License 2.0",
     "github_description": "Checks whether Kubernetes is deployed according to security best practices as defined in the CIS Kubernetes Benchmark",
+    "install_cmd": "go install github.com/aquasecurity/kube-bench@latest",
     "archived": false,
-    "install_cmd": "go install github.com/aquasecurity/kube-bench@latest"
+    "forks": 1348
   },
   {
     "name": "Arcane",
@@ -3160,7 +3160,7 @@
       "stream-processing",
       "traces"
     ],
-    "last_updated": "2026-11-04T06:04:59Z",
+    "last_updated": "2026-11-04T06:20:25Z",
     "license": "Apache License 2.0",
     "github_description": "Fast and Lightweight Logs, Metrics and Traces processor for Linux, BSD, OSX and Windows",
     "install_cmd": null,
@@ -3206,7 +3206,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 7994,
-    "forks": 347,
     "language": "Go",
     "topics": [
       "aws",
@@ -3233,8 +3232,9 @@
     "last_updated": "2026-11-04T00:28:58Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Zero-ETL, infinite possibilities. Live query APIs, code & more with SQL. No DB required.",
+    "install_cmd": "go install github.com/turbot/steampipe@latest",
     "archived": false,
-    "install_cmd": "go install github.com/turbot/steampipe@latest"
+    "forks": 347
   },
   {
     "name": "terratest",
@@ -3346,7 +3346,6 @@
     "category": "kubernetes",
     "subcategory": "AWS Cloud Development Kit (AWS CDK)",
     "stars": 7589,
-    "forks": 482,
     "language": "Jsonnet",
     "topics": [
       "config",
@@ -3358,8 +3357,9 @@
     "last_updated": "2026-03-30T14:23:57Z",
     "license": "Apache License 2.0",
     "github_description": "Jsonnet - The data templating language",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 482
   },
   {
     "name": "HertzBeat github",
@@ -3545,7 +3545,6 @@
     "category": "kubernetes",
     "subcategory": "kubecost",
     "stars": 6802,
-    "forks": 916,
     "language": "Go",
     "topics": [
       "aws",
@@ -3564,8 +3563,9 @@
     "last_updated": "2026-10-29T20:52:20Z",
     "license": "Apache License 2.0",
     "github_description": "Cost monitoring for Kubernetes workloads and cloud costs",
+    "install_cmd": "go install github.com/opencost/opencost@latest",
     "archived": false,
-    "install_cmd": "go install github.com/opencost/opencost@latest"
+    "forks": 916
   },
   {
     "name": "Kraken",
@@ -3678,7 +3678,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 6296,
-    "forks": 727,
     "language": "Python",
     "topics": [
       "adk",
@@ -3693,8 +3692,9 @@
     "last_updated": "2026-10-27T10:30:55Z",
     "license": "Apache License 2.0",
     "github_description": "The CLI and skills that turn any coding assistant into an expert at creating, evaluating, and deploying AI agents on Google Cloud.",
+    "install_cmd": "pip install agents-cli",
     "archived": false,
-    "install_cmd": "pip install agents-cli"
+    "forks": 727
   },
   {
     "name": "podman-compose",
@@ -3821,7 +3821,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Dashboard",
     "stars": 5854,
-    "forks": 365,
     "language": "TypeScript",
     "topics": [
       "gui",
@@ -3834,8 +3833,9 @@
     "last_updated": "2026-10-29T00:14:06Z",
     "license": "Apache License 2.0",
     "github_description": "The missing UI for Helm - visualize your releases",
+    "install_cmd": "npm install helm-dashboard",
     "archived": false,
-    "install_cmd": "npm install helm-dashboard"
+    "forks": 365
   },
   {
     "name": "tflint",
@@ -3863,7 +3863,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 5774,
-    "forks": 358,
     "language": "TypeScript",
     "topics": [
       "cloud-native",
@@ -3876,8 +3875,9 @@
     "last_updated": "2026-11-04T01:34:45Z",
     "license": "MIT License",
     "github_description": "Free IDE for Kubernetes",
+    "install_cmd": "npm install freelens",
     "archived": false,
-    "install_cmd": "npm install freelens"
+    "forks": 358
   },
   {
     "name": "Litmus",
@@ -3988,7 +3988,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 5659,
-    "forks": 252,
     "language": null,
     "topics": [
       "automation",
@@ -4008,8 +4007,9 @@
     "last_updated": "2023-09-21T14:37:01Z",
     "license": "MIT License",
     "github_description": " Kubernetes clusters for the hobbyist.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 252
   },
   {
     "name": "tempo github",
@@ -4067,7 +4067,6 @@
     "category": "kubernetes",
     "subcategory": "OpenKruise/Kruise",
     "stars": 5375,
-    "forks": 942,
     "language": "Go",
     "topics": [
       "cloud-native",
@@ -4084,8 +4083,9 @@
     "last_updated": "2026-10-20T02:05:02Z",
     "license": "Other",
     "github_description": "Automated management of large-scale applications on Kubernetes (incubating project under CNCF)",
+    "install_cmd": "go install github.com/openkruise/kruise@latest",
     "archived": false,
-    "install_cmd": "go install github.com/openkruise/kruise@latest"
+    "forks": 942
   },
   {
     "name": "Mesos",
@@ -4195,7 +4195,6 @@
     "category": "kubernetes",
     "subcategory": "Helmfile",
     "stars": 5228,
-    "forks": 374,
     "language": "Go",
     "topics": [
       "helm",
@@ -4205,8 +4204,9 @@
     "last_updated": "2026-11-03T15:15:15Z",
     "license": "MIT License",
     "github_description": "Declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases. Generate all-in-one manifests for use with ArgoCD.",
+    "install_cmd": "go install github.com/helmfile/helmfile@latest",
     "archived": false,
-    "install_cmd": "go install github.com/helmfile/helmfile@latest"
+    "forks": 374
   },
   {
     "name": "terrascan",
@@ -4215,7 +4215,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 5216,
-    "forks": 552,
     "language": "Go",
     "topics": [
       "architecture",
@@ -4242,8 +4241,9 @@
     "last_updated": "2025-11-20T19:37:10Z",
     "license": "Apache License 2.0",
     "github_description": "Detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure.",
+    "install_cmd": "go install github.com/accurics/terrascan@latest",
     "archived": true,
-    "install_cmd": "go install github.com/accurics/terrascan@latest"
+    "forks": 552
   },
   {
     "name": "terrascan",
@@ -4289,14 +4289,14 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Knowledge Hubs",
     "stars": 5107,
-    "forks": 510,
     "language": null,
     "topics": [],
     "last_updated": "2023-10-17T14:10:14Z",
     "license": null,
     "github_description": "🤔  What happens when I type kubectl run?",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 510
   },
   {
     "name": "kube-hunter",
@@ -4305,7 +4305,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 5088,
-    "forks": 610,
     "language": "Python",
     "topics": [
       "hacktoberfest",
@@ -4315,8 +4314,9 @@
     "last_updated": "2024-03-19T12:30:55Z",
     "license": "Apache License 2.0",
     "github_description": "Hunt for security weaknesses in Kubernetes clusters",
+    "install_cmd": "pip install kube-hunter",
     "archived": false,
-    "install_cmd": "pip install kube-hunter"
+    "forks": 610
   },
   {
     "name": "OpenTSDB github",
@@ -4501,14 +4501,14 @@
     "category": "kubernetes",
     "subcategory": "Cloud Development Kit (CDK) for Kubernetes",
     "stars": 4856,
-    "forks": 309,
     "language": "JavaScript",
     "topics": [],
     "last_updated": "2026-11-03T09:26:53Z",
     "license": "Apache License 2.0",
     "github_description": "Define Kubernetes native apps and abstractions using object-oriented programming",
+    "install_cmd": "npm install cdk8s",
     "archived": false,
-    "install_cmd": "npm install cdk8s"
+    "forks": 309
   },
   {
     "name": "terraform-docs",
@@ -4540,7 +4540,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 4782,
-    "forks": 610,
     "language": "Go",
     "topics": [
       "blackhat",
@@ -4567,8 +4566,9 @@
     "last_updated": "2026-05-01T08:14:30Z",
     "license": "Apache License 2.0",
     "github_description": "📦  Make security testing of K8s, Docker, and Containerd easier.",
+    "install_cmd": "go install github.com/cdk-team/CDK@latest",
     "archived": false,
-    "install_cmd": "go install github.com/cdk-team/CDK@latest"
+    "forks": 610
   },
   {
     "name": "caddy-docker-proxy",
@@ -4667,14 +4667,14 @@
     "category": "kubernetes",
     "subcategory": "Helm",
     "stars": 4716,
-    "forks": 322,
     "language": "Go",
     "topics": [],
     "last_updated": "2024-01-08T18:48:14Z",
     "license": "Other",
     "github_description": "A tool to build, deploy, and release any application on any platform.",
+    "install_cmd": "go install github.com/hashicorp/waypoint@latest",
     "archived": true,
-    "install_cmd": "go install github.com/hashicorp/waypoint@latest"
+    "forks": 322
   },
   {
     "name": "registrator",
@@ -5072,7 +5072,6 @@
     "category": "kubernetes",
     "subcategory": "Memes",
     "stars": 3981,
-    "forks": 1743,
     "language": "Go",
     "topics": [
       "enhancements",
@@ -5083,8 +5082,9 @@
     "last_updated": "2026-11-03T10:47:44Z",
     "license": "Apache License 2.0",
     "github_description": "Enhancements tracking repo for Kubernetes",
+    "install_cmd": "go install github.com/kubernetes/enhancements@latest",
     "archived": false,
-    "install_cmd": "go install github.com/kubernetes/enhancements@latest"
+    "forks": 1743
   },
   {
     "name": "eon01",
@@ -5277,7 +5277,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl aliases",
     "stars": 3719,
-    "forks": 862,
     "language": "Nu",
     "topics": [
       "kubectl",
@@ -5286,8 +5285,9 @@
     "last_updated": "2025-05-11T17:04:45Z",
     "license": "Apache License 2.0",
     "github_description": "Programmatically generated handy kubectl aliases.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 862
   },
   {
     "name": "terramate",
@@ -5351,7 +5351,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Plugins",
     "stars": 3513,
-    "forks": 331,
     "language": "Go",
     "topics": [
       "charts",
@@ -5361,8 +5360,9 @@
     "last_updated": "2026-11-02T01:33:20Z",
     "license": "Apache License 2.0",
     "github_description": "A helm plugin that shows a diff explaining what a helm upgrade would change",
+    "install_cmd": "go install github.com/databus23/helm-diff@latest",
     "archived": false,
-    "install_cmd": "go install github.com/databus23/helm-diff@latest"
+    "forks": 331
   },
   {
     "name": "Swarmpit",
@@ -5462,7 +5462,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Quality of Service QOS. Kubernetes Resource and Capacity Management. Capacity Planning. Resource Quotas per namespace, LimitRanges per namespace, Limits and Requests per POD",
     "stars": 3363,
-    "forks": 180,
     "language": "Go",
     "topics": [
       "fairwinds-official",
@@ -5474,8 +5473,9 @@
     "last_updated": "2026-11-03T18:31:43Z",
     "license": "Apache License 2.0",
     "github_description": "Get your resource requests \"Just Right\"",
+    "install_cmd": "go install github.com/FairwindsOps/goldilocks@latest",
     "archived": false,
-    "install_cmd": "go install github.com/FairwindsOps/goldilocks@latest"
+    "forks": 180
   },
   {
     "name": "Dragonfly",
@@ -5545,7 +5545,6 @@
     "category": "kubernetes",
     "subcategory": "Enforcing Policies and governance for kubernetes workloads with Conftest",
     "stars": 3295,
-    "forks": 364,
     "language": "Go",
     "topics": [
       "kubernetes",
@@ -5557,8 +5556,9 @@
     "last_updated": "2026-11-03T04:59:30Z",
     "license": "Other",
     "github_description": "Write tests against structured configuration data using the Open Policy Agent Rego query language",
+    "install_cmd": "go install github.com/open-policy-agent/conftest@latest",
     "archived": false,
-    "install_cmd": "go install github.com/open-policy-agent/conftest@latest"
+    "forks": 364
   },
   {
     "name": "dry",
@@ -5719,7 +5719,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Jobs and Cron Jobs",
     "stars": 3130,
-    "forks": 889,
     "language": "Go",
     "topics": [
       "k8s",
@@ -5729,8 +5728,9 @@
     "last_updated": "2026-11-03T21:00:49Z",
     "license": "Apache License 2.0",
     "github_description": ":vertical_traffic_light: Kubernetes-native Job Queueing and Scheduling",
+    "install_cmd": "go install github.com/kubernetes-sigs/kueue@latest",
     "archived": false,
-    "install_cmd": "go install github.com/kubernetes-sigs/kueue@latest"
+    "forks": 889
   },
   {
     "name": "javamelody github",
@@ -5924,7 +5924,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 2577,
-    "forks": 393,
     "language": "JavaScript",
     "topics": [
       "aws",
@@ -5939,8 +5938,9 @@
     "last_updated": "2022-05-28T13:05:36Z",
     "license": "MIT License",
     "github_description": "Integrate external secret management systems with Kubernetes",
+    "install_cmd": "npm install kubernetes-external-secrets",
     "archived": true,
-    "install_cmd": "npm install kubernetes-external-secrets"
+    "forks": 393
   },
   {
     "name": "DockSTARTer",
@@ -6095,7 +6095,6 @@
     "category": "kubernetes",
     "subcategory": "KubeFed",
     "stars": 2477,
-    "forks": 526,
     "language": "Go",
     "topics": [
       "federated-clusters",
@@ -6105,8 +6104,9 @@
     "last_updated": "2023-03-24T21:50:24Z",
     "license": "Apache License 2.0",
     "github_description": "Kubernetes Cluster Federation",
+    "install_cmd": "go install github.com/kubernetes-retired/kubefed@latest",
     "archived": true,
-    "install_cmd": "go install github.com/kubernetes-retired/kubefed@latest"
+    "forks": 526
   },
   {
     "name": "The Claude Agent Skill for Terraform and OpenTofu - testing, modules, CI/CD, and production patterns",
@@ -6439,7 +6439,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 2188,
-    "forks": 177,
     "language": "Go",
     "topics": [
       "bpf",
@@ -6457,8 +6456,9 @@
     "last_updated": "2026-04-16T20:47:34Z",
     "license": "MIT License",
     "github_description": "Schedule bpftrace programs on your kubernetes cluster using the kubectl",
+    "install_cmd": "go install github.com/iovisor/kubectl-trace@latest",
     "archived": false,
-    "install_cmd": "go install github.com/iovisor/kubectl-trace@latest"
+    "forks": 177
   },
   {
     "name": "CKS Certified Kubernetes Security Specialist resources repo",
@@ -6467,7 +6467,6 @@
     "category": "kubernetes",
     "subcategory": "General Resources",
     "stars": 2137,
-    "forks": 561,
     "language": "AGS Script",
     "topics": [
       "apparmor",
@@ -6494,8 +6493,9 @@
     "last_updated": "2026-03-14T00:46:44Z",
     "license": "Creative Commons Attribution Share Alike 4.0 International",
     "github_description": "Curated resources help you prepare for the CNCF/Linux Foundation CKS 2021 \"Kubernetes Certified Security Specialist\" Certification exam.  Please provide feedback or requests by raising issues, or making a pull request. All feedback for improvements are welcome. thank you.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 561
   },
   {
     "name": "Awesome Linux Container",
@@ -6682,7 +6682,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 2042,
-    "forks": 332,
     "language": "HTML",
     "topics": [
       "aws",
@@ -6691,8 +6690,9 @@
     "last_updated": "2026-05-08T11:59:36Z",
     "license": "BSD 3-Clause \"New\" or \"Revised\" License",
     "github_description": "kube2iam  provides different AWS IAM roles for pods running on Kubernetes",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 332
   },
   {
     "name": "ARA",
@@ -6771,7 +6771,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 1997,
-    "forks": 301,
     "language": "Go",
     "topics": [
       "cloud-native",
@@ -6788,8 +6787,9 @@
     "last_updated": "2026-11-02T16:14:16Z",
     "license": "Apache License 2.0",
     "github_description": "Kubernetes-native security toolkit",
+    "install_cmd": "go install github.com/aquasecurity/trivy-operator@latest",
     "archived": false,
-    "install_cmd": "go install github.com/aquasecurity/trivy-operator@latest"
+    "forks": 301
   },
   {
     "name": "regctl",
@@ -6818,7 +6818,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 1935,
-    "forks": 188,
     "language": "Go",
     "topics": [
       "audit",
@@ -6828,8 +6827,9 @@
     "last_updated": "2024-08-21T18:48:27Z",
     "license": "MIT License",
     "github_description": "kubeaudit helps you audit your Kubernetes clusters against common security controls",
+    "install_cmd": "go install github.com/Shopify/kubeaudit@latest",
     "archived": true,
-    "install_cmd": "go install github.com/Shopify/kubeaudit@latest"
+    "forks": 188
   },
   {
     "name": "Kapitan",
@@ -6940,7 +6940,6 @@
     "category": "kubernetes",
     "subcategory": "Red Hat Operator Lifecycle Manager (OLM)",
     "stars": 1866,
-    "forks": 587,
     "language": "Go",
     "topics": [
       "crd",
@@ -6952,8 +6951,9 @@
     "last_updated": "2026-11-03T16:13:54Z",
     "license": "Apache License 2.0",
     "github_description": "A management framework for extending Kubernetes with Operators",
+    "install_cmd": "go install github.com/operator-framework/operator-lifecycle-manager@latest",
     "archived": false,
-    "install_cmd": "go install github.com/operator-framework/operator-lifecycle-manager@latest"
+    "forks": 587
   },
   {
     "name": "github.com/kairos-io/kairos: Kairos - Kubernetes-focused, Cloud Native Linux meta-distribution",
@@ -6962,7 +6962,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 1860,
-    "forks": 153,
     "language": "Go",
     "topics": [
       "baremetal",
@@ -6986,8 +6985,9 @@
     "last_updated": "2026-11-03T23:36:41Z",
     "license": "Apache License 2.0",
     "github_description": "The immutable Linux meta-distribution for edge Kubernetes.",
+    "install_cmd": "go install github.com/kairos-io/kairos@latest",
     "archived": false,
-    "install_cmd": "go install github.com/kairos-io/kairos@latest"
+    "forks": 153
   },
   {
     "name": "oscap-docker",
@@ -7082,14 +7082,14 @@
     "category": "kubernetes",
     "subcategory": "Helm Chart Documentation",
     "stars": 1775,
-    "forks": 222,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-06-22T09:25:43Z",
     "license": "GNU General Public License v3.0",
     "github_description": "A tool for automatically generating markdown documentation for helm charts",
+    "install_cmd": "go install github.com/norwoodj/helm-docs@latest",
     "archived": false,
-    "install_cmd": "go install github.com/norwoodj/helm-docs@latest"
+    "forks": 222
   },
   {
     "name": "doco-cd",
@@ -7371,7 +7371,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes SIG's Repos",
     "stars": 1567,
-    "forks": 337,
     "language": "Go",
     "topics": [
       "aws-secrets-manager",
@@ -7387,8 +7386,9 @@
     "last_updated": "2026-11-01T21:38:00Z",
     "license": "Apache License 2.0",
     "github_description": "Secrets Store CSI driver for Kubernetes secrets - Integrates secrets stores with Kubernetes via a CSI volume.  ",
+    "install_cmd": "go install github.com/kubernetes-sigs/secrets-store-csi-driver@latest",
     "archived": false,
-    "install_cmd": "go install github.com/kubernetes-sigs/secrets-store-csi-driver@latest"
+    "forks": 337
   },
   {
     "name": "Openstack Ansible",
@@ -7436,7 +7436,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Best Practices and Tips",
     "stars": 1508,
-    "forks": 98,
     "language": null,
     "topics": [
       "container",
@@ -7446,8 +7445,9 @@
     "last_updated": "2026-04-27T12:56:26Z",
     "license": "Apache License 2.0",
     "github_description": "A cookbook with the best practices to working with kubernetes.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 98
   },
   {
     "name": "Helmsman: Helm Charts as Code 🌟",
@@ -7456,7 +7456,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 1495,
-    "forks": 178,
     "language": "Go",
     "topics": [
       "git-ops",
@@ -7473,8 +7472,9 @@
     "last_updated": "2026-11-02T22:44:26Z",
     "license": "MIT License",
     "github_description": "Helm Charts as Code",
+    "install_cmd": "go install github.com/mkubaczyk/helmsman@latest",
     "archived": false,
-    "install_cmd": "go install github.com/mkubaczyk/helmsman@latest"
+    "forks": 178
   },
   {
     "name": "OpenResty Manager",
@@ -7577,7 +7577,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 1459,
-    "forks": 174,
     "language": "Go",
     "topics": [
       "cloud",
@@ -7596,8 +7595,9 @@
     "last_updated": "2026-05-25T02:27:26Z",
     "license": "Apache License 2.0",
     "github_description": "OpenClarity is an open source platform built to enhance security and observability of cloud native applications and infrastructure",
+    "install_cmd": "go install github.com/Portshift/kubei@latest",
     "archived": true,
-    "install_cmd": "go install github.com/Portshift/kubei@latest"
+    "forks": 174
   },
   {
     "name": "hidetatz/kubecolor 🌟",
@@ -7606,7 +7606,6 @@
     "category": "kubernetes",
     "subcategory": "Introduction",
     "stars": 1438,
-    "forks": 104,
     "language": "Go",
     "topics": [
       "kubectl",
@@ -7615,8 +7614,9 @@
     "last_updated": "2023-04-13T17:38:06Z",
     "license": "MIT License",
     "github_description": "colorizes kubectl output",
+    "install_cmd": "go install github.com/hidetatz/kubecolor@latest",
     "archived": true,
-    "install_cmd": "go install github.com/hidetatz/kubecolor@latest"
+    "forks": 104
   },
   {
     "name": "lazyjournal",
@@ -7734,7 +7734,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 1401,
-    "forks": 61,
     "language": "Go",
     "topics": [
       "authorization",
@@ -7749,8 +7748,9 @@
     "last_updated": "2023-04-05T05:00:24Z",
     "license": "Apache License 2.0",
     "github_description": "Review Access - kubectl plugin to show an access matrix for k8s server resources",
+    "install_cmd": "go install github.com/corneliusweig/rakkess@latest",
     "archived": false,
-    "install_cmd": "go install github.com/corneliusweig/rakkess@latest"
+    "forks": 61
   },
   {
     "name": "Freelan",
@@ -8248,7 +8248,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 1140,
-    "forks": 232,
     "language": "Go",
     "topics": [
       "aws-iam",
@@ -8259,8 +8258,9 @@
     "last_updated": "2024-03-05T11:39:28Z",
     "license": "Apache License 2.0",
     "github_description": "Integrate AWS IAM with Kubernetes",
+    "install_cmd": "go install github.com/uswitch/kiam@latest",
     "archived": true,
-    "install_cmd": "go install github.com/uswitch/kiam@latest"
+    "forks": 232
   },
   {
     "name": "Shinken",
@@ -8372,7 +8372,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 1116,
-    "forks": 33,
     "language": "Go",
     "topics": [
       "cd",
@@ -8395,8 +8394,9 @@
     "last_updated": "2026-11-03T21:16:40Z",
     "license": "Other",
     "github_description": "Nelm is a Helm 4 alternative. It is a Kubernetes deployment tool that manages Helm Charts and deploys them to Kubernetes. The Nelm goal is to provide a modern alternative to Helm, with long-standing issues fixed and many new major features introduced.",
+    "install_cmd": "go install github.com/werf/nelm@latest",
     "archived": false,
-    "install_cmd": "go install github.com/werf/nelm@latest"
+    "forks": 33
   },
   {
     "name": "audit2rbac",
@@ -8405,7 +8405,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 1111,
-    "forks": 84,
     "language": "Go",
     "topics": [
       "audit",
@@ -8417,8 +8416,9 @@
     "last_updated": "2023-02-11T07:11:26Z",
     "license": "Other",
     "github_description": "Autogenerate RBAC policies based on Kubernetes audit logs",
+    "install_cmd": "go install github.com/liggitt/audit2rbac@latest",
     "archived": false,
-    "install_cmd": "go install github.com/liggitt/audit2rbac@latest"
+    "forks": 84
   },
   {
     "name": "Vim-Terraform",
@@ -8450,14 +8450,14 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Patterns and Antipatterns. Service Discovery",
     "stars": 1089,
-    "forks": 295,
     "language": "Shell",
     "topics": [],
     "last_updated": "2026-03-29T04:12:06Z",
     "license": "Other",
     "github_description": "Examples for \"Kubernetes Patterns - Reusable Elements for Designing Cloud Native Applications\", Second Edition",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 295
   },
   {
     "name": "ansible-runner",
@@ -8559,7 +8559,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Namespaces and Multi Tenancy. Self Service Namespaces",
     "stars": 1070,
-    "forks": 70,
     "language": "Go",
     "topics": [
       "devops",
@@ -8570,8 +8569,9 @@
     "last_updated": "2024-04-25T18:59:51Z",
     "license": "Apache License 2.0",
     "github_description": "kiosk 🏢 Multi-Tenancy Extension For Kubernetes - Secure Cluster Sharing & Self-Service Namespace Provisioning",
+    "install_cmd": "go install github.com/loft-sh/kiosk@latest",
     "archived": true,
-    "install_cmd": "go install github.com/loft-sh/kiosk@latest"
+    "forks": 70
   },
   {
     "name": "yj",
@@ -8681,14 +8681,14 @@
     "category": "kubernetes",
     "subcategory": "kubecost",
     "stars": 1047,
-    "forks": 70,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-10-24T15:49:57Z",
     "license": "Apache License 2.0",
     "github_description": "CLI for determining the cost of Kubernetes workloads",
+    "install_cmd": "go install github.com/kubecost/kubectl-cost@latest",
     "archived": false,
-    "install_cmd": "go install github.com/kubecost/kubectl-cost@latest"
+    "forks": 70
   },
   {
     "name": "terraform-aws-lambda",
@@ -8719,7 +8719,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Plugins",
     "stars": 1038,
-    "forks": 121,
     "language": "Go",
     "topics": [
       "hacktoberfest",
@@ -8731,8 +8730,9 @@
     "last_updated": "2026-10-20T22:29:45Z",
     "license": "Apache License 2.0",
     "github_description": "This is a Helm plugin which map deprecated or removed Kubernetes APIs in a release to supported APIs",
+    "install_cmd": "go install github.com/helm/helm-mapkubeapis@latest",
     "archived": false,
-    "install_cmd": "go install github.com/helm/helm-mapkubeapis@latest"
+    "forks": 121
   },
   {
     "name": "Dockerlings",
@@ -8777,7 +8777,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 1010,
-    "forks": 73,
     "language": null,
     "topics": [
       "awesome-list",
@@ -8788,8 +8787,9 @@
     "last_updated": "2026-10-28T19:09:24Z",
     "license": "Creative Commons Zero v1.0 Universal",
     "github_description": "Curated list of kubectl plugins",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 73
   },
   {
     "name": "OpenRun",
@@ -8814,7 +8814,7 @@
       "self-hosted",
       "starlark"
     ],
-    "last_updated": "2026-11-04T05:41:07Z",
+    "last_updated": "2026-11-04T06:18:49Z",
     "license": "Apache License 2.0",
     "github_description": "Deployment platform for teams to deploy internal tools. Deploy web apps declaratively, on a single-node or on Kubernetes, with OIDC/SAML auth and RBAC.",
     "install_cmd": "go install github.com/openrundev/openrun@latest",
@@ -8828,7 +8828,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Certifications. CKA, CKAD and CKS",
     "stars": 981,
-    "forks": 662,
     "language": "JavaScript",
     "topics": [
       "certification",
@@ -8838,8 +8837,9 @@
     "last_updated": "2026-05-19T16:51:45Z",
     "license": null,
     "github_description": "In-depth and hands-on practice for acing the exam.",
+    "install_cmd": "npm install ckad-crash-course",
     "archived": false,
-    "install_cmd": "npm install ckad-crash-course"
+    "forks": 662
   },
   {
     "name": "terraform-google-project-factory",
@@ -8970,7 +8970,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Namespaces and Multi Tenancy. Self Service Namespaces",
     "stars": 939,
-    "forks": 165,
     "language": "Go",
     "topics": [
       "k8s-sig-auth"
@@ -8978,8 +8977,9 @@
     "last_updated": "2023-05-11T21:17:56Z",
     "license": "Apache License 2.0",
     "github_description": "A working place for multi-tenancy related proposals and prototypes.",
+    "install_cmd": "go install github.com/kubernetes-retired/multi-tenancy@latest",
     "archived": true,
-    "install_cmd": "go install github.com/kubernetes-retired/multi-tenancy@latest"
+    "forks": 165
   },
   {
     "name": "pike",
@@ -9039,7 +9039,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 922,
-    "forks": 85,
     "language": "Go",
     "topics": [
       "kubectl",
@@ -9050,8 +9049,9 @@
     "last_updated": "2024-07-17T11:59:27Z",
     "license": "Apache License 2.0",
     "github_description": "Show who has RBAC permissions to perform actions on different resources in Kubernetes",
+    "install_cmd": "go install github.com/aquasecurity/kubectl-who-can@latest",
     "archived": false,
-    "install_cmd": "go install github.com/aquasecurity/kubectl-who-can@latest"
+    "forks": 85
   },
   {
     "name": "github.com/genuinetools: contained.af",
@@ -9060,7 +9060,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 909,
-    "forks": 62,
     "language": "JavaScript",
     "topics": [
       "apparmor",
@@ -9076,8 +9075,9 @@
     "last_updated": "2023-05-11T20:38:28Z",
     "license": "MIT License",
     "github_description": "A stupid game for learning about containers, capabilities, and syscalls.",
+    "install_cmd": "npm install contained.af",
     "archived": false,
-    "install_cmd": "npm install contained.af"
+    "forks": 62
   },
   {
     "name": "helmwave/helmwave",
@@ -9086,7 +9086,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 901,
-    "forks": 49,
     "language": "Go",
     "topics": [
       "chart",
@@ -9097,8 +9096,9 @@
     "last_updated": "2026-08-06T08:44:35Z",
     "license": "MIT License",
     "github_description": "New 🌊 wave for @helm",
+    "install_cmd": "go install github.com/helmwave/helmwave@latest",
     "archived": false,
-    "install_cmd": "go install github.com/helmwave/helmwave@latest"
+    "forks": 49
   },
   {
     "name": "tfautomv",
@@ -9177,7 +9177,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Charts repositories",
     "stars": 877,
-    "forks": 49,
     "language": "Go",
     "topics": [
       "fairwinds-official",
@@ -9188,8 +9187,9 @@
     "last_updated": "2026-11-03T18:30:40Z",
     "license": "Apache License 2.0",
     "github_description": "Find outdated or deprecated Helm charts running in your cluster.",
+    "install_cmd": "go install github.com/fairwindsops/nova@latest",
     "archived": false,
-    "install_cmd": "go install github.com/fairwindsops/nova@latest"
+    "forks": 49
   },
   {
     "name": "==github.com/datreeio/CRDs-catalog: CRDs Catalog==",
@@ -9198,7 +9198,6 @@
     "category": "kubernetes",
     "subcategory": "Adding Custom Resources. Extending Kubernetes API with Kubernetes Resource Definitions. CRD vs Aggregated API",
     "stars": 873,
-    "forks": 474,
     "language": "Python",
     "topics": [
       "crds",
@@ -9211,8 +9210,9 @@
     "last_updated": "2026-11-03T07:51:14Z",
     "license": "MIT License",
     "github_description": "Popular Kubernetes CRDs (CustomResourceDefinition) in JSON schema format.",
+    "install_cmd": "pip install CRDs-catalog",
     "archived": false,
-    "install_cmd": "pip install CRDs-catalog"
+    "forks": 474
   },
   {
     "name": "icingaweb2 github",
@@ -9260,14 +9260,14 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 828,
-    "forks": 71,
     "language": "Python",
     "topics": [],
     "last_updated": "2021-05-28T09:13:26Z",
     "license": "Apache License 2.0",
     "github_description": "Red Team K8S Adversary Emulation Based on kubectl",
+    "install_cmd": "pip install red-kube",
     "archived": false,
-    "install_cmd": "pip install red-kube"
+    "forks": 71
   },
   {
     "name": "terraform-provider-docker",
@@ -9342,14 +9342,14 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Autocomplete",
     "stars": 817,
-    "forks": 76,
     "language": "Shell",
     "topics": [],
     "last_updated": "2022-06-29T15:40:34Z",
     "license": "GNU General Public License v3.0",
     "github_description": "automagical shell alias completion;",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 76
   },
   {
     "name": "iam-policy-json-to-terraform",
@@ -9403,7 +9403,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 810,
-    "forks": 53,
     "language": "Rust",
     "topics": [
       "allocations",
@@ -9412,8 +9411,9 @@
     "last_updated": "2026-11-01T04:13:42Z",
     "license": "Creative Commons Zero v1.0 Universal",
     "github_description": "kubectl plugin to list allocations (cpu, memory, gpu,... X utilization, requested, limit, allocatable,...)",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 53
   },
   {
     "name": "kube-scan",
@@ -9422,7 +9422,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 800,
-    "forks": 108,
     "language": "Go",
     "topics": [
       "cloud-native",
@@ -9439,8 +9438,9 @@
     "last_updated": "2023-01-06T02:27:16Z",
     "license": "MIT License",
     "github_description": "kube-scan: Octarine k8s cluster risk assessment tool",
+    "install_cmd": "go install github.com/octarinesec/kube-scan@latest",
     "archived": true,
-    "install_cmd": "go install github.com/octarinesec/kube-scan@latest"
+    "forks": 108
   },
   {
     "name": "T.A.D.S. boilerplate",
@@ -9701,7 +9701,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Charts",
     "stars": 745,
-    "forks": 625,
     "language": "Shell",
     "topics": [
       "charts",
@@ -9714,8 +9713,9 @@
     "last_updated": "2026-10-30T15:22:50Z",
     "license": "Apache License 2.0",
     "github_description": "A curated set of Helm charts brought to you by codecentric",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 625
   },
   {
     "name": "tf-summarize",
@@ -9806,7 +9806,6 @@
     "category": "kubernetes",
     "subcategory": "AWS Cloud Development Kit (AWS CDK)",
     "stars": 720,
-    "forks": 59,
     "language": "Go",
     "topics": [
       "infrastructure-as-code",
@@ -9817,8 +9816,9 @@
     "last_updated": "2021-11-17T14:38:55Z",
     "license": "Apache License 2.0",
     "github_description": "A tool for managing complex enterprise Kubernetes environments as code.",
+    "install_cmd": "go install github.com/vmware-archive/kubecfg@latest",
     "archived": true,
-    "install_cmd": "go install github.com/vmware-archive/kubecfg@latest"
+    "forks": 59
   },
   {
     "name": "Docuum",
@@ -9926,7 +9926,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 704,
-    "forks": 675,
     "language": null,
     "topics": [
       "k8s-sig-cli",
@@ -9937,8 +9936,9 @@
     "last_updated": "2026-11-03T05:27:39Z",
     "license": "Apache License 2.0",
     "github_description": "Plugin index for https://github.com/kubernetes-sigs/krew. This repo is for plugin maintainers.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 675
   },
   {
     "name": "ansible-bender",
@@ -10034,7 +10034,6 @@
     "category": "kubernetes",
     "subcategory": "Enforcing Policies and governance for kubernetes workloads with Conftest",
     "stars": 689,
-    "forks": 88,
     "language": "Go",
     "topics": [
       "autoremediation",
@@ -10045,8 +10044,9 @@
     "last_updated": "2024-03-26T15:33:02Z",
     "license": "Apache License 2.0",
     "github_description": "Automatically cordon and drain Kubernetes nodes based on node conditions",
+    "install_cmd": "go install github.com/planetlabs/draino@latest",
     "archived": false,
-    "install_cmd": "go install github.com/planetlabs/draino@latest"
+    "forks": 88
   },
   {
     "name": "PHP Censor",
@@ -10293,7 +10293,6 @@
     "category": "kubernetes",
     "subcategory": "Krew, a plugin manager for kubectl plugins",
     "stars": 636,
-    "forks": 61,
     "language": "Shell",
     "topics": [
       "automated-deployment",
@@ -10317,8 +10316,9 @@
     "last_updated": "2024-06-27T06:00:21Z",
     "license": "Apache License 2.0",
     "github_description": "A Collection of Plugins for kubectl Integration (exec as any user, context switching, etc).",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 61
   },
   {
     "name": "Gebug",
@@ -10392,7 +10392,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Certifications. CKA, CKAD and CKS",
     "stars": 617,
-    "forks": 402,
     "language": null,
     "topics": [
       "certification",
@@ -10402,8 +10401,9 @@
     "last_updated": "2023-04-02T23:27:42Z",
     "license": null,
     "github_description": "Exercises demonstrated as part of the video course \"Certified Kubernetes Application Developer (CKAD) Prep Course\" published by O'Reilly Media.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 402
   },
   {
     "name": "witness",
@@ -10493,7 +10493,6 @@
     "category": "kubernetes",
     "subcategory": "Introduction",
     "stars": 591,
-    "forks": 40,
     "language": "Shell",
     "topics": [
       "kubectl",
@@ -10504,8 +10503,9 @@
     "last_updated": "2023-05-15T02:43:09Z",
     "license": "MIT License",
     "github_description": "Display information about the kubectl current context and namespace in zsh prompt.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 40
   },
   {
     "name": "terraform-aws-security-group",
@@ -10682,7 +10682,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 559,
-    "forks": 248,
     "language": "Go",
     "topics": [
       "aad-pod-identity",
@@ -10695,8 +10694,9 @@
     "last_updated": "2023-10-02T20:34:21Z",
     "license": "MIT License",
     "github_description": "[DEPRECATED] Assign Azure Active Directory Identities to Kubernetes applications. ",
+    "install_cmd": "go install github.com/Azure/aad-pod-identity@latest",
     "archived": true,
-    "install_cmd": "go install github.com/Azure/aad-pod-identity@latest"
+    "forks": 248
   },
   {
     "name": "ansible-navigator",
@@ -10952,14 +10952,14 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 517,
-    "forks": 36,
     "language": "Go",
     "topics": [],
     "last_updated": "2025-01-23T16:14:13Z",
     "license": "Apache License 2.0",
     "github_description": "Security risk analysis for Kubernetes resources",
+    "install_cmd": "go install github.com/stefanprodan/kubectl-kubesec@latest",
     "archived": false,
-    "install_cmd": "go install github.com/stefanprodan/kubectl-kubesec@latest"
+    "forks": 36
   },
   {
     "name": "Cordum",
@@ -11021,14 +11021,14 @@
     "category": "kubernetes",
     "subcategory": "Buildkit CLI for kubectl a drop in replacement for docker build",
     "stars": 504,
-    "forks": 41,
     "language": "Go",
     "topics": [],
     "last_updated": "2023-09-28T03:00:47Z",
     "license": "Other",
     "github_description": "BuildKit CLI for kubectl is a tool for building container images with your Kubernetes cluster",
+    "install_cmd": "go install github.com/vmware-archive/buildkit-cli-for-kubectl@latest",
     "archived": true,
-    "install_cmd": "go install github.com/vmware-archive/buildkit-cli-for-kubectl@latest"
+    "forks": 41
   },
   {
     "name": "terraform-aws-notify-slack",
@@ -11119,7 +11119,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 491,
-    "forks": 20,
     "language": "Go",
     "topics": [
       "containers",
@@ -11131,8 +11130,9 @@
     "last_updated": "2025-11-07T11:44:47Z",
     "license": "Apache License 2.0",
     "github_description": "Kubernetes focused container assessment and context discovery tool for penetration testing",
+    "install_cmd": "go install github.com/quarkslab/kdigger@latest",
     "archived": false,
-    "install_cmd": "go install github.com/quarkslab/kdigger@latest"
+    "forks": 20
   },
   {
     "name": "Kubernetes Security Checklist and Requirements",
@@ -11141,7 +11141,6 @@
     "category": "kubernetes",
     "subcategory": "General Resources",
     "stars": 488,
-    "forks": 91,
     "language": null,
     "topics": [
       "checklist",
@@ -11156,8 +11155,9 @@
     "last_updated": "2021-12-13T07:39:53Z",
     "license": null,
     "github_description": "Kubernetes Security Checklist and Requirements - All in One (authentication, authorization, logging, secrets, configuration, network, workloads, dockerfile)",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 91
   },
   {
     "name": "hcl2json",
@@ -11566,7 +11566,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Scripts",
     "stars": 419,
-    "forks": 172,
     "language": "Shell",
     "topics": [
       "hacktoberfest",
@@ -11576,8 +11575,9 @@
     "last_updated": "2026-10-12T06:00:09Z",
     "license": null,
     "github_description": "A collection of scripts and commands for various Kubernetes tasks",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 172
   },
   {
     "name": "check_ssl_cert",
@@ -11636,7 +11636,7 @@
       "sovereign-cloud",
       "vpc"
     ],
-    "last_updated": "2026-11-04T06:09:07Z",
+    "last_updated": "2026-11-04T06:20:07Z",
     "license": "GNU Affero General Public License v3.0",
     "github_description": "Open-source, AWS-compatible cloud for bare-metal, edge and on-premise. Run existing AWS CLI, SDK and Terraform workflows against EC2, EBS, S3, VPC, IAM, EKS and RDS on your own servers.",
     "install_cmd": "go install github.com/mulgadc/spinifex@latest",
@@ -11686,7 +11686,6 @@
     "category": "kubernetes",
     "subcategory": "AWS Cloud Development Kit (AWS CDK)",
     "stars": 405,
-    "forks": 28,
     "language": "Go",
     "topics": [
       "configuration",
@@ -11700,8 +11699,9 @@
     "last_updated": "2023-01-04T21:42:33Z",
     "license": "Apache License 2.0",
     "github_description": "Configuration as Code with ECMAScript",
+    "install_cmd": "go install github.com/jkcfg/jk@latest",
     "archived": false,
-    "install_cmd": "go install github.com/jkcfg/jk@latest"
+    "forks": 28
   },
   {
     "name": "rback",
@@ -11710,7 +11710,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 399,
-    "forks": 38,
     "language": "Go",
     "topics": [
       "graphviz",
@@ -11721,8 +11720,9 @@
     "last_updated": "2021-01-04T12:59:14Z",
     "license": "Apache License 2.0",
     "github_description": "RBAC in Kubernetes visualizer ",
+    "install_cmd": "go install github.com/team-soteria/rback@latest",
     "archived": false,
-    "install_cmd": "go install github.com/team-soteria/rback@latest"
+    "forks": 38
   },
   {
     "name": "konstraint",
@@ -11731,7 +11731,6 @@
     "category": "kubernetes",
     "subcategory": "Enforcing Policies and governance for kubernetes workloads with Conftest",
     "stars": 394,
-    "forks": 51,
     "language": "Go",
     "topics": [
       "conftest",
@@ -11745,8 +11744,9 @@
     "last_updated": "2025-11-20T02:18:14Z",
     "license": "MIT License",
     "github_description": "A policy management tool for interacting with Gatekeeper",
+    "install_cmd": "go install github.com/plexsystems/konstraint@latest",
     "archived": false,
-    "install_cmd": "go install github.com/plexsystems/konstraint@latest"
+    "forks": 51
   },
   {
     "name": "terraform-graph-beautifier",
@@ -11778,7 +11778,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 385,
-    "forks": 15,
     "language": "Go",
     "topics": [
       "containers",
@@ -11792,8 +11791,9 @@
     "last_updated": "2023-12-18T21:53:45Z",
     "license": null,
     "github_description": "Deep kubernetes visibility from the kubectl",
+    "install_cmd": "go install github.com/sysdiglabs/kubectl-dig@latest",
     "archived": true,
-    "install_cmd": "go install github.com/sysdiglabs/kubectl-dig@latest"
+    "forks": 15
   },
   {
     "name": "Stevedore",
@@ -11910,7 +11910,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Quality of Service QOS. Kubernetes Resource and Capacity Management. Capacity Planning. Resource Quotas per namespace, LimitRanges per namespace, Limits and Requests per POD",
     "stars": 378,
-    "forks": 11,
     "language": "Go",
     "topics": [
       "kubernetes",
@@ -11920,8 +11919,9 @@
     "last_updated": "2024-11-05T04:02:08Z",
     "license": "GNU General Public License v3.0",
     "github_description": "Automated resources sizing tool for containers in kubernetes",
+    "install_cmd": "go install github.com/unagex/kondense@latest",
     "archived": false,
-    "install_cmd": "go install github.com/unagex/kondense@latest"
+    "forks": 11
   },
   {
     "name": "terrahelp",
@@ -12456,7 +12456,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 327,
-    "forks": 41,
     "language": "Go",
     "topics": [
       "container-security",
@@ -12467,8 +12466,9 @@
     "last_updated": "2023-10-11T21:18:59Z",
     "license": "Apache License 2.0",
     "github_description": "Help building an adaptive and fine-grained pod security policy",
+    "install_cmd": "go install github.com/sysdiglabs/kube-psp-advisor@latest",
     "archived": true,
-    "install_cmd": "go install github.com/sysdiglabs/kube-psp-advisor@latest"
+    "forks": 41
   },
   {
     "name": "kubectl-bindrole",
@@ -12477,7 +12477,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 325,
-    "forks": 18,
     "language": "Go",
     "topics": [
       "hacktoberfest",
@@ -12490,8 +12489,9 @@
     "last_updated": "2026-07-03T00:36:37Z",
     "license": "MIT License",
     "github_description": "Summarize Kubernetes RBAC roles for the specified subjects.",
+    "install_cmd": "go install github.com/Ladicle/kubectl-bindrole@latest",
     "archived": false,
-    "install_cmd": "go install github.com/Ladicle/kubectl-bindrole@latest"
+    "forks": 18
   },
   {
     "name": "python-hcl2",
@@ -12679,7 +12679,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 307,
-    "forks": 78,
     "language": "Go",
     "topics": [
       "chart",
@@ -12693,8 +12692,9 @@
     "last_updated": "2026-10-19T03:32:50Z",
     "license": "Apache License 2.0",
     "github_description": "Export helm stats into the Prometheus format",
+    "install_cmd": "go install github.com/sstarcher/helm-exporter@latest",
     "archived": false,
-    "install_cmd": "go install github.com/sstarcher/helm-exporter@latest"
+    "forks": 78
   },
   {
     "name": "ctk",
@@ -12862,7 +12862,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Certifications. CKA, CKAD and CKS",
     "stars": 295,
-    "forks": 144,
     "language": "HTML",
     "topics": [
       "bookmarks",
@@ -12875,8 +12874,9 @@
     "last_updated": "2023-02-23T04:44:31Z",
     "license": "MIT License",
     "github_description": "save time in searching docs in CKAD exam",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 144
   },
   {
     "name": "HULL",
@@ -12885,7 +12885,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Charts",
     "stars": 295,
-    "forks": 15,
     "language": "Python",
     "topics": [
       "ai",
@@ -12912,8 +12911,9 @@
     "last_updated": "2026-11-02T07:21:09Z",
     "license": "Apache License 2.0",
     "github_description": "The incredible HULL - Helm Uniform Layer Library - is a Helm library chart to improve Helm chart based workflows. ",
+    "install_cmd": "pip install hull",
     "archived": false,
-    "install_cmd": "pip install hull"
+    "forks": 15
   },
   {
     "name": "Anthracite",
@@ -13057,14 +13057,14 @@
     "category": "kubernetes",
     "subcategory": "KubeCarrier",
     "stars": 290,
-    "forks": 14,
     "language": "Go",
     "topics": [],
     "last_updated": "2023-07-05T20:56:40Z",
     "license": "Apache License 2.0",
     "github_description": "KubeCarrier - Service Management at Scale ",
+    "install_cmd": "go install github.com/kubermatic/kubecarrier@latest",
     "archived": true,
-    "install_cmd": "go install github.com/kubermatic/kubecarrier@latest"
+    "forks": 14
   },
   {
     "name": "NSCP github",
@@ -13105,7 +13105,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 287,
-    "forks": 10,
     "language": "Rust",
     "topics": [
       "bash",
@@ -13118,8 +13117,9 @@
     "last_updated": "2026-10-24T15:32:50Z",
     "license": "MIT License",
     "github_description": "Kubectl plugin managing sessions",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 10
   },
   {
     "name": "Telert",
@@ -13525,7 +13525,6 @@
     "category": "kubernetes",
     "subcategory": "Enforcing Policies and governance for kubernetes workloads with Conftest",
     "stars": 249,
-    "forks": 44,
     "language": "Go",
     "topics": [
       "aks",
@@ -13538,8 +13537,9 @@
     "last_updated": "2026-11-02T18:16:08Z",
     "license": "Apache License 2.0",
     "github_description": "Kubernetes Connection Manager CLI",
+    "install_cmd": "go install github.com/fidelity/kconnect@latest",
     "archived": false,
-    "install_cmd": "go install github.com/fidelity/kconnect@latest"
+    "forks": 44
   },
   {
     "name": "cloud-concierge",
@@ -13852,7 +13852,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 232,
-    "forks": 11,
     "language": "Go",
     "topics": [
       "kubectl",
@@ -13865,8 +13864,9 @@
     "last_updated": "2026-03-06T13:17:06Z",
     "license": "Apache License 2.0",
     "github_description": "kubectl plugin for spinning up netshoot container for network troubleshooting",
+    "install_cmd": "go install github.com/nilic/kubectl-netshoot@latest",
     "archived": false,
-    "install_cmd": "go install github.com/nilic/kubectl-netshoot@latest"
+    "forks": 11
   },
   {
     "name": "Kubeterm: Graphical Management Tool for Kubernetes",
@@ -13875,7 +13875,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 231,
-    "forks": 10,
     "language": null,
     "topics": [
       "ai-agent",
@@ -13897,8 +13896,9 @@
     "last_updated": "2026-10-19T06:25:04Z",
     "license": null,
     "github_description": "Graphical management tool for Kubernetes on desktop and mobile.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 10
   },
   {
     "name": "tfvar",
@@ -14050,14 +14050,14 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 222,
-    "forks": 59,
     "language": "Python",
     "topics": [],
     "last_updated": "2024-02-05T12:58:06Z",
     "license": "Apache License 2.0",
     "github_description": "Tool for auditing RBACs in Kubernetes",
+    "install_cmd": "pip install kubernetes-rbac-audit",
     "archived": false,
-    "install_cmd": "pip install kubernetes-rbac-audit"
+    "forks": 59
   },
   {
     "name": "jamesbuckett/ckad-questions",
@@ -14066,7 +14066,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Certifications. CKA, CKAD and CKS",
     "stars": 216,
-    "forks": 59,
     "language": null,
     "topics": [
       "certification",
@@ -14082,8 +14081,9 @@
     "last_updated": "2026-05-15T02:56:50Z",
     "license": "Apache License 2.0",
     "github_description": "A set of exercises and solutions to prepare for the Certified Kubernetes Application Developer exam by Cloud Native Computing Foundation.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 59
   },
   {
     "name": "php-ansible Library",
@@ -14127,14 +14127,14 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Jobs and Cron Jobs",
     "stars": 210,
-    "forks": 8,
     "language": "Go",
     "topics": [],
     "last_updated": "2024-08-13T22:32:56Z",
     "license": "MIT License",
     "github_description": "Run a Kubernetes Job and get the logs when it's done 🏃‍♂️",
+    "install_cmd": "go install github.com/alexellis/run-job@latest",
     "archived": false,
-    "install_cmd": "go install github.com/alexellis/run-job@latest"
+    "forks": 8
   },
   {
     "name": "Complete Terraform documentation as PDF files (Updated nightly)",
@@ -14271,7 +14271,6 @@
     "category": "kubernetes",
     "subcategory": "Enforcing Policies and governance for kubernetes workloads with Conftest",
     "stars": 198,
-    "forks": 15,
     "language": "Go",
     "topics": [
       "krew",
@@ -14282,8 +14281,9 @@
     "last_updated": "2023-05-19T08:21:45Z",
     "license": "Apache License 2.0",
     "github_description": "kubectl plugin that deletes unused Kubernetes resources",
+    "install_cmd": "go install github.com/micnncim/kubectl-reap@latest",
     "archived": false,
-    "install_cmd": "go install github.com/micnncim/kubectl-reap@latest"
+    "forks": 15
   },
   {
     "name": "dockerize",
@@ -14425,7 +14425,6 @@
     "category": "kubernetes",
     "subcategory": "Cost Estimation Strategies",
     "stars": 188,
-    "forks": 9,
     "language": "Go",
     "topics": [
       "aws",
@@ -14437,8 +14436,9 @@
     "last_updated": "2021-11-03T09:30:26Z",
     "license": "Apache License 2.0",
     "github_description": "💰 Significantly reduce Kubernetes costs by finding the cheapest machine types that can run your workloads",
+    "install_cmd": "go install github.com/aporia-ai/kubesurvival@latest",
     "archived": false,
-    "install_cmd": "go install github.com/aporia-ai/kubesurvival@latest"
+    "forks": 9
   },
   {
     "name": "tf_aws_bastion_s3_keys",
@@ -14606,14 +14606,14 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 174,
-    "forks": 13,
     "language": "Go",
     "topics": [],
     "last_updated": "2023-04-04T21:12:58Z",
     "license": "Other",
     "github_description": "Treat any Kustomization or K8s manifests directory as a Helm chart",
+    "install_cmd": "go install github.com/mumoshu/helm-x@latest",
     "archived": false,
-    "install_cmd": "go install github.com/mumoshu/helm-x@latest"
+    "forks": 13
   },
   {
     "name": "OpenSRE",
@@ -14786,7 +14786,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 165,
-    "forks": 5,
     "language": "Python",
     "topics": [
       "cloud-native",
@@ -14798,8 +14797,9 @@
     "last_updated": "2026-09-06T21:05:09Z",
     "license": "Apache License 2.0",
     "github_description": "Tool to validate assumptions about the network",
+    "install_cmd": "pip install netchecks",
     "archived": false,
-    "install_cmd": "pip install netchecks"
+    "forks": 5
   },
   {
     "name": "terraform-provider-terracurl",
@@ -14946,14 +14946,14 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 162,
-    "forks": 151,
     "language": null,
     "topics": [],
     "last_updated": "2022-06-30T08:23:16Z",
     "license": null,
     "github_description": "This repo contains set of practice questions which will help you to get ready for the cka exam ",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 151
   },
   {
     "name": "k8s-worker-pod-autoscaler",
@@ -14962,7 +14962,6 @@
     "category": "kubernetes",
     "subcategory": "Enforcing Policies and governance for kubernetes workloads with Conftest",
     "stars": 161,
-    "forks": 28,
     "language": "Go",
     "topics": [
       "autoscaling",
@@ -14974,8 +14973,9 @@
     "last_updated": "2024-02-28T00:17:55Z",
     "license": "Apache License 2.0",
     "github_description": "Kubernetes autoscaler for the workers. Resource is called WPA. Queues Supported: SQS, Beanstalkd.",
+    "install_cmd": "go install github.com/practo/k8s-worker-pod-autoscaler@latest",
     "archived": false,
-    "install_cmd": "go install github.com/practo/k8s-worker-pod-autoscaler@latest"
+    "forks": 28
   },
   {
     "name": "Kraken CI",
@@ -15447,14 +15447,14 @@
     "category": "kubernetes",
     "subcategory": "Enforcing Policies and governance for kubernetes workloads with Conftest",
     "stars": 142,
-    "forks": 15,
     "language": "Open Policy Agent",
     "topics": [],
     "last_updated": "2021-07-28T12:32:00Z",
     "license": "MIT License",
     "github_description": "Rego policies to monitor Kubernetes APIs deprecations.",
+    "install_cmd": null,
     "archived": true,
-    "install_cmd": null
+    "forks": 15
   },
   {
     "name": "terraform-provider-spinnaker",
@@ -15535,7 +15535,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 140,
-    "forks": 16,
     "language": "Shell",
     "topics": [
       "debugging",
@@ -15548,8 +15547,9 @@
     "last_updated": "2021-08-22T16:25:53Z",
     "license": "Apache License 2.0",
     "github_description": "pod debugging tool for kubernetes clusters with docker runtimes",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 16
   },
   {
     "name": "clarity",
@@ -15653,7 +15653,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Charts",
     "stars": 137,
-    "forks": 68,
     "language": "Shell",
     "topics": [
       "acs",
@@ -15680,8 +15679,9 @@
     "last_updated": "2026-11-01T21:09:59Z",
     "license": "GNU General Public License v3.0",
     "github_description": "Original & most popular Helm Chart / Container for GenieACS",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 68
   },
   {
     "name": "layerx",
@@ -15787,7 +15787,6 @@
     "category": "kubernetes",
     "subcategory": "AWS Cloud Development Kit (AWS CDK)",
     "stars": 135,
-    "forks": 12,
     "language": "Go",
     "topics": [
       "kubernetes",
@@ -15796,8 +15795,9 @@
     "last_updated": "2018-06-01T15:13:48Z",
     "license": "Other",
     "github_description": "kubegen – simple way to describe Kubernetes resources in a structured way, but without new syntax or magic",
+    "install_cmd": "go install github.com/errordeveloper/kubegen@latest",
     "archived": false,
-    "install_cmd": "go install github.com/errordeveloper/kubegen@latest"
+    "forks": 12
   },
   {
     "name": "terraform-provider-k8s",
@@ -16017,14 +16017,14 @@
     "category": "kubernetes",
     "subcategory": "Helm Chart Documentation",
     "stars": 122,
-    "forks": 16,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-10-10T19:39:16Z",
     "license": "Apache License 2.0",
     "github_description": "Helm Chart Documentation Generator",
+    "install_cmd": "go install github.com/kubepack/chart-doc-gen@latest",
     "archived": false,
-    "install_cmd": "go install github.com/kubepack/chart-doc-gen@latest"
+    "forks": 16
   },
   {
     "name": "nagvis github",
@@ -16110,7 +16110,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 119,
-    "forks": 7,
     "language": "Go",
     "topics": [
       "cli",
@@ -16121,8 +16120,9 @@
     "last_updated": "2022-03-24T12:46:59Z",
     "license": "Apache License 2.0",
     "github_description": "Kubernetes Container Registry",
+    "install_cmd": "go install github.com/hasheddan/k8scr@latest",
     "archived": false,
-    "install_cmd": "go install github.com/hasheddan/k8scr@latest"
+    "forks": 7
   },
   {
     "name": "terraform-provider-pingdom",
@@ -16263,7 +16263,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Plugins",
     "stars": 114,
-    "forks": 24,
     "language": "Shell",
     "topics": [
       "helm",
@@ -16273,8 +16272,9 @@
     "last_updated": "2026-03-29T15:24:57Z",
     "license": "Apache License 2.0",
     "github_description": "Helm3 plugin that pulls(re-creates) helm Charts from deployed releases, and updates values of deployed releases without the chart.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 24
   },
   {
     "name": "cekit",
@@ -16305,7 +16305,6 @@
     "category": "kubernetes",
     "subcategory": "Kubecrt",
     "stars": 113,
-    "forks": 7,
     "language": "Go",
     "topics": [
       "helm-charts",
@@ -16315,8 +16314,9 @@
     "last_updated": "2023-03-07T02:59:09Z",
     "license": "ISC License",
     "github_description": "Convert Helm charts to Kubernetes resources.",
+    "install_cmd": "go install github.com/blendle/kubecrt@latest",
     "archived": false,
-    "install_cmd": "go install github.com/blendle/kubecrt@latest"
+    "forks": 7
   },
   {
     "name": "proco",
@@ -16480,7 +16480,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 107,
-    "forks": 16,
     "language": "Python",
     "topics": [
       "cis",
@@ -16504,8 +16503,9 @@
     "last_updated": "2023-06-06T10:12:31Z",
     "license": "Apache License 2.0",
     "github_description": "OWASP Kubernetes security and compliance tool [WIP]",
+    "install_cmd": "pip install KubeLight",
     "archived": false,
-    "install_cmd": "pip install KubeLight"
+    "forks": 16
   },
   {
     "name": "philips-labs/terraform-registry",
@@ -16684,14 +16684,14 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Best Practices and Tips",
     "stars": 97,
-    "forks": 111,
     "language": "HCL",
     "topics": [],
     "last_updated": "2023-02-18T02:57:45Z",
     "license": "MIT License",
     "github_description": "Kubernetes Production Best Practices, published by Packt",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 111
   },
   {
     "name": "Hokusai",
@@ -16851,7 +16851,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 92,
-    "forks": 14,
     "language": "Jinja",
     "topics": [
       "cloud-native",
@@ -16863,8 +16862,9 @@
     "last_updated": "2023-01-10T03:37:18Z",
     "license": "MIT License",
     "github_description": ":package: :rocket: :package:     - Kubernetes Cluster setup using CRI-O Runtime",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 14
   },
   {
     "name": "rspec-terraform",
@@ -16935,14 +16935,14 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 90,
-    "forks": 20,
     "language": "Python",
     "topics": [],
     "last_updated": "2021-10-20T23:48:03Z",
     "license": null,
     "github_description": "Open source IaC security scanner for public Helm charts",
+    "install_cmd": "pip install helm-scanner",
     "archived": false,
-    "install_cmd": "pip install helm-scanner"
+    "forks": 20
   },
   {
     "name": "tfgen",
@@ -17029,14 +17029,14 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 89,
-    "forks": 30,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-11-02T15:05:03Z",
     "license": "Apache License 2.0",
     "github_description": "kubectl plugin for signing Kubernetes manifest YAML files with sigstore",
+    "install_cmd": "go install github.com/sigstore/k8s-manifest-sigstore@latest",
     "archived": false,
-    "install_cmd": "go install github.com/sigstore/k8s-manifest-sigstore@latest"
+    "forks": 30
   },
   {
     "name": "terraform-aws-redshift",
@@ -17249,7 +17249,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 83,
-    "forks": 17,
     "language": "Go",
     "topics": [
       "backup",
@@ -17263,8 +17262,9 @@
     "last_updated": "2021-03-04T17:55:09Z",
     "license": "Other",
     "github_description": "Helm plugin which performs backup/restore of releases in a namespace to/from a file",
+    "install_cmd": "go install github.com/maorfr/helm-backup@latest",
     "archived": false,
-    "install_cmd": "go install github.com/maorfr/helm-backup@latest"
+    "forks": 17
   },
   {
     "name": "Gradle Docker plugin",
@@ -17689,7 +17689,6 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Patterns and Antipatterns. Service Discovery",
     "stars": 72,
-    "forks": 11,
     "language": "Go",
     "topics": [
       "golang",
@@ -17700,8 +17699,9 @@
     "last_updated": "2020-10-05T21:37:29Z",
     "license": "MIT License",
     "github_description": "YAML and Golang implementations of common Kubernetes patterns.",
+    "install_cmd": "go install github.com/sharadbhat/KubernetesPatterns@latest",
     "archived": false,
-    "install_cmd": "go install github.com/sharadbhat/KubernetesPatterns@latest"
+    "forks": 11
   },
   {
     "name": "tfgpt",
@@ -17844,7 +17844,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 69,
-    "forks": 9,
     "language": "Go",
     "topics": [
       "deployment",
@@ -17859,8 +17858,9 @@
     "last_updated": "2022-11-14T17:37:27Z",
     "license": "Apache License 2.0",
     "github_description": "Allows you to manage configuration and secrets from multiple provider while masking the secrets at the deployment",
+    "install_cmd": "go install github.com/tellerops/helm-teller@latest",
     "archived": false,
-    "install_cmd": "go install github.com/tellerops/helm-teller@latest"
+    "forks": 9
   },
   {
     "name": "Terraform PDF Doc",
@@ -18082,7 +18082,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 64,
-    "forks": 26,
     "language": "Go",
     "topics": [
       "backup",
@@ -18102,8 +18101,9 @@
     "last_updated": "2026-10-28T23:32:43Z",
     "license": "Apache License 2.0",
     "github_description": "Use SQL to instantly query Kubernetes API resources. Open source CLI. No DB required.",
+    "install_cmd": "go install github.com/turbot/steampipe-plugin-kubernetes@latest",
     "archived": false,
-    "install_cmd": "go install github.com/turbot/steampipe-plugin-kubernetes@latest"
+    "forks": 26
   },
   {
     "name": "terraform-plan",
@@ -18223,14 +18223,14 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 62,
-    "forks": 57,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-11-02T21:03:42Z",
     "license": "Apache License 2.0",
     "github_description": "A rules-based tool to certify Helm Charts.",
+    "install_cmd": "go install github.com/redhat-certification/chart-verifier@latest",
     "archived": false,
-    "install_cmd": "go install github.com/redhat-certification/chart-verifier@latest"
+    "forks": 57
   },
   {
     "name": "nagios plugins",
@@ -18531,14 +18531,14 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 53,
-    "forks": 6,
     "language": "Go",
     "topics": [],
     "last_updated": "2023-08-16T13:48:06Z",
     "license": null,
     "github_description": "Decomposes Helm package and visualizes hierarchy of subcharts and images",
+    "install_cmd": "go install github.com/jkosik/helm-decomposer@latest",
     "archived": false,
-    "install_cmd": "go install github.com/jkosik/helm-decomposer@latest"
+    "forks": 6
   },
   {
     "name": "NDOUtils github",
@@ -18822,7 +18822,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Plugins",
     "stars": 45,
-    "forks": 35,
     "language": "Go",
     "topics": [
       "architecture-diagram",
@@ -18841,8 +18840,9 @@
     "last_updated": "2026-09-01T15:34:37Z",
     "license": "Apache License 2.0",
     "github_description": null,
+    "install_cmd": "go install github.com/meshery-extensions/helm-kanvas-snapshot@latest",
     "archived": false,
-    "install_cmd": "go install github.com/meshery-extensions/helm-kanvas-snapshot@latest"
+    "forks": 35
   },
   {
     "name": "terraform-provider-checkly",
@@ -18926,14 +18926,14 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 43,
-    "forks": 15,
     "language": "Go",
     "topics": [],
     "last_updated": "2024-08-01T10:32:40Z",
     "license": "Apache License 2.0",
     "github_description": "Create changelogs for Helm Charts, based on git history",
+    "install_cmd": "go install github.com/mogensen/helm-changelog@latest",
     "archived": false,
-    "install_cmd": "go install github.com/mogensen/helm-changelog@latest"
+    "forks": 15
   },
   {
     "name": "monitoring-plugins perl",
@@ -19182,7 +19182,6 @@
     "category": "kubernetes",
     "subcategory": "Kubectl Plugins",
     "stars": 39,
-    "forks": 4,
     "language": "Go",
     "topics": [
       "go",
@@ -19194,8 +19193,9 @@
     "last_updated": "2024-10-10T04:57:50Z",
     "license": "MIT License",
     "github_description": "A kubectl plugin for viewing decoded Secret data with search flags.",
+    "install_cmd": "go install github.com/keisku/kubectl-secretdata@latest",
     "archived": false,
-    "install_cmd": "go install github.com/keisku/kubectl-secretdata@latest"
+    "forks": 4
   },
   {
     "name": "terraform-provider-env0",
@@ -19390,7 +19390,6 @@
     "category": "kubernetes",
     "subcategory": "Helm Tools",
     "stars": 37,
-    "forks": 8,
     "language": "Go",
     "topics": [
       "add-on",
@@ -19405,8 +19404,9 @@
     "last_updated": "2026-10-31T17:52:41Z",
     "license": "Apache License 2.0",
     "github_description": "A CLI to nicely display resources/helm charts deployed in Cluster managed by Sveltos. Collect tech-support from managed Kubernetes clusters.",
+    "install_cmd": "go install github.com/projectsveltos/sveltosctl@latest",
     "archived": false,
-    "install_cmd": "go install github.com/projectsveltos/sveltosctl@latest"
+    "forks": 8
   },
   {
     "name": "fuzzy-terraform-rm",
@@ -19697,7 +19697,6 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 31,
-    "forks": 7,
     "language": "Pascal",
     "topics": [
       "compliance",
@@ -19714,8 +19713,9 @@
     "last_updated": "2026-03-25T21:26:25Z",
     "license": "Apache License 2.0",
     "github_description": "Run individual controls or full compliance benchmarks for NSA CISA Kubernetes Hardening Guidance across all of your Kubernetes clusters using Powerpipe and Steampipe.",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 7
   },
   {
     "name": "tf-why",
@@ -19763,14 +19763,14 @@
     "category": "kubernetes",
     "subcategory": "Kubernetes Open Source Container Orchestation",
     "stars": 30,
-    "forks": 2,
     "language": null,
     "topics": [],
     "last_updated": "2023-08-17T19:03:45Z",
     "license": "Apache License 2.0",
     "github_description": null,
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 2
   },
   {
     "name": "terraform-aws-appconfig",
@@ -20614,14 +20614,14 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 16,
-    "forks": 2,
     "language": "Go",
     "topics": [],
     "last_updated": "2026-03-24T19:16:15Z",
     "license": "Apache License 2.0",
     "github_description": "Kubernetes Native Policy Management",
+    "install_cmd": "go install github.com/nirmata/kyverno@latest",
     "archived": true,
-    "install_cmd": "go install github.com/nirmata/kyverno@latest"
+    "forks": 2
   },
   {
     "name": "Registryo",
@@ -20816,14 +20816,14 @@
     "category": "kubernetes",
     "subcategory": "Kubectl example",
     "stars": 13,
-    "forks": 0,
     "language": "Go",
     "topics": [],
     "last_updated": "2023-02-20T13:29:22Z",
     "license": "Other",
     "github_description": "kubectl plugin to dump example helper resource templates",
+    "install_cmd": "go install github.com/trstringer/kubectl-example@latest",
     "archived": false,
-    "install_cmd": "go install github.com/trstringer/kubectl-example@latest"
+    "forks": 0
   },
   {
     "name": "mesh-router",
@@ -21071,14 +21071,14 @@
     "category": "kubernetes",
     "subcategory": "Helm Charts repositories",
     "stars": 11,
-    "forks": 2,
     "language": "Go",
     "topics": [],
     "last_updated": "2023-03-01T11:37:12Z",
     "license": "Apache License 2.0",
     "github_description": "kubernetes deployment orchestrator",
+    "install_cmd": "go install github.com/SAP-archive/kubernetes-deployment-orchestrator@latest",
     "archived": true,
-    "install_cmd": "go install github.com/SAP-archive/kubernetes-deployment-orchestrator@latest"
+    "forks": 2
   },
   {
     "name": "Snap CD",
@@ -21585,14 +21585,14 @@
     "category": "kubernetes",
     "subcategory": "Open Source Projects",
     "stars": 6,
-    "forks": 0,
     "language": null,
     "topics": [],
     "last_updated": "2024-05-30T20:08:39Z",
     "license": null,
     "github_description": "KBOM - Kubernetes Bill of Materials",
+    "install_cmd": null,
     "archived": true,
-    "install_cmd": null
+    "forks": 0
   },
   {
     "name": "nagios-mib github",
@@ -22649,14 +22649,14 @@
     "category": "kubernetes",
     "subcategory": "Helm Charts",
     "stars": 0,
-    "forks": 0,
     "language": "Go Template",
     "topics": [],
     "last_updated": "2026-11-03T22:01:30Z",
     "license": "Apache License 2.0",
     "github_description": "A Helm chart for the Doubleword control layer",
+    "install_cmd": null,
     "archived": false,
-    "install_cmd": null
+    "forks": 0
   },
   {
     "name": "Ganglia github",
