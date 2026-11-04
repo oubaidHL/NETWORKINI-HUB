@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import { X, ExternalLink, Github, Terminal, Star, GitFork, Scale, Copy, Link2, Heart, GitCompare, Archive } from 'lucide-react';
 import { formatNumber, timeAgo, trendLabel } from '../utils';
 
@@ -13,6 +15,29 @@ const resolveUrl = (repo, url, key) => {
   return key === 'src'
     ? `https://raw.githubusercontent.com/${repo}/HEAD/${path}`
     : `https://github.com/${repo}/blob/HEAD/${path}`;
+};
+
+// READMEs are untrusted: raw HTML is parsed, then sanitized with a GitHub-like allow-list.
+const schema = {
+  ...defaultSchema,
+  attributes: {
+    ...defaultSchema.attributes,
+    img: [...(defaultSchema.attributes.img || []), 'width', 'height', 'align'],
+    '*': [...(defaultSchema.attributes['*'] || []), 'align'],
+  },
+};
+
+// Resolves relative links/images that appear inside raw HTML.
+const rehypeResolveUrls = (repo) => () => (tree) => {
+  const walk = (node) => {
+    if (node.type === 'element') {
+      for (const key of ['src', 'href']) {
+        if (typeof node.properties?.[key] === 'string') node.properties[key] = resolveUrl(repo, node.properties[key], key);
+      }
+    }
+    node.children?.forEach(walk);
+  };
+  walk(tree);
 };
 
 const markdownComponents = {
@@ -137,6 +162,7 @@ const ToolModal = ({ tool, related, onClose, onOpen, onCopy, onFilter, isFav, on
                 <div className="markdown-body">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeRaw, rehypeResolveUrls(repo), [rehypeSanitize, schema]]}
                     components={markdownComponents}
                     urlTransform={(url, key) => resolveUrl(repo, url, key)}
                   >

@@ -271,7 +271,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "netdata github",
+    "name": "netdata",
     "url": "https://github.com/firehol/netdata",
     "description": "Netdata written in C.",
     "category": "monitoring",
@@ -5158,7 +5158,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "statsd github",
+    "name": "statsd",
     "url": "https://github.com/etsy/statsd",
     "description": "Daemon for easy but powerful stats aggregation.",
     "category": "monitoring",
@@ -6487,7 +6487,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "logstash github",
+    "name": "logstash",
     "url": "https://github.com/elastic/logstash",
     "description": "Transport and process your logs, events, or other data, Elastic stack.",
     "category": "monitoring",
@@ -13034,7 +13034,7 @@
     "install_cmd": null
   },
   {
-    "name": "HertzBeat github",
+    "name": "HertzBeat",
     "url": "https://github.com/dromara/hertzbeat",
     "description": "HertzBeat github.",
     "category": "monitoring",
@@ -15102,7 +15102,7 @@
     "install_cmd": "go install github.com/containernetworking/cni@latest"
   },
   {
-    "name": "Graphite web github",
+    "name": "Graphite web",
     "url": "https://github.com/graphite-project/graphite-web",
     "description": "Graphite web.",
     "category": "monitoring",
@@ -18496,7 +18496,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "dokuwiki github",
+    "name": "dokuwiki",
     "url": "https://github.com/splitbrain/dokuwiki",
     "description": "Dokuwiki source code.",
     "category": "monitoring",
@@ -18764,7 +18764,7 @@
     }
   },
   {
-    "name": "Opserver github",
+    "name": "Opserver",
     "url": "https://github.com/opserver/Opserver",
     "description": "Opserver written in C#.",
     "category": "monitoring",
@@ -19483,7 +19483,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Uptrace github",
+    "name": "Uptrace",
     "url": "https://github.com/uptrace/uptrace",
     "description": "Open source APM: OpenTelemetry traces, metrics, and logs",
     "category": "monitoring",
@@ -23819,7 +23819,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "javamelody github",
+    "name": "javamelody",
     "url": "https://github.com/javamelody/javamelody",
     "description": "The source code.",
     "category": "monitoring",
@@ -24436,7 +24436,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "Sensu github",
+    "name": "Sensu",
     "url": "https://github.com/sensu/sensu",
     "description": "Sensu core written in Ruby.",
     "category": "monitoring",
@@ -27121,7 +27121,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "Icinga2 core github",
+    "name": "Icinga2 core",
     "url": "https://github.com/Icinga/icinga2",
     "description": "Icinga2 core written in C++.",
     "category": "monitoring",
@@ -28474,7 +28474,7 @@
     "install_cmd": "go install github.com/boz/kail@latest"
   },
   {
-    "name": "Nagios core github",
+    "name": "Nagios core",
     "url": "https://github.com/NagiosEnterprises/nagioscore",
     "description": "Nagios core written in C.",
     "category": "monitoring",
@@ -31006,7 +31006,7 @@
     "install_cmd": null
   },
   {
-    "name": "kairosDB github",
+    "name": "kairosDB",
     "url": "https://github.com/kairosdb/kairosdb",
     "description": "KairosDB source code.",
     "category": "monitoring",
@@ -32666,7 +32666,7 @@
     "install_cmd": "pip install sceptre"
   },
   {
-    "name": "Graphite carbon github",
+    "name": "Graphite carbon",
     "url": "https://github.com/graphite-project/carbon",
     "description": "Graphite carbon.",
     "category": "monitoring",
@@ -33947,7 +33947,7 @@
     "install_cmd": "go install github.com/poseidon/matchbox@latest"
   },
   {
-    "name": "kamon github",
+    "name": "kamon",
     "url": "https://github.com/kamon-io/Kamon",
     "description": "The source code.",
     "category": "monitoring",
@@ -35610,7 +35610,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "graphite-whisper github",
+    "name": "graphite-whisper",
     "url": "https://github.com/graphite-project/whisper",
     "description": "Graphite whisper.",
     "category": "monitoring",
@@ -36794,7 +36794,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "Shinken core github",
+    "name": "Shinken core",
     "url": "https://github.com/naparuba/shinken",
     "description": "Shinken core written in Python.",
     "category": "monitoring",
@@ -36987,7 +36987,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "rrdtool github",
+    "name": "rrdtool",
     "url": "https://github.com/oetiker/rrdtool-1.x",
     "description": "Rrdtool source code.",
     "category": "monitoring",
@@ -39996,7 +39996,7 @@
     "install_cmd": null
   },
   {
-    "name": "icingaweb2 github",
+    "name": "icingaweb2",
     "url": "https://github.com/Icinga/icingaweb2",
     "description": "For Icinga.",
     "category": "monitoring",
@@ -41142,7 +41142,7 @@
     "install_cmd": "go install github.com/kmesh-net/kmesh@latest"
   },
   {
-    "name": "gearman github",
+    "name": "gearman",
     "url": "https://github.com/gearman/gearmand",
     "description": "Gearmand source code. A gearman job server written in C++.",
     "category": "monitoring",
@@ -44416,7 +44416,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "nagios-api github",
+    "name": "nagios-api",
     "url": "https://github.com/zorkian/nagios-api",
     "description": "A REST-like, JSON interface to nagios.",
     "category": "monitoring",
@@ -46150,7 +46150,7 @@
     "install_cmd": "go install github.com/postfinance/kubenurse@latest"
   },
   {
-    "name": "Ganglia core github",
+    "name": "Ganglia core",
     "url": "https://github.com/ganglia/monitor-core",
     "description": "Ganglia written in C.",
     "category": "monitoring",
@@ -46833,7 +46833,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "nagstamon github",
+    "name": "nagstamon",
     "url": "https://github.com/HenriWahl/Nagstamon",
     "description": "Nagstamon source code.",
     "category": "monitoring",
@@ -47420,7 +47420,7 @@
     "install_cmd": "pip install conjure-up"
   },
   {
-    "name": "consol thruk github",
+    "name": "consol thruk",
     "url": "https://github.com/sni/Thruk",
     "description": "Thruk source code.",
     "category": "monitoring",
@@ -50502,7 +50502,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Centreon plugins github",
+    "name": "Centreon plugins",
     "url": "https://github.com/centreon/centreon-plugins",
     "description": "Centreon plugins.",
     "category": "monitoring",
@@ -50595,7 +50595,7 @@
     "install_cmd": "npm install lock-threads"
   },
   {
-    "name": "adagios github",
+    "name": "adagios",
     "url": "https://github.com/opinkerfi/adagios",
     "description": "Adagios source code.",
     "category": "monitoring",
@@ -50906,7 +50906,7 @@
     "install_cmd": null
   },
   {
-    "name": "nagios-herald github",
+    "name": "nagios-herald",
     "url": "https://github.com/etsy/nagios-herald",
     "description": "Nagios-herald source code.",
     "category": "monitoring",
@@ -52149,7 +52149,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "nagdash github",
+    "name": "nagdash",
     "url": "https://github.com/lozzd/Nagdash",
     "description": "Dashboard interface for nagios.",
     "category": "monitoring",
@@ -52185,7 +52185,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "NSCP github",
+    "name": "NSCP",
     "url": "https://github.com/mickem/nscp",
     "description": "NSCP source code.",
     "category": "monitoring",
@@ -52317,7 +52317,7 @@
     "install_cmd": null
   },
   {
-    "name": "graphios github",
+    "name": "graphios",
     "url": "https://github.com/shawn-sterling/graphios",
     "description": "A program to send nagios perf data to graphite(carbon)/statsd/librato/influxdb.",
     "category": "monitoring",
@@ -52804,7 +52804,7 @@
     "install_cmd": null
   },
   {
-    "name": "NRPE github",
+    "name": "NRPE",
     "url": "https://github.com/NagiosEnterprises/nrpe",
     "description": "Nagios Remote Plugin Executor for Linux.",
     "category": "monitoring",
@@ -53445,7 +53445,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "cucumber github",
+    "name": "cucumber",
     "url": "https://github.com/auxesis/cucumber-nagios",
     "description": "Cucumber source code.",
     "category": "monitoring",
@@ -55391,7 +55391,7 @@
     "install_cmd": null
   },
   {
-    "name": "Add releases to GitHub",
+    "name": "Add releases to",
     "url": "https://github.com/elgohr/Github-Release-Action",
     "description": "Publish Github releases in an action",
     "category": "cicd",
@@ -55842,7 +55842,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "NCPA github",
+    "name": "NCPA",
     "url": "https://github.com/NagiosEnterprises/ncpa",
     "description": "Nagios Cross Platform Agent.",
     "category": "monitoring",
@@ -57138,7 +57138,7 @@
     "install_cmd": "npm install create-issue-from-file"
   },
   {
-    "name": "pynag github",
+    "name": "pynag",
     "url": "https://github.com/pynag/pynag",
     "description": "Pynag source code.",
     "category": "monitoring",
@@ -57409,7 +57409,7 @@
     "install_cmd": "npm install ghaction-github-labeler"
   },
   {
-    "name": "Naemon core github",
+    "name": "Naemon core",
     "url": "https://github.com/naemon/naemon-core",
     "description": "Next generation of nagios core written in C.",
     "category": "monitoring",
@@ -59069,7 +59069,7 @@
     "install_cmd": "go install github.com/cnrancher/octopus@latest"
   },
   {
-    "name": "pnp4nagios github",
+    "name": "pnp4nagios",
     "url": "https://github.com/lingej/pnp4nagios",
     "description": "Php4nagios source code.",
     "category": "monitoring",
@@ -61004,7 +61004,7 @@
     "trend_measured": false
   },
   {
-    "name": "consol mod-gearman github",
+    "name": "consol mod-gearman",
     "url": "https://github.com/sni/mod_gearman",
     "description": "Mod-gearman source code. A gearman wroker written in C.",
     "category": "monitoring",
@@ -61080,7 +61080,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "chef-nagios-cookbook github",
+    "name": "chef-nagios-cookbook",
     "url": "https://github.com/schubergphilis/nagios",
     "description": "Chef nagios cookbook.",
     "category": "monitoring",
@@ -61340,7 +61340,7 @@
     "install_cmd": "npm install aws-github-actions"
   },
   {
-    "name": "nagvis github",
+    "name": "nagvis",
     "url": "https://github.com/NagVis/nagvis",
     "description": "Nagvis source code.",
     "category": "monitoring",
@@ -61736,7 +61736,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "nagiosharder github",
+    "name": "nagiosharder",
     "url": "https://github.com/railsmachine/nagiosharder",
     "description": "Ruby API for scraping nagios.",
     "category": "monitoring",
@@ -62034,7 +62034,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "CNCF Chaos Engineering Working Group Github",
+    "name": "CNCF Chaos Engineering Working Group",
     "url": "https://github.com/chaoseng/wg-chaoseng",
     "description": "Chaos Engineering Working Group",
     "category": "observability",
@@ -64951,7 +64951,7 @@
     "install_cmd": "go install github.com/middleware-labs/mw-agent@latest"
   },
   {
-    "name": "mod-webui github",
+    "name": "mod-webui",
     "url": "https://github.com/shinken-monitoring/mod-webui",
     "description": "For Shinken.",
     "category": "monitoring",
@@ -65098,7 +65098,7 @@
     "install_cmd": null
   },
   {
-    "name": "SNClient github",
+    "name": "SNClient",
     "url": "https://github.com/ConSol-Monitoring/snclient",
     "description": "SNClient source code",
     "category": "monitoring",
@@ -65237,7 +65237,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "nconf github",
+    "name": "nconf",
     "url": "https://github.com/nconf/nconf",
     "description": "Nconf source code.",
     "category": "monitoring",
@@ -65903,7 +65903,7 @@
     "install_cmd": null
   },
   {
-    "name": "nagflux github",
+    "name": "nagflux",
     "url": "https://github.com/Griesbacher/nagflux",
     "description": "A connector which copies performancedata from Nagios / Icinga(2) / Naemon to InfluxDB",
     "category": "monitoring",
@@ -68318,7 +68318,7 @@
     "install_cmd": "npm install istio-ui"
   },
   {
-    "name": "NDOUtils github",
+    "name": "NDOUtils",
     "url": "https://github.com/NagiosEnterprises/ndoutils",
     "description": "Nagios Data Output Utils, for Nagios.",
     "category": "monitoring",
@@ -68648,7 +68648,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "NRDP github",
+    "name": "NRDP",
     "url": "https://github.com/NagiosEnterprises/nrdp",
     "description": "Nagios Remote Data Processor, as a replacement for NSCA.",
     "category": "monitoring",
@@ -69089,7 +69089,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "NSCA github",
+    "name": "NSCA",
     "url": "https://github.com/NagiosEnterprises/nsca",
     "description": "Nagios Service Check Acceptor, for nagios/naemon/icinga.",
     "category": "monitoring",
@@ -69531,7 +69531,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Centreon core github",
+    "name": "Centreon core",
     "url": "https://github.com/centreon/centreon-engine",
     "description": "Centreon core written in C++.",
     "category": "monitoring",
@@ -70343,7 +70343,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "ledbetter github",
+    "name": "ledbetter",
     "url": "https://github.com/github/ledbetter",
     "description": "Script that scrapes alert statistics from Nagios and reports them to Graphite.",
     "category": "monitoring",
@@ -71225,7 +71225,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "nagiosvshell github",
+    "name": "nagiosvshell",
     "url": "https://github.com/NagiosEnterprises/nagiosvshell",
     "description": "Nagios v-shell PHP interface.",
     "category": "monitoring",
@@ -71757,7 +71757,7 @@
     "install_cmd": "npm install merge-pal-action"
   },
   {
-    "name": "op5 Ninja github",
+    "name": "op5 Ninja",
     "url": "https://github.com/op5/ninja",
     "description": "Ninja source code.",
     "category": "monitoring",
@@ -72230,7 +72230,7 @@
     "install_cmd": "npm install new-dependencies-action"
   },
   {
-    "name": "naemon-livestatus github",
+    "name": "naemon-livestatus",
     "url": "https://github.com/naemon/naemon-livestatus",
     "description": "For Naemon.",
     "category": "monitoring",
@@ -72248,7 +72248,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "NSCA-ng github",
+    "name": "NSCA-ng",
     "url": "https://github.com/weiss/nsca-ng",
     "description": "NSCA-ng source code.",
     "category": "monitoring",
@@ -72414,7 +72414,7 @@
     "install_cmd": null
   },
   {
-    "name": "nagmap github",
+    "name": "nagmap",
     "url": "https://github.com/hecko/nagmap",
     "description": "Integration of nagios/icinga into google maps.",
     "category": "monitoring",
@@ -73415,7 +73415,7 @@
     "install_cmd": "go install github.com/mhausenblas/mehdb@latest"
   },
   {
-    "name": "op5 merlin github",
+    "name": "op5 merlin",
     "url": "https://github.com/op5/merlin",
     "description": "Merlin source code.",
     "category": "monitoring",
@@ -74959,7 +74959,7 @@
     "install_cmd": null
   },
   {
-    "name": "mod-livestaus github",
+    "name": "mod-livestaus",
     "url": "https://github.com/shinken-monitoring/mod-livestatus",
     "description": "For Shinken.",
     "category": "monitoring",
@@ -75000,7 +75000,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "NSTI github",
+    "name": "NSTI",
     "url": "https://github.com/NagiosEnterprises/nsti",
     "description": "NSTI.",
     "category": "monitoring",
@@ -75760,7 +75760,7 @@
     "trend_measured": false
   },
   {
-    "name": "nagrestconf github",
+    "name": "nagrestconf",
     "url": "https://github.com/mclarkson/nagrestconf",
     "description": "Nagrestconf.",
     "category": "monitoring",
@@ -76298,7 +76298,7 @@
     "install_cmd": null
   },
   {
-    "name": "super-devops github",
+    "name": "super-devops",
     "url": "https://github.com/crazy-canux/super-devops",
     "description": "Tons of devops tools for devops related project.",
     "category": "monitoring",
@@ -76412,7 +76412,7 @@
     "install_cmd": "go get github.com/crazy-canux/go-devops"
   },
   {
-    "name": "go-devops github",
+    "name": "go-devops",
     "url": "https://github.com/crazy-canux/go-devops",
     "description": "Tons of devops tools for devops related project.",
     "category": "monitoring",
@@ -76874,7 +76874,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "nagiosBPI github",
+    "name": "nagiosBPI",
     "url": "https://github.com/NagiosEnterprises/nagiosbpi",
     "description": "NagiosBPI.",
     "category": "monitoring",
@@ -77750,7 +77750,7 @@
     "checked_at": "2026-11-04"
   },
   {
-    "name": "nagios-mib github",
+    "name": "nagios-mib",
     "url": "https://github.com/nagios-plugins/nagios-mib",
     "description": "This is the initial set of MIBs for Nagios to allow traps sent from Nagios to be recognized by other NMSes.",
     "category": "monitoring",
@@ -79783,7 +79783,7 @@
     "trend_measured": false
   },
   {
-    "name": "BP github",
+    "name": "BP",
     "url": "https://github.com/booboo-at-gluga-de/bp-addon",
     "description": "BP source code.",
     "category": "monitoring",
@@ -80487,7 +80487,7 @@
     "subcategory": "Deployment & Platforms"
   },
   {
-    "name": "Bosun github",
+    "name": "Bosun",
     "url": "https://github.com/bosun-monitor",
     "description": "Bosun written in Go.",
     "category": "monitoring",
@@ -80550,7 +80550,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "coffeesaint github",
+    "name": "coffeesaint",
     "url": "https://github.com/flok99/CoffeeSaint",
     "description": "Coffeesaint source code.",
     "category": "monitoring",
@@ -80634,7 +80634,7 @@
     "trend_measured": false
   },
   {
-    "name": "DNX github",
+    "name": "DNX",
     "url": "https://github.com/DNX-Project/DNX",
     "description": "DNX source code.",
     "category": "monitoring",
@@ -80743,7 +80743,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Ganglia github",
+    "name": "Ganglia",
     "url": "https://github.com/ganglia",
     "description": "Related source code.",
     "category": "monitoring",
@@ -80897,7 +80897,7 @@
     "subcategory": "ChatOps"
   },
   {
-    "name": "icinga-addons github",
+    "name": "icinga-addons",
     "url": "https://github.com/Icinga",
     "description": "Icinga addons.",
     "category": "monitoring",
@@ -80939,7 +80939,7 @@
     "install_cmd": null
   },
   {
-    "name": "Jaeger github",
+    "name": "Jaeger",
     "url": "https://github.com/jaegertracing",
     "description": "Distributed Tracing System",
     "category": "monitoring",
@@ -81108,7 +81108,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "monitoring-plugins github",
+    "name": "monitoring-plugins",
     "url": "https://github.com/monitoring-plugins",
     "description": "Monitoring plugins source code.",
     "category": "monitoring",
@@ -81123,14 +81123,14 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "naemon-addons github",
+    "name": "naemon-addons",
     "url": "https://github.com/naemon",
     "description": "Naemon addons.",
     "category": "monitoring",
     "subcategory": "Nagios Monitoring Addons"
   },
   {
-    "name": "nagios-addons github",
+    "name": "nagios-addons",
     "url": "https://github.com/NagiosEnterprises",
     "description": "Nagios addons.",
     "category": "monitoring",
@@ -81144,7 +81144,7 @@
     "subcategory": "Orchestration"
   },
   {
-    "name": "new relic github",
+    "name": "new relic",
     "url": "https://github.com/newrelic",
     "description": "New relic written in Ruby.",
     "category": "monitoring",
@@ -81191,7 +81191,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "opentelementry github",
+    "name": "opentelementry",
     "url": "https://github.com/open-telemetry",
     "description": "",
     "category": "monitoring",
@@ -81248,7 +81248,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "pagerduty github",
+    "name": "pagerduty",
     "url": "https://github.com/PagerDuty",
     "description": "Related source code.",
     "category": "monitoring",
@@ -81356,7 +81356,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "realopinsight github",
+    "name": "realopinsight",
     "url": "https://github.com/RealOpInsightLabs/realopinsight-workstation",
     "description": "Realopinsight source code.",
     "category": "monitoring",
@@ -81418,14 +81418,14 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Sensu-plugins github",
+    "name": "Sensu-plugins",
     "url": "https://github.com/sensu-plugins",
     "description": "Sensu plugins source code.",
     "category": "monitoring",
     "subcategory": "Sensu"
   },
   {
-    "name": "server density github",
+    "name": "server density",
     "url": "https://github.com/serverdensity",
     "description": "Related source code.",
     "category": "monitoring",
@@ -81448,7 +81448,7 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Shinken exchange github",
+    "name": "Shinken exchange",
     "url": "https://github.com/shinken-monitoring",
     "description": "Shinken exchange.",
     "category": "monitoring",
@@ -81837,14 +81837,14 @@
     "first_seen": "2026-11-04"
   },
   {
-    "name": "Zabbix github",
+    "name": "Zabbix",
     "url": "https://github.com/zabbix",
     "description": "Zabbix github.",
     "category": "monitoring",
     "subcategory": "Zabbix"
   },
   {
-    "name": "Zenoss github",
+    "name": "Zenoss",
     "url": "https://github.com/zenoss",
     "description": "Zenoss github.",
     "category": "monitoring",

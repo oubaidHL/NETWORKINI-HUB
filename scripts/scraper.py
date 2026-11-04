@@ -371,6 +371,7 @@ def polish(tool):
             name = name.split(': ', 1)[1]
         name = re.sub(r'\s+[-–]\s+.*$', '', name)
     name = re.sub(r':[a-z0-9_+-]+:|[\U0001F300-\U0001FAFF\u2600-\u27BF]', '', name).strip(' :-')
+    name = re.sub(r'\s+github$', '', name, flags=re.I)  # "netdata github" -> "netdata"
     if m and (not name or '/' in name or name.lower() in GENERIC_NAMES):
         name = m.group(2).removesuffix('.git')
     tool['name'] = name
