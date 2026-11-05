@@ -1,1 +1,15 @@
-[]
+[
+ {
+  "date": "2026-11-05",
+  "count": 1,
+  "added": [
+   {
+    "name": "speedrunner",
+    "url": "https://github.com/anthonyGosme/speedrunner",
+    "category": "ansible",
+    "description": "Cuts the start-up time of ansible, ansible-doc and other Ansible commands by serving them from a preloaded daemon, which helps scripts that call them many times.",
+    "stars": 4
+   }
+  ]
+ }
+]
