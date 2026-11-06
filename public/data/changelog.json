@@ -1,5 +1,18 @@
 [
  {
+  "date": "2026-11-06",
+  "count": 1,
+  "added": [
+   {
+    "name": "k8s-namespace-sync",
+    "url": "https://github.com/somaz94/k8s-namespace-sync",
+    "category": "cloud",
+    "description": "Kubernetes operator that copies Secrets and ConfigMaps from a source namespace to other namespaces and keeps them in sync, including namespaces created later, with glob filters on resource names.",
+    "stars": 4
+   }
+  ]
+ },
+ {
   "date": "2026-11-05",
   "count": 1,
   "added": [
