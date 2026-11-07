@@ -1,5 +1,53 @@
 [
  {
+  "date": "2026-11-07",
+  "count": 6,
+  "added": [
+   {
+    "name": "Oxynote",
+    "url": "https://github.com/oxynote/oxynote",
+    "category": "observability",
+    "description": "Self-hosted documentation workspace where pages embed live Prometheus charts next to the text explaining them, with draft review for runbooks.",
+    "stars": 529
+   },
+   {
+    "name": "ros2_pulse",
+    "url": "https://github.com/TanayK07/ros2_pulse",
+    "category": "observability",
+    "description": "LDPRELOAD library that counts per-topic publish and callback rates inside ROS 2 processes, with a Prometheus and OTLP exporter, alert rules and a Grafana dashboard.",
+    "stars": 53
+   },
+   {
+    "name": "Caprock",
+    "url": "https://github.com/dspv/caprock",
+    "category": "observability",
+    "description": "Local dashboard for Claude Code, Codex, OpenCode and Gemini CLI sessions. Shows live activity, token cost per repository and per model at API list prices, the 5-hour and weekly plan-limit windows, and alerts when a session repeats the same tool call; everything the agent wrote is searchable across sessions. Single Go binary with SQLite, loopback only, no telemetry, Apache-2.0.",
+    "stars": 41
+   },
+   {
+    "name": "zeroreads",
+    "url": "https://github.com/Bisman-Singh/zeroreads",
+    "category": "observability",
+    "description": "Finds the Loki log lines no logged query, alert or dashboard reads, proves it for each rule, and writes OpenTelemetry Collector, Vector or Fluent Bit configuration that aggregates, samples, archives or drops them, with a shadow mode that measures before anything is removed.",
+    "stars": 9
+   },
+   {
+    "name": "spantruth",
+    "url": "https://github.com/Plexito-de/spantruth",
+    "category": "observability",
+    "description": "Checks whether LLM instrumentation reports the truth. A local fake provider serves OpenAI and Anthropic responses, including streams, prompt-cache hits, 429s and dropped connections, to OpenLLMetry, OpenInference and the OpenTelemetry GenAI instrumentation, and spantruth compares the token counts, models and errors on their spans, and whether each span ends, with what was sent. Apache-2.0.",
+    "stars": 4
+   },
+   {
+    "name": "amlint",
+    "url": "https://github.com/danikdanik2013/amlint",
+    "category": "observability",
+    "description": "Linter and routing simulator for Prometheus Alertmanager configurations. Finds routes that never match, inhibit rules that mute too much and notification templates that fail at send time, and runs routing unit tests in CI.",
+    "stars": 3
+   }
+  ]
+ },
+ {
   "date": "2026-11-06",
   "count": 1,
   "added": [
