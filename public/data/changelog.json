@@ -1,5 +1,102 @@
 [
  {
+  "date": "2026-11-08",
+  "count": 13,
+  "added": [
+   {
+    "name": "Vessel",
+    "url": "https://github.com/spenceclark/Vessel",
+    "category": "observability",
+    "description": "Local-first reverse proxy for LLM traffic (Ollama, OpenAI-compatible, Anthropic Messages). Captures requests and responses byte-for-byte to local SQLite with full-text search, TTFT and token metrics, warnings for truncation, cold loads and fumbled tool calls, and replay across models. No SDK; single binary.",
+    "stars": 8
+   },
+   {
+    "name": "Vobo",
+    "url": "https://github.com/getbeton/vobo",
+    "category": "observability",
+    "description": "Open-source human review for AI output. Anchored comments and a hashed evidence chain. Self-hostable.",
+    "stars": 6
+   },
+   {
+    "name": "YYLO Benchmark",
+    "url": "https://github.com/yylo-dev/yylo-benchmark",
+    "category": "observability",
+    "description": "Isolated evaluation layer for agent runs. Normalizes every case into one attempt contract, runs each candidate in a private fresh-repository workspace, and evaluates retained evidence with ordered deterministic and/or LLM profiles; workspace receipts, repository manifests, and terminals stay hash-linked, and records are immutable. Installs via npm as @yylo/benchmark.",
+    "stars": 2
+   },
+   {
+    "name": "Replayowl",
+    "url": "https://github.com/replayowl/replayowl",
+    "category": "observability",
+    "description": "Open-source, self-hosted session replay that records DOM changes, masked input and console errors; the server runs as one Cloudflare Worker or one Node process and keeps recordings in your own S3-compatible bucket.",
+    "stars": 2
+   },
+   {
+    "name": "Kilobat CLI",
+    "url": "https://github.com/seifip/kilobat-cli",
+    "category": "observability",
+    "description": "GPL-3.0-only macOS command-line network monitoring and diagnostics with JSON output and a local MCP server.",
+    "stars": 1
+   },
+   {
+    "name": "log10x-mcp",
+    "url": "https://github.com/log-10x/log10x-mcp",
+    "category": "observability",
+    "description": "MCP server that ranks log patterns by volume and cost and plans compact, tier down or offload for the excess over each cap on Splunk, Datadog, Elasticsearch, CloudWatch and ClickHouse. Runs locally; read-only without an API key.",
+    "stars": 1
+   },
+   {
+    "name": "Check Expiry",
+    "url": "https://github.com/hal-boring-utils/check-expiry-action",
+    "category": "observability",
+    "description": "GitHub Action for TLS certificate and domain-registration expiry checks, with workflow summaries and configurable warning thresholds.",
+    "stars": 0
+   },
+   {
+    "name": "otel-budget-check",
+    "url": "https://github.com/northstarappstudio-ops/otel-budget-check",
+    "category": "observability",
+    "description": "GitHub Action that runs your tests with a local OTLP receiver and fails PRs on telemetry cost/cardinality regressions before merge.",
+    "stars": 0
+   },
+   {
+    "name": "CrashPilot",
+    "url": "https://github.com/CrashPilotX/crashpilot-agent",
+    "category": "observability",
+    "description": "Open-source (MIT) Linux crash forensics agent that explains why a machine went down: OOM kills, kernel panics, NVIDIA Xid GPU faults, thermal shutdowns, PCIe and disk errors. crashpilot classify works offline on pasted logs, and a Kubernetes DaemonSet is included.",
+    "stars": 0
+   },
+   {
+    "name": "RKE2 observability pack",
+    "url": "https://github.com/lbarrosby/rke2-observability-pack",
+    "category": "observability",
+    "description": "Grafana dashboards and Prometheus alerts for RKE2 clusters: control plane, embedded etcd and its snapshots, certificates, networking, ingress, and cost per namespace with or without OpenCost.",
+    "stars": 0
+   },
+   {
+    "name": "SLO Error Budget Calculator",
+    "url": "https://github.com/kkkevins/slo-error-budget-calculator",
+    "category": "observability",
+    "description": "Browser-based SLO error budget and burn-rate calculator that generates multiwindow, multi-burn-rate Prometheus alerting rules.",
+    "stars": 0
+   },
+   {
+    "name": "Cognipeer Observability",
+    "url": "https://github.com/Cognipeer/cognipeer-observability",
+    "category": "observability",
+    "description": "Python and TypeScript packages that send traces, tool calls, token usage, cost and latency from agent frameworks such as LangChain, LangGraph and OpenAI Agents, and from OpenTelemetry-instrumented agents, to Cognipeer Console.",
+    "stars": 0
+   },
+   {
+    "name": "AI observability pack",
+    "url": "https://github.com/lbarrosby/ai-observability-pack",
+    "category": "observability",
+    "description": "Grafana dashboards, Prometheus alerts and Zabbix templates for self-hosted AI inference: vLLM, SGLang, llama.cpp, TEI, Triton, NVIDIA DCGM, Volcano, KServe, Ray Serve, LiteLLM, Qdrant and Weaviate.",
+    "stars": 0
+   }
+  ]
+ },
+ {
   "date": "2026-11-07",
   "count": 6,
   "added": [
