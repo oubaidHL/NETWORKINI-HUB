@@ -1,5 +1,25 @@
 [
  {
+  "date": "2026-11-09",
+  "count": 2,
+  "added": [
+   {
+    "name": "Orchestrator",
+    "url": "https://github.com/OrchestratorInc/agent-orchestrator",
+    "category": "devops",
+    "description": "Desktop app that runs AI coding agents in parallel Git worktrees and feeds failed CI checks and review comments back to them. oss",
+    "stars": 14318
+   },
+   {
+    "name": "mnemo-jvm-warden",
+    "url": "https://github.com/baokhang83/mnemo-jvm-warden",
+    "category": "cloud",
+    "description": "Kubernetes controller and sidecar that resize JVM pod memory on a schedule with in-place resize, releasing heap before shrinking the pod.",
+    "stars": 13
+   }
+  ]
+ },
+ {
   "date": "2026-11-08",
   "count": 13,
   "added": [
