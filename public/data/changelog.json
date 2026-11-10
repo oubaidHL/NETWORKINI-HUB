@@ -1,5 +1,18 @@
 [
  {
+  "date": "2026-11-10",
+  "count": 1,
+  "added": [
+   {
+    "name": "ansible-vars",
+    "url": "https://github.com/xorwow/ansible-vars",
+    "category": "ansible",
+    "description": "ansible-vault replacement that supports encrypting individual vault variables.",
+    "stars": 4
+   }
+  ]
+ },
+ {
   "date": "2026-11-09",
   "count": 2,
   "added": [
