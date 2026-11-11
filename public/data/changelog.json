@@ -1,5 +1,46 @@
 [
  {
+  "date": "2026-11-11",
+  "count": 5,
+  "added": [
+   {
+    "name": "nightingale",
+    "url": "https://github.com/ccfos/nightingale",
+    "category": "cloud",
+    "description": "Self-hosted alerting for metrics, logs, and databases, with a built-in AI agent and MCP server.",
+    "stars": 13478
+   },
+   {
+    "name": "stern",
+    "url": "https://github.com/stern/stern",
+    "category": "cloud",
+    "description": "Multi pod and container log tailing for Kubernetes.",
+    "stars": 4922
+   },
+   {
+    "name": "kubicorn",
+    "url": "https://github.com/kubicorn/kubicorn",
+    "category": "cloud",
+    "description": "Create, manage, snapshot, and scale Kubernetes infrastructure in the public cloud.",
+    "stars": 1677
+   },
+   {
+    "name": "akmatori",
+    "url": "https://github.com/akmatori/akmatori",
+    "category": "cloud",
+    "description": "Self-hosted AIOps platform that investigates Alertmanager, PagerDuty, Grafana, Datadog and Zabbix alerts with LLM agents through Kubernetes, SSH and monitoring tools, and puts risky remediation actions behind human approval.",
+    "stars": 50
+   },
+   {
+    "name": "forge",
+    "url": "https://github.com/reliant-labs/forge",
+    "category": "cloud",
+    "description": "Go and React framework and CLI that generates Connect RPC services from protobuf and SQL migrations and deploys them to Kubernetes, Docker Compose or host processes.",
+    "stars": 8
+   }
+  ]
+ },
+ {
   "date": "2026-11-10",
   "count": 1,
   "added": [
