@@ -1,5 +1,18 @@
 [
  {
+  "date": "2026-11-12",
+  "count": 1,
+  "added": [
+   {
+    "name": "kubespade",
+    "url": "https://github.com/kubespade/kubespade",
+    "category": "cloud",
+    "description": "Free open-source Kubernetes desktop client for Mac, Windows, and Linux with resource browsing, logs, exec, YAML, Helm, and optional MCP AI.",
+    "stars": 2
+   }
+  ]
+ },
+ {
   "date": "2026-11-11",
   "count": 5,
   "added": [
