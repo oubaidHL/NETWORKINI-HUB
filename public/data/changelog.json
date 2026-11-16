@@ -1,5 +1,18 @@
 [
  {
+  "date": "2026-11-16",
+  "count": 1,
+  "added": [
+   {
+    "name": "nubis",
+    "url": "https://github.com/windevase/nubis",
+    "category": "cloud",
+    "description": "Windows desktop client for Kubernetes, SSH and RDP with per-cluster encrypted kubeconfigs, pod shells and logs, cluster discovery across EKS, GKE, AKS, OKE and TKE, and an approval-gated Claude Code panel.",
+    "stars": 4
+   }
+  ]
+ },
+ {
   "date": "2026-11-12",
   "count": 1,
   "added": [
