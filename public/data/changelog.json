@@ -1,5 +1,18 @@
 [
  {
+  "date": "2026-11-18",
+  "count": 1,
+  "added": [
+   {
+    "name": "topic",
+    "url": "https://github.com/yurirocha15/topic",
+    "category": "cloud",
+    "description": "Top-like terminal UI that runs inside a container or Kubernetes pod and reports usage against the container's cgroup limits.",
+    "stars": 3
+   }
+  ]
+ },
+ {
   "date": "2026-11-16",
   "count": 1,
   "added": [
