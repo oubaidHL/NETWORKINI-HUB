@@ -1,5 +1,46 @@
 [
  {
+  "date": "2026-11-25",
+  "count": 5,
+  "added": [
+   {
+    "name": "modulestf",
+    "url": "https://github.com/modulestf/modulestf",
+    "category": "terraform",
+    "description": "Agent skills for Claude Code and Codex that review, fix and maintain reusable Terraform modules by the rules of terraform-aws-modules. Rules: modules.tf/rules.",
+    "stars": 377
+   },
+   {
+    "name": "mtf-facts",
+    "url": "https://github.com/modulestf/facts",
+    "category": "terraform",
+    "description": "Offline Go CLI that parses Terraform module trees and reports rule results, findings with evidence, and interface and provider schema diffs. Works as a standalone module linter.",
+    "stars": 21
+   },
+   {
+    "name": "repro-lambda",
+    "url": "https://github.com/antonbabenko/repro-lambda",
+    "category": "terraform",
+    "description": "Builds byte-identical AWS Lambda packages on macOS and Linux, uploads them to S3 by content hash, and passes them to terraform-aws-lambda as s3existingpackage, so terraform plan builds nothing.",
+    "stars": 15
+   },
+   {
+    "name": "terraform-provider-aws (compliance.tf)",
+    "url": "https://github.com/compliancetf/terraform-provider-aws",
+    "category": "terraform",
+    "description": "AWS provider for Terraform and OpenTofu by compliance.tf. Runs the unmodified hashicorp/aws provider and checks aws resources against compliance controls before apply. Warns by default; can fail the run in CI.",
+    "stars": 4
+   },
+   {
+    "name": "ctfkit",
+    "url": "https://github.com/compliancetf/ctfkit",
+    "category": "terraform",
+    "description": "Offline analyzer for Terraform and OpenTofu configuration, plans and module manifests. Writes SARIF findings. Needs no cloud credentials. Also available as a GitHub Action.",
+    "stars": 4
+   }
+  ]
+ },
+ {
   "date": "2026-11-18",
   "count": 1,
   "added": [
