@@ -1,5 +1,18 @@
 [
  {
+  "date": "2026-11-27",
+  "count": 1,
+  "added": [
+   {
+    "name": "dapr-quickstarts",
+    "url": "https://github.com/dapr/quickstarts",
+    "category": "cloud",
+    "description": "Runnable Dapr examples for workflow, pub/sub, state management, service invocation and other building blocks in several languages.",
+    "stars": 1117
+   }
+  ]
+ },
+ {
   "date": "2026-11-25",
   "count": 5,
   "added": [
