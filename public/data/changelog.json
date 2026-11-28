@@ -1,5 +1,46 @@
 [
  {
+  "date": "2026-11-28",
+  "count": 5,
+  "added": [
+   {
+    "name": "Uptime Kuma",
+    "url": "https://github.com/louislam/uptime-kuma",
+    "category": "observability",
+    "description": "Self-hosted uptime monitoring for HTTP(s), TCP, ping, DNS, push heartbeats and Docker containers, with status pages and notifications to 90+ services.",
+    "stars": 94988
+   },
+   {
+    "name": "OpenObserve",
+    "url": "https://github.com/openobserve/openobserve",
+    "category": "observability",
+    "description": "Open source observability platform for logs, metrics, traces and RUM, shipped as a single binary that stores data as Parquet on object storage.",
+    "stars": 23202
+   },
+   {
+    "name": "Pyrra",
+    "url": "https://github.com/prometheus-community/pyrra",
+    "category": "observability",
+    "description": "Kubernetes operator and UI that turns SLO definitions into Prometheus recording rules and multi-window, multi-burn-rate alerts.",
+    "stars": 1577
+   },
+   {
+    "name": "OpenTelemetry eBPF Instrumentation",
+    "url": "https://github.com/open-telemetry/opentelemetry-ebpf-instrumentation",
+    "category": "observability",
+    "description": "Zero-code instrumentation that uses eBPF to produce OpenTelemetry trace spans and RED metrics for HTTP/S and gRPC services, without changing the application; the upstream project of Grafana Beyla.",
+    "stars": 645
+   },
+   {
+    "name": "Prod Forge Backend",
+    "url": "https://github.com/prod-forge/backend",
+    "category": "observability",
+    "description": "NestJS reference API with a local Prometheus, Loki, Tempo and Grafana stack on Docker Compose, structured logs with trace IDs and a script that verifies the pipeline end to end.",
+    "stars": 485
+   }
+  ]
+ },
+ {
   "date": "2026-11-27",
   "count": 1,
   "added": [
